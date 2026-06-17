@@ -1,0 +1,562 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebook Library Catalog</title>
+  <style>
+    :root {
+      --bg: #f4f7f6;
+      --card-bg: #ffffff;
+      --primary: #2d3436;
+      --secondary: #636e72;
+      --accent: #0984e3;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --overlay: rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--primary);
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      max-width: 1400px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #dfe6e9;
+      padding-bottom: 15px;
+    }
+
+    .stats {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      background: #dfe6e9;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* Navigation Breadcrumb */
+    .breadcrumb {
+      max-width: 1400px;
+      margin: 10px auto 20px auto;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-btn {
+      color: var(--accent);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Category Headings */
+    .parent-group {
+      max-width: 1400px;
+      margin: 40px auto;
+    }
+
+    .parent-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      border-bottom: 2px solid #cbd5e1;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Folder Dashboard Grid Layout */
+    .folder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Folder Card Design */
+    .folder-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .folder-card:hover {
+      transform: translateY(-3px);
+      background-color: #fcfcfc;
+    }
+
+    .folder-icon {
+      font-size: 2.5rem;
+    }
+
+    .folder-info h3 {
+      margin: 0 0 4px 0;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+
+    .folder-info p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--secondary);
+    }
+
+    /* Books Grid Layout */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Book Card Design */
+    .book-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cover-box {
+      position: relative;
+      width: 100%;
+      padding-top: 140%;
+      background: #e2e2e2;
+    }
+
+    .cover-box img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .details {
+      padding: 12px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .meta {
+      margin-top: auto;
+      font-size: 0.7rem;
+      color: var(--secondary);
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+    }
+
+    .format-badge {
+      background: var(--accent);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+    }
+
+    /* --- Modal Overlay Window --- */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--overlay);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 1200px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      display: flex;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .modal-content {
+        flex-direction: column;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #dfe6e9;
+      border: none;
+      font-size: 1.2rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background: #b2bec3;
+    }
+
+    .modal-left {
+      flex: 1;
+    }
+
+    .modal-left img {
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+      max-height: 100%;
+    }
+
+    .modal-right {
+      flex: 2;
+    }
+
+    .modal-title {
+      margin: 0 0 15px 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .info-table td {
+      padding: 8px 4px;
+    }
+
+    .info-table td.label {
+      color: var(--secondary);
+      font-weight: 600;
+      width: 35%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Library Catalog</h1>
+    <div id="book-count" class="stats">Loading Library...</div>
+  </header>
+
+  <div class="breadcrumb" id="nav-breadcrumb">
+    <span>📁 Root Dashboard</span>
+  </div>
+
+  <main id="view-container"></main>
+
+  <div id="detail-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" id="close-btn">&times;</button>
+      <div class="modal-left">
+        <img id="modal-img" src="" alt="Book Cover">
+      </div>
+      <div class="modal-right">
+        <h2 id="modal-title" class="modal-title">Book Title</h2>
+        <table class="info-table">
+          <tbody>
+            <tr>
+              <td class="label">ID</td>
+              <td id="info-id">-</td>
+            </tr>
+            <tr>
+              <td class="label">Format</td>
+              <td id="info-format">-</td>
+            </tr>
+            <tr>
+              <td class="label">File Size</td>
+              <td id="info-size">-</td>
+            </tr>
+            <tr>
+              <td class="label">Relative Path</td>
+              <td id="info-path">-</td>
+            </tr>
+            <tr>
+              <td class="label">Date Created</td>
+              <td id="info-created">-</td>
+            </tr>
+            <tr>
+              <td class="label">Last Modified</td>
+              <td id="info-modified">-</td>
+            </tr>
+            <tr>
+              <td class="label">Status</td>
+              <td id="info-status">-</td>
+            </tr>
+            <tr>
+              <td class="label">Notes</td>
+              <td id="info-notes">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let libraryBooks = [];
+    let nestedLibraryStructure = {};
+
+    // Helper to safely parse filepaths cross-platform into parents and children
+    function parseFolderStructure(filepath) {
+      if (!filepath) return { parent: "Unsorted", sub: "Root" };
+
+      const cleanPath = filepath.replace(/\\/g, '/');
+      const parts = cleanPath.split('/');
+
+      if (parts[0] === 'ebooks') parts.shift(); // Remove root folder mapping
+      if (parts.length > 1) parts.pop();        // Strip filename off end
+
+      // If it's a deep structure like Languages/Dutch
+      if (parts.length >= 2) {
+        return {
+          parent: parts[0],
+          sub: parts.slice(1).join(' / ')
+        };
+      } else if (parts.length === 1 && parts[0] !== "") {
+        return {
+          parent: parts[0],
+          sub: "Main Folder"
+        };
+      }
+
+      return { parent: "Unsorted", sub: "Root" };
+    }
+
+    async function initLibrary() {
+      const countLabel = document.getElementById('book-count');
+      const modal = document.getElementById('detail-modal');
+      const closeBtn = document.getElementById('close-btn');
+
+      try {
+        const response = await fetch('catalog.json');
+        libraryBooks = await response.json();
+        countLabel.textContent = `${libraryBooks.length} Books`;
+
+        // 1. Group records dynamically into structural mapping layout tree
+        libraryBooks.forEach(book => {
+          const location = parseFolderStructure(book.filepath);
+
+          if (!nestedLibraryStructure[location.parent]) {
+            nestedLibraryStructure[location.parent] = {};
+          }
+          if (!nestedLibraryStructure[location.parent][location.sub]) {
+            nestedLibraryStructure[location.parent][location.sub] = [];
+          }
+          nestedLibraryStructure[location.parent][location.sub].push(book);
+        });
+
+        // Load dashboard view execution
+        renderFolderDashboard();
+
+        // Modal event handling setups
+        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('active');
+        });
+
+      } catch (err) {
+        console.error("Initialization Failed:", err);
+        document.getElementById('view-container').innerHTML = `<p>Error fetching data resources.</p>`;
+      }
+    }
+
+    // --- VIEW A: Render Grouped Nested Folders ---
+    function renderFolderDashboard() {
+      const container = document.getElementById('view-container');
+      const breadcrumb = document.getElementById('nav-breadcrumb');
+
+      breadcrumb.innerHTML = `<span>📁 Root Dashboard</span>`;
+      container.innerHTML = '';
+
+      const masterFragment = document.createDocumentFragment();
+      const sortedParents = Object.keys(nestedLibraryStructure).sort();
+
+      sortedParents.forEach(parentName => {
+        // Create parent section layout context (e.g., LANGUAGES)
+        const parentSection = document.createElement('div');
+        parentSection.className = 'parent-group';
+
+        const parentHeader = document.createElement('h2');
+        parentHeader.className = 'parent-title';
+        parentHeader.textContent = parentName;
+        parentSection.appendChild(parentHeader);
+
+        // Grid container holding subfolder cards (e.g., Dutch, French)
+        const folderGrid = document.createElement('div');
+        folderGrid.className = 'folder-grid';
+
+        const sortedSubs = Object.keys(nestedLibraryStructure[parentName]).sort();
+
+        sortedSubs.forEach(subName => {
+          const booksInSub = nestedLibraryStructure[parentName][subName];
+          const bookCount = booksInSub.length;
+
+          const folderCard = document.createElement('div');
+          folderCard.className = 'folder-card';
+          folderCard.innerHTML = `
+            <div class="folder-icon">📁</div>
+            <div class="folder-info">
+              <h3>${subName}</h3>
+              <p>${bookCount} book${bookCount !== 1 ? 's' : ''}</p>
+            </div>
+          `;
+
+          // Event assignment router matching exact selection tracking parameters
+          folderCard.addEventListener('click', () => renderBookShelf(parentName, subName));
+          folderGrid.appendChild(folderCard);
+        });
+
+        parentSection.appendChild(folderGrid);
+        masterFragment.appendChild(parentSection);
+      });
+
+      container.appendChild(masterFragment);
+    }
+
+    // --- VIEW B: Render Internal Books Shelf Layout ---
+    function renderBookShelf(parentName, subName) {
+      const container = document.getElementById('view-container');
+      const breadcrumb = document.getElementById('nav-breadcrumb');
+      const books = nestedLibraryStructure[parentName][subName];
+
+      // Update Navigation elements tracking
+      breadcrumb.innerHTML = `
+        <span class="back-btn" onclick="renderFolderDashboard()">📁 Root Dashboard</span> 
+        <span> &gt; </span> 
+        <span>${parentName}</span>
+        <span> &gt; </span> 
+        <span>📄 ${subName}</span>
+      `;
+
+      container.innerHTML = '';
+
+      const grid = document.createElement('div');
+      grid.className = 'catalog-grid';
+
+      books.forEach(book => {
+        const displayTitle = book.filename.replace(/\.[^/.]+$/, "");
+        const normalizedCover = book.coverImage ? book.coverImage.replace(/\\/g, '/') : '';
+        const fixedCoverPath = normalizedCover ? `../${normalizedCover}` : `../covers/placeholder.jpg`;
+
+        const card = document.createElement('div');
+        card.className = 'book-card';
+        card.innerHTML = `
+          <div class="cover-box">
+            <img src="${fixedCoverPath}" alt="Cover" loading="lazy">
+          </div>
+          <div class="details">
+            <div class="title" title="${displayTitle}">${displayTitle}</div>
+            <div class="meta">
+              <span class="format-badge">${book.format}</span>
+              <span>${book.filesizeMB} MB</span>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => showDetails(book));
+        grid.appendChild(card);
+      });
+
+      container.appendChild(grid);
+    }
+
+    function showDetails(book) {
+      const modal = document.getElementById('detail-modal');
+      const cleanTitle = book.filename.replace(/\.[^/.]+$/, "");
+      const normalizedCover = book.coverImage ? book.coverImage.replace(/\\/g, '/') : '';
+
+      document.getElementById('modal-title').textContent = cleanTitle;
+      document.getElementById('modal-img').src = normalizedCover ? `../${normalizedCover}` : `../covers/placeholder.jpg`;
+
+      document.getElementById('info-id').textContent = book.id;
+      document.getElementById('info-format').textContent = book.format.toUpperCase();
+      document.getElementById('info-size').textContent = `${book.filesizeMB} MB (${book.filesize.toLocaleString()} bytes)`;
+      document.getElementById('info-path').textContent = book.filepath.replace(/\\/g, '/');
+      document.getElementById('info-created').textContent = new Date(book.createdAt).toLocaleDateString();
+      document.getElementById('info-modified').textContent = new Date(book.modifiedAt).toLocaleDateString();
+      document.getElementById('info-status').textContent = book.status;
+      document.getElementById('info-notes').textContent = book.notes || "None";
+
+      modal.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', initLibrary);
+  </script>
+</body>
+
+</html>
+
+```

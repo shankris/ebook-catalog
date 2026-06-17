@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBook Search</title>
+  <link rel="stylesheet" href="search.css">
+</head>
+
+<body>
+
+  <div class="search-container">
+    <h1>Library Search</h1>
+
+    <div class="search-box-wrapper">
+      <input type="text" id="searchInput" placeholder="Search by title, author, series, format, etc..."
+        autocomplete="off">
+
+      <main class="results-list-floating" id="resultsGrid"></main>
+    </div>
+
+    <div id="resultCount" class="result-count"></div>
+  </div>
+
+  <script src="search.js"></script>
+</body>
+
+</html>

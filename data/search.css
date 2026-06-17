@@ -1,0 +1,201 @@
+:root {
+  --primary-color: #2563eb;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --text-color: #1e293b;
+  --text-light: #64748b;
+  --border-color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 4rem 2rem;
+  /* Added padding to give the dropdown room to float */
+}
+
+.search-container {
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-container h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Anchor point for the floating element */
+.search-box-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  /* Rounded pill style similar to modern search bars */
+  outline: none;
+  background: var(--card-background);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+#searchInput:focus {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.result-count {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  padding-left: 1rem;
+}
+
+/* FLOATING & SCROLLABLE RESULTS CONTAINER */
+.results-list-floating {
+  position: absolute;
+  top: calc(100% + 4px);
+  /* Sits exactly 8px below the search bar */
+  left: 0;
+  right: 0;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  /* Forces it above everything else on the page */
+
+  /* SCROLL MANAGEMENT */
+  max-height: 380px;
+  /* Limits size to around 5-6 rows high */
+  overflow-y: auto;
+  /* Turns on vertical scrolling when data overflows */
+
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+/* Hide container entirely if it contains no elements */
+.results-list-floating:empty {
+  display: none;
+}
+
+/* Custom Scrollbar for sleek appearance */
+.results-list-floating::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results-list-floating::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.results-list-floating::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.results-list-floating::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Compact Book Row */
+.book-row {
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  gap: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s;
+}
+
+.book-row:last-child {
+  border-bottom: none;
+}
+
+.book-row:hover {
+  background-color: #f8fafc;
+}
+
+/* Thumbnail Layout */
+.thumb-wrapper {
+  width: 36px;
+  height: 46px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-wrapper.no-cover {
+  background: #cbd5e1;
+}
+
+.thumb-wrapper.no-cover::after {
+  content: "📖";
+  font-size: 1rem;
+}
+
+/* Typography elements */
+.book-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.book-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-sub-meta {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.badge {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}

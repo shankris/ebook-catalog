@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebook Library Catalog</title>
+  <style>
+    :root {
+      --bg: #f4f7f6;
+      --card-bg: #ffffff;
+      --primary: #2d3436;
+      --secondary: #636e72;
+      --accent: #0984e3;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --overlay: rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--primary);
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      max-width: 1400px;
+      margin: 0 auto 30px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stats {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      background: #dfe6e9;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* Grid Layout */
+    #catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Card Design */
+    .book-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cover-box {
+      position: relative;
+      width: 100%;
+      padding-top: 140%;
+      background: #e2e2e2;
+    }
+
+    .cover-box img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .details {
+      padding: 12px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .meta {
+      margin-top: auto;
+      font-size: 0.7rem;
+      color: var(--secondary);
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+    }
+
+    .format-badge {
+      background: var(--accent);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+    }
+
+    /* --- Modal Window Overlay --- */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--overlay);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      display: flex;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .modal-content {
+        flex-direction: column;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #dfe6e9;
+      border: none;
+      font-size: 1.2rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background: #b2bec3;
+    }
+
+    .modal-left {
+      flex: 1;
+      max-width: 180px;
+    }
+
+    .modal-left img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+    }
+
+    .modal-right {
+      flex: 2;
+    }
+
+    .modal-title {
+      margin: 0 0 15px 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .info-table td {
+      padding: 8px 4px;
+    }
+
+    .info-table td.label {
+      color: var(--secondary);
+      font-weight: 600;
+      width: 35%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ebook Catalog</h1>
+    <div id="book-count" class="stats">Loading Library...</div>
+  </header>
+
+  <main id="catalog-grid"></main>
+
+  <div id="detail-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" id="close-btn">&times;</button>
+      
+      <div class="modal-left">
+        <img id="modal-img" src="" alt="Book Cover">
+      </div>
+      
+      <div class="modal-right">
+        <h2 id="modal-title" class="modal-title">Book Title</h2>
+        <table class="info-table">
+          <tbody>
+            <tr><td class="label">ID</td><td id="info-id">-</td></tr>
+            <tr><td class="label">Format</td><td id="info-format">-</td></tr>
+            <tr><td class="label">File Size</td><td id="info-size">-</td></tr>
+            <tr><td class="label">Date Created</td><td id="info-created">-</td></tr>
+            <tr><td class="label">Last Modified</td><td id="info-modified">-</td></tr>
+            <tr><td class="label">Status</td><td id="info-status">-</td></tr>
+            <tr><td class="label">Notes</td><td id="info-notes">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Keep books array stored in global scope memory once fetched
+    let libraryBooks = [];
+
+    async function initGallery() {
+      const grid = document.getElementById('catalog-grid');
+      const countLabel = document.getElementById('book-count');
+      const modal = document.getElementById('detail-modal');
+      const closeBtn = document.getElementById('close-btn');
+
+      try {
+        // Since index.html lives inside /data, catalog.json is in the same folder
+        const response = await fetch('catalog.json');
+        libraryBooks = await response.json();
+
+        countLabel.textContent = `${libraryBooks.length} Books`;
+
+        const fragment = document.createDocumentFragment();
+
+        libraryBooks.forEach(book => {
+          const displayTitle = book.filename.replace(/\.[^/.]+$/, "");
+          
+          const card = document.createElement('div');
+          card.className = 'book-card';
+          // Store ID as a reference to query our global variable later
+          card.dataset.id = book.id;
+
+          // Note the path prefix adjustments: 
+          // Since index.html is in /data, we step out one folder using '../'
+          const fixedCoverPath = book.coverImage ? `../${book.coverImage}` : `../covers/placeholder.jpg`;
+
+          card.innerHTML = `
+            <div class="cover-box">
+              <img src="${fixedCoverPath}" alt="Cover" loading="lazy">
+            </div>
+            <div class="details">
+              <div class="title" title="${displayTitle}">${displayTitle}</div>
+              <div class="meta">
+                <span class="format-badge">${book.format}</span>
+                <span>${book.filesizeMB} MB</span>
+              </div>
+            </div>
+          `;
+          fragment.appendChild(card);
+        });
+
+        grid.appendChild(fragment);
+
+        // --- Event Delegation Click Logic ---
+        grid.addEventListener('click', (e) => {
+          const card = e.target.closest('.book-card');
+          if (!card) return;
+
+          const targetId = card.dataset.id;
+          const bookInfo = libraryBooks.find(b => b.id === targetId);
+
+          if (bookInfo) {
+            showDetails(bookInfo);
+          }
+        });
+
+        // Close Modal Events
+        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('active');
+        });
+
+      } catch (err) {
+        console.error("Error configuration loading execution:", err);
+        grid.innerHTML = `<p>Failed to load data items. Ensure <b>catalog.json</b> is present in this folder.</p>`;
+      }
+    }
+
+    // Populate and open detail slide overlay 
+    function showDetails(book) {
+      const modal = document.getElementById('detail-modal');
+      const cleanTitle = book.filename.replace(/\.[^/.]+$/, "");
+
+      // Elements inside modal
+      document.getElementById('modal-title').textContent = cleanTitle;
+      document.getElementById('modal-img').src = book.coverImage ? `../${book.coverImage}` : `../covers/placeholder.jpg`;
+      
+      document.getElementById('info-id').textContent = book.id;
+      document.getElementById('info-format').textContent = book.format.toUpperCase();
+      document.getElementById('info-size').textContent = `${book.filesizeMB} MB (${book.filesize.toLocaleString()} bytes)`;
+      document.getElementById('info-created').textContent = new Date(book.createdAt).toLocaleDateString();
+      document.getElementById('info-modified').textContent = new Date(book.modifiedAt).toLocaleDateString();
+      document.getElementById('info-status').textContent = book.status;
+      document.getElementById('info-notes').textContent = book.notes || "None";
+
+      // Fire active class animation trigger
+      modal.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', initGallery);
+  </script>
+</body>
+</html>

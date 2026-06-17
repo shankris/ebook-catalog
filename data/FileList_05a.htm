@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebook Library Catalog</title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scrollbar-gutter: stable;
+    }
+
+    :root {
+      --bg: #f4f7f6;
+      --card-bg: #ffffff;
+      --primary: #2d3436;
+      --secondary: #636e72;
+      --accent: #0984e3;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --overlay: rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--primary);
+      margin: 0 auto;
+      padding: 10px 0;
+      max-width: 90%;
+      width: 1600px;
+    }
+
+    h1.pageTitle {
+      font-weight: 300;
+      margin: 0;
+    }
+
+    header {
+      max-width: 1400px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #dfe6e9;
+      padding-bottom: 15px;
+    }
+
+    .stats {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      background: #dfe6e9;
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      max-width: 1400px;
+      margin: 10px auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .breadcrumb {
+      font-size: 16px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-btn {
+      color: var(--accent);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+
+    .sort-container select {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background-color: white;
+      color: var(--primary);
+      cursor: pointer;
+      outline: none;
+    }
+
+    .sort-container select:focus {
+      border-color: var(--accent);
+    }
+
+    /* Layout Structure for Sidebar + Main Content Container */
+    .app-layout {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      gap: 25px;
+      align-items: flex-start;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 200px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      position: sticky;
+      top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .sidebar-item-clickable {
+      padding: 4px 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .sidebar-item-clickable:hover {
+      background: #f0f4f8;
+      color: var(--accent);
+    }
+
+    .sidebar-item-clickable.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .sidebar-section-header {
+      padding: 4px 2px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 6px;
+      transition: background 0.6s;
+      user-select: none;
+      /* margin-top: 8px; */
+    }
+
+    .sidebar-section-header:hover {
+      background: #f0f4f8;
+    }
+
+    .sidebar-sub-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      /* gap: 2px;  */
+    }
+
+    .sidebar-sub-list.collapsed {
+      display: none;
+    }
+
+    .sidebar-sub-item {
+      padding: 0px 4px 2px 8px;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      cursor: pointer;
+      color: var(--secondary);
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sidebar-sub-item:hover {
+      background: #fffebd;
+      color: var(--accent);
+    }
+
+    .sidebar-sub-item.active {
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .filter-count-badge {
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+
+    .active .filter-count-badge {
+      color: #fff;
+    }
+
+    /* Content Area Layout */
+    .content-area {
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    /* Section Headings */
+    .parent-group {
+      margin: 0 auto 40px auto;
+    }
+
+    .parent-title {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--primary);
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Folder Grid */
+    .folder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .folder-card {
+      background: var(--card-bg);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      position: relative;
+      gap: 15px;
+      min-height: 80px;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .folder-card:hover {
+      transform: translateY(-1px);
+      background-color: #fcfcfc;
+    }
+
+    .folder-info {
+      padding-right: 35px;
+    }
+
+    .folder-info h3 {
+      margin: 0 0 4px 0;
+      color: #6d9eac;
+      font-weight: 400;
+      font-size: 20px;
+    }
+
+    .folder-count {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      font-size: 22px;
+      font-weight: 300;
+      color: #dddddd;
+      padding: 2px 7px;
+      border-radius: 4px;
+      transition: all 0.6s ease-in;
+    }
+
+    .folder-card:hover .folder-count {
+      color: #5f5f5f;
+      font-weight: 500;
+    }
+
+    /* Books Grid */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 25px;
+    }
+
+    .book-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .cover-box {
+      position: relative;
+      width: 100%;
+      padding-top: 140%;
+      background: #e2e2e2;
+    }
+
+    .cover-box img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 450px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .details {
+      padding: 12px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      line-height: 1.3;
+      display: -webkit-box;
+      /* -webkit-line-clamp: 3; */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .meta {
+      margin-top: auto;
+      font-size: 0.7rem;
+      color: var(--secondary);
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+      align-items: center;
+    }
+
+    .format-icon {
+      height: 18px;
+      width: auto;
+      object-fit: contain;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .modal-format-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .modal-star-icon {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: -8px;
+    }
+
+    .format-badge {
+      background: var(--accent);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+    }
+
+    .rating-badge {
+      color: #f1c40f;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--overlay);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 1200px;
+      width: 90%;
+      height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      display: flex;
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .app-layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+      }
+
+      .modal-content {
+        flex-direction: column;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #dfe6e9;
+      border: none;
+      font-size: 1.2rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background: #b2bec3;
+    }
+
+    .modal-left {
+      flex: 1;
+    }
+
+    .modal-left img {
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+      max-height: 100%;
+      width: 450px;
+      height: auto;
+      aspect-ratio: 1 / 1.6;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .modal-left img {
+        max-width: 80vw;
+      }
+    }
+
+    .modal-right {
+      flex: 2;
+    }
+
+    .modal-title {
+      margin: 0 0 15px 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .info-table td {
+      padding: 8px 4px;
+    }
+
+    .info-table td.label {
+      color: var(--secondary);
+      font-weight: 600;
+      width: 35%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="pageTitle">Ebooks Catalog</h1>
+    <div id="book-count" class="stats">Loading Library...</div>
+  </header>
+
+  <div class="controls-bar">
+    <div class="breadcrumb" id="nav-breadcrumb">
+      <span>📁 Home</span>
+    </div>
+    <div class="sort-container">
+      <select id="sort-select"></select>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar-content"></aside>
+    <main id="view-container" class="content-area"></main>
+  </div>
+
+  <div id="detail-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" id="close-btn">&times;</button>
+      <div class="modal-left">
+        <img id="modal-img" src="" alt="Book Cover">
+      </div>
+      <div class="modal-right">
+        <h2 id="modal-title" class="modal-title">Book Title</h2>
+        <table class="info-table">
+          <tbody id="modal-info-tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- HARDCODED ARRAYS CONFIGURATION ---
+    const hardcodedSeriesKeywords = ['A Book Apart', 'Complete Idiots Guide', 'Dummies', 'Glossika', 'Kodak', 'Nuls', 'Practice Makes Perfect', 'Progressive', 'SitePoint'];
+    const hardcodedAuthors = ['Alain de Botton', 'Clive James', 'Michael Palin', 'Pico Iyer', 'William C. Martell'];
+    const hardcodedComicsKeywords = ['Asterix', 'Tintin'];
+    const hardcodedLanguages = ['Dutch', 'French', 'German', 'Italian', 'Japanese', 'Portuguese', 'Spanish'];
+
+    let persistentSortOrder = 'title-asc';
+
+    let libraryBooks = [];
+    let nestedLibraryStructure = {};
+
+    let currentView = 'dashboard';
+    let currentActiveParent = '';
+    let currentActiveSub = '';
+
+    let currentFlatTitle = '';
+    let currentFlatFilterFn = null;
+
+    let activeFilter = { type: 'all', value: '' };
+    let sectionExpanded = {
+      series: true,
+      authors: true,
+      comics: false,
+      languages: false,
+      rating: false
+    };
+
+    function parseFolderStructure(filepath) {
+      if (!filepath) return { parent: "Unsorted", sub: "Root" };
+      const cleanPath = filepath.replace(/\\/g, '/');
+      const parts = cleanPath.split('/');
+
+      if (parts[0] === 'ebooks') parts.shift();
+      if (parts.length > 1) parts.pop();
+
+      if (parts.length >= 2) {
+        return { parent: parts[0], sub: parts.slice(1).join(' / ') };
+      } else if (parts.length === 1 && parts[0] !== "") {
+        return { parent: parts[0], sub: "Main Folder" };
+      }
+      return { parent: "Unsorted", sub: "Root" };
+    }
+
+    async function initLibrary() {
+      const countLabel = document.getElementById('book-count');
+      const modal = document.getElementById('detail-modal');
+      const closeBtn = document.getElementById('close-btn');
+      const sortSelect = document.getElementById('sort-select');
+
+      try {
+        const response = await fetch('catalog.json');
+        libraryBooks = await response.json();
+        countLabel.textContent = `${libraryBooks.length} Books`;
+
+        rebuildNestedStructure();
+        sortSelect.addEventListener('change', handleSortChange);
+
+        renderSidebarFilters();
+
+        // Trigger the "New" filter by default
+        activeFilter = { type: 'new', value: '' };
+        const sorted = [...libraryBooks].sort((a, b) => new Date(b.scanDate || 0) - new Date(a.scanDate || 0));
+        renderFilteredFlatView('New Arrivals (Last 100)', (book) => sorted.slice(0, 100).includes(book), 'date-desc');
+
+        renderFolderDashboard();
+
+        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('active');
+        });
+
+      } catch (err) {
+        console.error("Initialization Failed:", err);
+        document.getElementById('view-container').innerHTML = `<p>Error fetching data resources.</p>`;
+      }
+    }
+
+
+    function rebuildNestedStructure() {
+      nestedLibraryStructure = {};
+      libraryBooks.forEach(book => {
+        const location = parseFolderStructure(book.filepath);
+        if (!nestedLibraryStructure[location.parent]) nestedLibraryStructure[location.parent] = {};
+        if (!nestedLibraryStructure[location.parent][location.sub]) nestedLibraryStructure[location.parent][location.sub] = [];
+        nestedLibraryStructure[location.parent][location.sub].push(book);
+      });
+    }
+
+    // Dynamic looping pattern directly rendering your custom SVG code asset properties
+    function generateStarRatingHTML(ratingValue) {
+      if (!ratingValue) return '-';
+      const count = Math.round(parseFloat(ratingValue));
+      if (isNaN(count) || count <= 0) return '-';
+
+      let starsHTML = '';
+      for (let i = 0; i < count; i++) {
+        starsHTML += `<img src="img/icon_star.svg" alt="Star" class="modal-star-icon">`;
+      }
+      return starsHTML;
+    }
+
+    // Direct match update ensuring accurate asset template matching rules from your source logic
+    function generateFormatHTML(formatValue) {
+      const lowerFormat = formatValue ? formatValue.toLowerCase() : '';
+      const textLabel = formatValue ? formatValue.toUpperCase() : 'UNKNOWN';
+
+      if (lowerFormat === 'pdf') {
+        return `
+          <div class="modal-format-wrapper">
+            <img src="img/icon_pdf.svg" alt="PDF" class="format-icon">
+            <span>${textLabel}</span>
+          </div>`;
+      } else if (lowerFormat === 'epub') {
+        return `
+          <div class="modal-format-wrapper">
+            <img src="img/icon_epub.svg" alt="EPUB" class="format-icon">
+            <span>${textLabel}</span>
+          </div>`;
+      } else {
+        return textLabel;
+      }
+    }
+
+    // --- Dynamic Modal Display Logic ---
+    function showDetails(book) {
+      const modal = document.getElementById('detail-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalImg = document.getElementById('modal-img');
+      const tbody = document.getElementById('modal-info-tbody');
+
+      const safeFilename = book.filename || "Unknown Title";
+      modalTitle.textContent = safeFilename.replace(/\.[^/.]+$/, "");
+
+      const normalizedCover = book.coverImage ? book.coverImage.replace(/\\/g, '/') : '';
+      modalImg.src = normalizedCover ? `../${normalizedCover}` : `../covers/placeholder.jpg`;
+
+      // Build Category Array Tree
+      let categoryPath = [];
+      if (book.category) categoryPath.push(book.category);
+      if (book.subCat) categoryPath.push(book.subCat);
+      if (book.subSubCat) categoryPath.push(book.subSubCat);
+      const categoryString = categoryPath.join(' > ');
+
+      let formattedSize = '-';
+      if (book.filesizeMB !== undefined) {
+        formattedSize = `${book.filesizeMB} MB`;
+      } else if (book.filesize) {
+        formattedSize = `${(book.filesize / (1024 * 1024)).toFixed(2)} MB`;
+      }
+
+      // Metadata layout schema configuration mapping rules
+      const metadataRows = [
+        { label: "ID", value: book.id },
+        { label: "Format", value: generateFormatHTML(book.format), isHTML: true },
+        { label: "File Size", value: formattedSize },
+        { label: "Author", value: book.author, conditional: true },
+        { label: "Publisher", value: book.publisher, conditional: true },
+        { label: "Series", value: book.series, conditional: true },
+        { label: "Tags", value: book.tags, conditional: true },
+        { label: "Category", value: categoryString, conditional: true },
+        { label: "Rating", value: book.rating ? generateStarRatingHTML(book.rating) : null, isHTML: true },
+        { label: "Status", value: book.status },
+        { label: "Notes", value: book.notes }
+      ];
+
+      tbody.innerHTML = '';
+      metadataRows.forEach(row => {
+        if (row.conditional && (!row.value || row.value.trim() === '')) {
+          return;
+        }
+
+        const tr = document.createElement('tr');
+        const labelTd = document.createElement('td');
+        labelTd.className = 'label';
+        labelTd.textContent = row.label;
+
+        const valueTd = document.createElement('td');
+        if (row.isHTML) {
+          valueTd.innerHTML = row.value || '-';
+        } else {
+          valueTd.textContent = row.value || '-';
+        }
+
+        tr.appendChild(labelTd);
+        tr.appendChild(valueTd);
+        tbody.appendChild(tr);
+      });
+
+      modal.classList.add('active');
+    }
+
+    // --- Render Sidebar Panels ---
+    function renderSidebarFilters() {
+      const sidebarContainer = document.getElementById('sidebar-content');
+      sidebarContainer.innerHTML = '';
+
+      // --- New Link (Default View) ---
+      const newBtn = document.createElement('div');
+      newBtn.className = `sidebar-item-clickable ${activeFilter.type === 'new' ? 'active' : ''}`;
+      newBtn.innerHTML = `<span>New</span> <span class="filter-count-badge">100</span>`;
+      newBtn.addEventListener('click', () => {
+        activeFilter = { type: 'new', value: '' };
+        renderSidebarFilters();
+
+        // Sort by Date Descending, slice first 100
+        const sorted = [...libraryBooks].sort((a, b) => new Date(b.scanDate || 0) - new Date(a.scanDate || 0));
+        const recentBooks = sorted.slice(0, 100);
+
+        currentFlatTitle = 'New Arrivals (Last 100)';
+        // Use a custom render logic or filter for the top 100
+        renderFilteredFlatView(currentFlatTitle, (book) => recentBooks.includes(book), 'date-desc');
+      });
+      sidebarContainer.appendChild(newBtn);
+
+      // --- Folder View Link (Renamed from All) ---
+      const folderViewBtn = document.createElement('div');
+      folderViewBtn.className = `sidebar-item-clickable ${activeFilter.type === 'all' ? 'active' : ''}`;
+      folderViewBtn.innerHTML = `<span>Folder View</span> <span class="filter-count-badge">${libraryBooks.length}</span>`;
+      folderViewBtn.addEventListener('click', clearActiveFilters);
+      sidebarContainer.appendChild(folderViewBtn);
+
+      const seriesSubList = document.createElement('ul');
+      seriesSubList.className = `sidebar-sub-list ${sectionExpanded.series ? '' : 'collapsed'}`;
+      hardcodedSeriesKeywords.forEach(kw => {
+        const count = libraryBooks.filter(book => book.series && book.series.toLowerCase().includes(kw.toLowerCase())).length;
+        const li = document.createElement('li');
+        li.className = `sidebar-sub-item ${activeFilter.type === 'series' && activeFilter.value === kw ? 'active' : ''}`;
+        li.innerHTML = `<span>${kw}</span> <span class="filter-count-badge">${count}</span>`;
+        li.addEventListener('click', () => {
+          activeFilter = { type: 'series', value: kw };
+          renderSidebarFilters();
+          currentFlatTitle = `Series: ${kw}`;
+          currentFlatFilterFn = book => book.series && book.series.toLowerCase().includes(kw.toLowerCase());
+          renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, persistentSortOrder);
+        });
+        seriesSubList.appendChild(li);
+      });
+      sidebarContainer.appendChild(seriesSubList);
+
+      // --- Authors Header & Sub-list ---
+      const totalAuthorsCount = hardcodedAuthors.length;
+
+      const authorsHeader = document.createElement('div');
+      authorsHeader.className = 'sidebar-section-header';
+      const authorsArrow = sectionExpanded.authors ? ' ▾' : ' ▸';
+      authorsHeader.innerHTML = `<span>Authors${authorsArrow}</span> <span class="filter-count-badge">${totalAuthorsCount}</span>`;
+      authorsHeader.addEventListener('click', () => {
+        sectionExpanded.authors = !sectionExpanded.authors;
+        renderSidebarFilters();
+      });
+      sidebarContainer.appendChild(authorsHeader);
+
+      const authorsSubList = document.createElement('ul');
+      authorsSubList.className = `sidebar-sub-list ${sectionExpanded.authors ? '' : 'collapsed'}`;
+      hardcodedAuthors.forEach(kw => {
+        const count = libraryBooks.filter(book => book.author && book.author.toLowerCase().includes(kw.toLowerCase())).length;
+        const li = document.createElement('li');
+        li.className = `sidebar-sub-item ${activeFilter.type === 'author' && activeFilter.value === kw ? 'active' : ''}`;
+        li.innerHTML = `<span>${kw}</span> <span class="filter-count-badge">${count}</span>`;
+        li.addEventListener('click', () => {
+          activeFilter = { type: 'author', value: kw };
+          renderSidebarFilters();
+          currentFlatTitle = `Author: ${kw}`;
+          currentFlatFilterFn = book => book.author && book.author.toLowerCase().includes(kw.toLowerCase());
+          renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, 'title-asc');
+        });
+        authorsSubList.appendChild(li);
+      });
+      sidebarContainer.appendChild(authorsSubList);
+
+      // --- Comics Header & Sub-list ---
+      const totalComicsCount = hardcodedComicsKeywords.length;
+
+      const comicsHeader = document.createElement('div');
+      comicsHeader.className = 'sidebar-section-header';
+      const comicsArrow = sectionExpanded.comics ? ' ▾' : ' ▸';
+      comicsHeader.innerHTML = `<span>Comics${comicsArrow}</span> <span class="filter-count-badge">${totalComicsCount}</span>`;
+      comicsHeader.addEventListener('click', () => {
+        sectionExpanded.comics = !sectionExpanded.comics;
+        renderSidebarFilters();
+      });
+      sidebarContainer.appendChild(comicsHeader);
+
+      const comicsSubList = document.createElement('ul');
+      comicsSubList.className = `sidebar-sub-list ${sectionExpanded.comics ? '' : 'collapsed'}`;
+      hardcodedComicsKeywords.forEach(kw => {
+        const count = libraryBooks.filter(book => book.series && book.series.toLowerCase().includes(kw.toLowerCase())).length;
+        const li = document.createElement('li');
+        li.className = `sidebar-sub-item ${activeFilter.type === 'comics' && activeFilter.value === kw ? 'active' : ''}`;
+        li.innerHTML = `<span>${kw}</span> <span class="filter-count-badge">${count}</span>`;
+        li.addEventListener('click', () => {
+          activeFilter = { type: 'comics', value: kw };
+          renderSidebarFilters();
+          currentFlatTitle = `Comics: ${kw}`;
+          currentFlatFilterFn = book => book.series && book.series.toLowerCase().includes(kw.toLowerCase());
+          renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, 'title-asc');
+        });
+        comicsSubList.appendChild(li);
+      });
+      sidebarContainer.appendChild(comicsSubList);
+
+      // --- Languages Header & Sub-list (NEW) ---
+      const totalLanguagesCount = hardcodedLanguages.length + 1; // +1 for 'Other'
+
+      const languagesHeader = document.createElement('div');
+      languagesHeader.className = 'sidebar-section-header';
+      const languagesArrow = sectionExpanded.languages ? ' ▾' : ' ▸';
+      languagesHeader.innerHTML = `<span>Languages${languagesArrow}</span> <span class="filter-count-badge">${totalLanguagesCount}</span>`;
+      languagesHeader.addEventListener('click', () => {
+        sectionExpanded.languages = !sectionExpanded.languages;
+        renderSidebarFilters();
+      });
+      sidebarContainer.appendChild(languagesHeader);
+
+      const languagesSubList = document.createElement('ul');
+      languagesSubList.className = `sidebar-sub-list ${sectionExpanded.languages ? '' : 'collapsed'}`;
+
+      // Render Specific Languages
+      hardcodedLanguages.forEach(lang => {
+        const count = libraryBooks.filter(book => book.category && book.category.toLowerCase().includes(`${lang.toLowerCase()} language study`)).length;
+        const li = document.createElement('li');
+        li.className = `sidebar-sub-item ${activeFilter.type === 'language' && activeFilter.value === lang ? 'active' : ''}`;
+        li.innerHTML = `<span>${lang}</span> <span class="filter-count-badge">${count}</span>`;
+        li.addEventListener('click', () => {
+          activeFilter = { type: 'language', value: lang };
+          renderSidebarFilters();
+          currentFlatTitle = `Language: ${lang}`;
+          currentFlatFilterFn = book => book.category && book.category.toLowerCase().includes(`${lang.toLowerCase()} language study`);
+          renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, 'title-asc');
+        });
+        languagesSubList.appendChild(li);
+      });
+
+      // Render 'Other' Languages (Catch-all for any other 'Language Study' categories)
+      const otherCount = libraryBooks.filter(book => {
+        if (!book.category || !book.category.toLowerCase().includes('language study')) return false;
+        // True if it includes 'language study' but is NOT one of our specific hardcoded languages
+        return !hardcodedLanguages.some(lang => book.category.toLowerCase().includes(`${lang.toLowerCase()} language study`));
+      }).length;
+
+      const otherLi = document.createElement('li');
+      otherLi.className = `sidebar-sub-item ${activeFilter.type === 'language' && activeFilter.value === 'Other' ? 'active' : ''}`;
+      otherLi.innerHTML = `<span>Other</span> <span class="filter-count-badge">${otherCount}</span>`;
+      otherLi.addEventListener('click', () => {
+        activeFilter = { type: 'language', value: 'Other' };
+        renderSidebarFilters();
+        currentFlatTitle = `Language: Other`;
+        currentFlatFilterFn = book => {
+          if (!book.category || !book.category.toLowerCase().includes('language study')) return false;
+          return !hardcodedLanguages.some(lang => book.category.toLowerCase().includes(`${lang.toLowerCase()} language study`));
+        };
+        renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, 'title-asc');
+      });
+      languagesSubList.appendChild(otherLi);
+      sidebarContainer.appendChild(languagesSubList);
+
+      // --- Favorite Section Heading ---
+      const favoriteCount = libraryBooks.filter(book => book.favorite === true || book.favorite === 'true').length;
+      const favoriteBtn = document.createElement('div');
+      favoriteBtn.className = `sidebar-section-header ${activeFilter.type === 'favorite' ? 'active' : ''}`;
+      favoriteBtn.innerHTML = `<span>Favourites</span> <span class="filter-count-badge">${favoriteCount}</span>`;
+      favoriteBtn.addEventListener('click', () => {
+        activeFilter = { type: 'favorite', value: 'true' };
+        renderSidebarFilters();
+        currentFlatTitle = 'Favorites';
+        currentFlatFilterFn = book => book.favorite === true || book.favorite === 'true';
+        renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, 'title-asc');
+      });
+      sidebarContainer.appendChild(favoriteBtn);
+
+      // --- Rating Header & Sub-list ---
+      const totalRatedCount = libraryBooks.filter(book => book.rating !== null && book.rating !== undefined && book.rating !== '').length;
+      const ratingHeader = document.createElement('div');
+      ratingHeader.className = 'sidebar-section-header';
+      const ratingArrow = sectionExpanded.rating ? ' ▾' : ' ▸';
+      ratingHeader.innerHTML = `<span>Rating${ratingArrow}</span> <span class="filter-count-badge">${totalRatedCount}</span>`;
+      ratingHeader.addEventListener('click', () => {
+        sectionExpanded.rating = !sectionExpanded.rating;
+        renderSidebarFilters();
+      });
+      sidebarContainer.appendChild(ratingHeader);
+
+      const ratingSubList = document.createElement('ul');
+      ratingSubList.className = `sidebar-sub-list ${sectionExpanded.rating ? '' : 'collapsed'}`;
+
+      [5, 4, 3, 2, 1].forEach(stars => {
+        const count = libraryBooks.filter(book => book.rating !== null && book.rating !== undefined && book.rating !== '' && Math.round(parseFloat(book.rating)) === stars).length;
+        const li = document.createElement('li');
+        li.className = `sidebar-sub-item ${activeFilter.type === 'rating' && activeFilter.value === stars ? 'active' : ''}`;
+        li.innerHTML = `<span>${stars} Stars</span> <span class="filter-count-badge">${count}</span>`;
+        li.addEventListener('click', () => {
+          activeFilter = { type: 'rating', value: stars };
+          renderSidebarFilters();
+          currentFlatTitle = `Rated: ${stars} Stars`;
+          currentFlatFilterFn = book => book.rating !== null && book.rating !== undefined && book.rating !== '' && Math.round(parseFloat(book.rating)) === stars;
+          renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, 'title-asc');
+        });
+        ratingSubList.appendChild(li);
+      });
+      sidebarContainer.appendChild(ratingSubList);
+    }
+
+
+
+    function clearActiveFilters() {
+      activeFilter = { type: 'all', value: '' };
+      renderSidebarFilters();
+      rebuildNestedStructure();
+      renderFolderDashboard();
+    }
+
+    function updateSortOptions() {
+      const sortSelect = document.getElementById('sort-select');
+      sortSelect.innerHTML = '';
+
+      // Display Folder options ONLY when looking at the dashboard or a main parent folder group
+      if (currentView === 'dashboard' || currentView === 'parent') {
+        sortSelect.innerHTML = `
+          <option value="name-asc">Folders: A-Z</option>
+          <option value="name-desc">Folders: Z-A</option>
+        `;
+      }
+      // Display full book filtering metrics for the individual folder shelves or sidebar filter clicks
+      else if (currentView === 'shelf' || currentView === 'filtered-flat') {
+        sortSelect.innerHTML = `
+          <option value="title-asc">Name: Alphabetical (A-Z)</option>
+          <option value="title-desc">Name: Reverse (Z-A)</option>
+          <option value="size-desc">File Size: Large to Small</option>
+          <option value="size-asc">File Size: Small to Large</option>
+          <option value="rating-desc">Rating: Highest Rated</option>
+          <option value="date-desc">Date Added: Newest First</option>
+          <option value="date-asc">Date Added: Oldest First</option>
+        `;
+      }
+    }
+
+
+    function handleSortChange(e) {
+      persistentSortOrder = e.target.value; // Store the selection globally
+
+      if (currentView === 'dashboard') {
+        renderFolderDashboard(persistentSortOrder);
+      } else if (currentView === 'parent') {
+        renderParentGroup(currentActiveParent, persistentSortOrder);
+      } else if (currentView === 'shelf') {
+        renderBookShelf(currentActiveParent, currentActiveSub, persistentSortOrder);
+      } else if (currentView === 'filtered-flat') {
+        renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, persistentSortOrder);
+      }
+    }
+
+
+
+    function renderFilteredFlatView(title, filterFn, sortOrder = 'title-asc') {
+      currentView = 'filtered-flat';
+      updateSortOptions();
+      document.getElementById('sort-select').value = sortOrder;
+
+      const container = document.getElementById('view-container');
+      const breadcrumb = document.getElementById('nav-breadcrumb');
+
+      let books = libraryBooks.filter(filterFn);
+
+      books.sort((a, b) => {
+        const titleA = a.filename ? a.filename.toLowerCase() : '';
+        const titleB = b.filename ? b.filename.toLowerCase() : '';
+
+        // Bulletproof string coercion for the categories
+        const catA = (a.category && String(a.category).trim() !== '') ? String(a.category).trim().toLowerCase() : 'zzz_uncategorized';
+        const catB = (b.category && String(b.category).trim() !== '') ? String(b.category).trim().toLowerCase() : 'zzz_uncategorized';
+
+        switch (sortOrder) {
+          case 'title-asc':
+            // STEP 1: Group by Category Alphabetically
+            if (catA !== catB) {
+              return catA.localeCompare(catB);
+            }
+            // STEP 2: Sort alphabetically by file name within identical category groups
+            return titleA.localeCompare(titleB);
+
+          case 'title-desc':
+            // Reverse sorting: Descending categories, then descending titles
+            if (catA !== catB) {
+              return catB.localeCompare(catA);
+            }
+            return titleB.localeCompare(titleA);
+
+          case 'size-desc': return (b.filesize || 0) - (a.filesize || 0);
+          case 'size-asc': return (a.filesize || 0) - (b.filesize || 0);
+          case 'rating-desc': return (b.rating || 0) - (a.rating || 0);
+          case 'date-desc':
+            return new Date(b.scanDate || 0) - new Date(a.scanDate || 0);
+          case 'date-asc':
+            return new Date(a.scanDate || 0) - new Date(b.scanDate || 0);
+
+          default: return 0;
+        }
+      });
+
+      breadcrumb.innerHTML = `
+    <span class="back-btn" onclick="clearActiveFilters()">📁 Home</span> 
+    <span> &gt; </span> 
+    <span>${title}</span>
+  `;
+
+      container.innerHTML = '';
+      if (books.length === 0) {
+        container.innerHTML = `<p style="padding: 20px; color: var(--secondary);">No books match this selection filter.</p>`;
+        return;
+      }
+
+      const grid = document.createElement('div');
+      grid.className = 'catalog-grid';
+
+      books.forEach(book => {
+        const safeFilename = book.filename || "Unknown_Title.pdf";
+        const displayTitle = safeFilename.replace(/\.[^/.]+$/, "");
+        const normalizedCover = book.coverImage ? book.coverImage.replace(/\\/g, '/') : '';
+        const fixedCoverPath = normalizedCover ? `../${normalizedCover}` : `../covers/placeholder.jpg`;
+
+        let formatDisplayHTML = '';
+        const lowerFormat = book.format ? book.format.toLowerCase() : '';
+
+        if (lowerFormat === 'pdf') {
+          formatDisplayHTML = `<img src="img/icon_pdf.svg" alt="PDF" class="format-icon">`;
+        } else if (lowerFormat === 'epub') {
+          formatDisplayHTML = `<img src="img/icon_epub.svg" alt="EPUB" class="format-icon">`;
+        } else {
+          formatDisplayHTML = `<span class="format-badge">${book.format ? book.format.toUpperCase() : 'UNKNOWN'}</span>`;
+        }
+
+        const cardStars = book.rating ? `⭐ ${book.rating}` : '';
+        const safeSize = book.filesizeMB !== undefined ? `${book.filesizeMB} MB` : '0 MB';
+
+        const card = document.createElement('div');
+        card.className = 'book-card';
+        card.innerHTML = `
+      <div class="cover-box">
+        <img src="${fixedCoverPath}" alt="Cover" loading="lazy">
+      </div>
+      <div class="details">
+        <div class="title" title="${displayTitle}">${displayTitle}</div>
+        <div class="meta">
+          ${formatDisplayHTML}
+          <span class="rating-badge">${cardStars}</span>
+          <span>${safeSize}</span>
+        </div>
+      </div>
+    `;
+
+        card.addEventListener('click', () => showDetails(book));
+        grid.appendChild(card);
+      });
+
+      container.appendChild(grid);
+    }
+
+
+    function renderFolderDashboard(sortOrder = 'name-asc') {
+      currentView = 'dashboard';
+      updateSortOptions();
+      document.getElementById('sort-select').value = sortOrder;
+
+      const container = document.getElementById('view-container');
+      const breadcrumb = document.getElementById('nav-breadcrumb');
+
+      breadcrumb.innerHTML = `<span>📁 Home</span>`;
+      container.innerHTML = '';
+
+      const masterFragment = document.createDocumentFragment();
+      let sortedParents = Object.keys(nestedLibraryStructure).sort();
+
+      if (sortOrder === 'name-desc') sortedParents.reverse();
+
+      sortedParents.forEach(parentName => {
+        const parentSection = document.createElement('div');
+        parentSection.className = 'parent-group';
+
+        const parentHeader = document.createElement('h2');
+        parentHeader.className = 'parent-title back-btn';
+        parentHeader.textContent = parentName;
+        parentHeader.addEventListener('click', () => renderParentGroup(parentName));
+        parentSection.appendChild(parentHeader);
+
+        const folderGrid = document.createElement('div');
+        folderGrid.className = 'folder-grid';
+
+        let sortedSubs = Object.keys(nestedLibraryStructure[parentName]).sort();
+        if (sortOrder === 'name-desc') sortedSubs.reverse();
+
+        sortedSubs.forEach(subName => {
+          const bookCount = nestedLibraryStructure[parentName][subName].length;
+
+          const folderCard = document.createElement('div');
+          folderCard.className = 'folder-card';
+          folderCard.innerHTML = `
+            <div class="folder-info">
+              <h3>${subName}</h3>
+            </div>
+            <div class="folder-count">${bookCount}</div>
+          `;
+
+          folderCard.addEventListener('click', () => renderBookShelf(parentName, subName));
+          folderGrid.appendChild(folderCard);
+        });
+
+        parentSection.appendChild(folderGrid);
+        masterFragment.appendChild(parentSection);
+      });
+
+      container.appendChild(masterFragment);
+    }
+
+    function renderParentGroup(parentName, sortOrder = 'name-asc') {
+      currentView = 'parent';
+      currentActiveParent = parentName;
+      updateSortOptions();
+      document.getElementById('sort-select').value = sortOrder;
+
+      const container = document.getElementById('view-container');
+      const breadcrumb = document.getElementById('nav-breadcrumb');
+
+      breadcrumb.innerHTML = `
+        <span class="back-btn" onclick="clearActiveFilters()">📁 Home</span> 
+        <span> &gt; </span> 
+        <span>${parentName}</span>
+      `;
+
+      container.innerHTML = '';
+      if (!nestedLibraryStructure[parentName]) return;
+
+      const folderGrid = document.createElement('div');
+      folderGrid.className = 'folder-grid';
+
+      let sortedSubs = Object.keys(nestedLibraryStructure[parentName]).sort();
+      if (sortOrder === 'name-desc') sortedSubs.reverse();
+
+      sortedSubs.forEach(subName => {
+        const bookCount = nestedLibraryStructure[parentName][subName].length;
+
+        const folderCard = document.createElement('div');
+        folderCard.className = 'folder-card';
+        folderCard.innerHTML = `
+          <div class="folder-info">
+            <h3>${subName}</h3>
+          </div>
+          <div class="folder-count">${bookCount}</div>
+        `;
+
+        folderCard.addEventListener('click', () => renderBookShelf(parentName, subName));
+        folderGrid.appendChild(folderCard);
+      });
+
+      container.appendChild(folderGrid);
+    }
+
+    function renderBookShelf(parentName, subName, sortOrder = 'title-asc') {
+      currentView = 'shelf';
+      currentActiveParent = parentName;
+      currentActiveSub = subName;
+      updateSortOptions();
+      document.getElementById('sort-select').value = sortOrder;
+
+      const container = document.getElementById('view-container');
+      const breadcrumb = document.getElementById('nav-breadcrumb');
+
+      breadcrumb.innerHTML = `
+        <span class="back-btn" onclick="clearActiveFilters()">📁 Home</span> 
+        <span> &gt; </span> 
+        <span class="back-btn" onclick="renderParentGroup('${parentName}')">${parentName}</span> 
+        <span> &gt; </span> 
+        <span>${subName}</span>
+      `;
+
+      container.innerHTML = '';
+      if (!nestedLibraryStructure[parentName] || !nestedLibraryStructure[parentName][subName]) return;
+
+      let books = [...nestedLibraryStructure[parentName][subName]];
+
+      books.sort((a, b) => {
+        const titleA = a.filename ? a.filename.toLowerCase() : '';
+        const titleB = b.filename ? b.filename.toLowerCase() : '';
+
+        switch (sortOrder) {
+          case 'title-asc': return titleA.localeCompare(titleB);
+          case 'title-desc': return titleB.localeCompare(titleA);
+          case 'size-desc': return (b.filesize || 0) - (a.filesize || 0);
+          case 'size-asc': return (a.filesize || 0) - (b.filesize || 0);
+          case 'rating-desc': return (b.rating || 0) - (a.rating || 0);
+          case 'date-desc': return (b.id || 0) - (a.id || 0);
+          case 'date-asc': return (a.id || 0) - (b.id || 0);
+          default: return 0;
+        }
+      });
+
+      const grid = document.createElement('div');
+      grid.className = 'catalog-grid';
+
+      books.forEach(book => {
+        const safeFilename = book.filename || "Unknown_Title.pdf";
+        const displayTitle = safeFilename.replace(/\.[^/.]+$/, "");
+        const normalizedCover = book.coverImage ? book.coverImage.replace(/\\/g, '/') : '';
+        const fixedCoverPath = normalizedCover ? `../${normalizedCover}` : `../covers/placeholder.jpg`;
+
+        let formatDisplayHTML = '';
+        const lowerFormat = book.format ? book.format.toLowerCase() : '';
+
+        if (lowerFormat === 'pdf') {
+          formatDisplayHTML = `<img src="img/icon_pdf.svg" alt="PDF" class="format-icon">`;
+        } else if (lowerFormat === 'epub') {
+          formatDisplayHTML = `<img src="img/icon_epub.svg" alt="EPUB" class="format-icon">`;
+        } else {
+          formatDisplayHTML = `<span class="format-badge">${book.format ? book.format.toUpperCase() : 'UNKNOWN'}</span>`;
+        }
+
+        const cardStars = book.rating ? `⭐ ${book.rating}` : '';
+        const safeSize = book.filesizeMB !== undefined ? `${book.filesizeMB} MB` : '0 MB';
+
+        const card = document.createElement('div');
+        card.className = 'book-card';
+        card.innerHTML = `
+          <div class="cover-box">
+            <img src="${fixedCoverPath}" alt="Cover" loading="lazy">
+          </div>
+          <div class="details">
+            <div class="title" title="${displayTitle}">${displayTitle}</div>
+            <div class="meta">
+              ${formatDisplayHTML}
+              <span class="rating-badge">${cardStars}</span>
+              <span>${safeSize}</span>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => showDetails(book));
+        grid.appendChild(card);
+      });
+
+      container.appendChild(grid);
+    }
+
+    window.addEventListener('DOMContentLoaded', initLibrary);
+  </script>
+</body>
+
+</html>
