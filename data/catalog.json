@@ -3849,14 +3849,14 @@
     "createdAt": "2026-06-20T01:03:31.311Z",
     "modifiedAt": "2026-06-20T01:03:40.849Z",
     "scanDate": "2026-06-20T03:00:57.807Z",
-    "category": "",
+    "category": "Web Dev",
     "subCat": "",
     "subSubCat": "",
     "tags": "",
     "favorite": false,
     "rating": null,
     "coverImage": "covers/Dev/A_Book_Appart/20260620-083054-3227.jpg",
-    "language": "",
+    "language": "French",
     "pageCount": 0,
     "description": ""
   },
@@ -6252,7 +6252,7 @@
     "createdAt": "2024-02-18T23:46:37.585Z",
     "modifiedAt": "2024-02-18T23:46:40.051Z",
     "scanDate": "2026-06-10T04:28:11.137Z",
-    "category": "Web DEv",
+    "category": "Web Dev",
     "subCat": "JavaScript",
     "subSubCat": "",
     "tags": "",
@@ -8851,7 +8851,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Dev\\Mis\\20260620-083058-9063.jpg",
-    "language": "",
+    "language": "French",
     "pageCount": 0,
     "description": ""
   },
@@ -22074,7 +22074,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-093808-3532.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 319,
     "description": ""
   },
@@ -22209,7 +22209,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-071548-6449.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 0,
     "description": ""
   },
@@ -22344,7 +22344,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-093814-4171.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 48,
     "description": ""
   },
@@ -22371,7 +22371,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-071548-7551.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 176,
     "description": "Les 50 règles qui résolvent 90 % des fautes d'orthographe ! La règle rédigée de façon simple et accessible à tous ; des astuces pour la mémoriser facilement. Des exemples. Les exceptions et les pièges à éviter. De nombreux exercices pour s'entraîner, et tous les corrigés...."
   },
@@ -22425,7 +22425,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-093818-8888.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 256,
     "description": "Le Bled Conjugaison s'adresse à tous ceux qui veulent conjuguer correctement tous les verbes de la langue française : collégiens, lycéens, étudiants, candidats aux concours, parents soucieux d'aider leurs enfants... Un outil de référence complet et pratique. Plus de 80 tableaux présentant la conjugaison des verbes types à tous les temps ; Une liste de plus de 6000 verbes avec, pour chacun d'eux, l..."
   },
@@ -22479,7 +22479,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-093825-3199.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 274,
     "description": "Les 100 fautes les plus fréquentes illustrées et corrigées. Toutes les règles de l’orthographe grammaticale et de l’orthographe d’usage. Toutes les règles d’accord des verbes. Des explications claires, toujours accompagnées d’exemples. 300 exercices progressifs et variés, tous corrigés, pour bien retenir les règles...."
   },
@@ -22911,7 +22911,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-071601-5120.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 63,
     "description": ""
   },
@@ -23046,7 +23046,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-071603-5269.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 47,
     "description": ""
   },
@@ -23073,7 +23073,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-121223-1206.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 0,
     "description": ""
   },
@@ -23397,7 +23397,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-121228-1517.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 127,
     "description": ""
   },
@@ -23424,7 +23424,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-111709-7847.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 144,
     "description": ""
   },
@@ -23451,7 +23451,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-111734-2391.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 0,
     "description": ""
   },
@@ -23532,7 +23532,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260527-070206-7836.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 0,
     "description": ""
   },
@@ -23559,7 +23559,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-111740-4474.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 0,
     "description": ""
   },
@@ -23586,7 +23586,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-111746-4751.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 0,
     "description": ""
   },
@@ -32064,7 +32064,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-112048-6029.jpeg",
-    "language": "French",
+    "language": "",
     "pageCount": 104,
     "description": "Beaucoup de gens se désespèrent parce qu’ils pensent que la langue française est envahie de mots anglais. Mais en fait, c’est l’inverse ! Savez-vous que spoiler, mail, suspens, flirt, basket, very, screen, stuff sont des mots français ? Vous a-t-on appris que shop est une déformation d’échoppe et que knife est tout simplement un canif ? Et que ce qu’on appelle les « faux amis » étaient des mots qu..."
   },
@@ -32172,7 +32172,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-071720-2422.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 372,
     "description": "Cours de Civilisation Française de la Sorbonne. Toute la langue française en un seul volume ! La Nouvelle Grammaire du Français, riche et complète, propose aux apprenants de français langue étrangère des repères précis pour maîtriser l'expression écrite et orale, dès la seconde année d'étude. Cette grammaire se présente comme un cours où vous trouverez : - un exposé clair des règles essentielles, ..."
   },
@@ -32199,7 +32199,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-094032-1794.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 224,
     "description": "Sur la page de gauche, la lecon d'orthographe comprenant les règles illustrées d'exemples et sur la page de droite, des exercices d'entraînement de difficulté progressive...."
   },
@@ -32226,7 +32226,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-071721-2262.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 224,
     "description": "Une nouvelle édition enrichie et mise à jour de notre collection plébiscitée par les enseignants. Plus de 1000 exercices classés par compétences, avec un accent mis sur la manipulation et la résolution de problèmes orthographiques. Un manuel organisé en 4 domaines : Grammaire, Conjugaison, Orthographe, Vocabulaire. Des leçons simples axées sur les attendus de fin de cycle. Une démarche en 4 étapes..."
   },
@@ -32334,7 +32334,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-112050-1609.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 262,
     "description": "Un ouvrage de (re)mise à nouveau pour perfectionner son français : Ce qu’il faut savoir en orthographe, grammaire, vocabulaire ; Une méthodologie de la compréhension de textes et de la rédaction ; De nombreux exercices corrigés. Pour toutes les personnes souhaitant améliorer leur maîtrise du français pour mieux comprendre les textes et rédiger : des compétences indispensables dans toutes les matiè..."
   },
@@ -32361,7 +32361,7 @@
     "favorite": false,
     "rating": null,
     "coverImage": "covers\\Languages\\French\\20260526-112050-9333.jpg",
-    "language": "French",
+    "language": "",
     "pageCount": 102,
     "description": "L'usuel qui vous sauvera la vie ! L'usuel qui vous sauvera la vie ! L'orthographe est souvent perçue comme un fardeau que l'on traîne depuis sa prime jeunesse et que l'on continue, vaille que vaille, de porter à l'âge adulte... C'est-à-dire que socialement, il est pénalisant d'avoir une mauvaise orthographe (honte à qui ne maîtrise pas ses accords !) et que ses nombreuses difficultés et irrégulari..."
   },
@@ -47493,7 +47493,7 @@
     "filepath": "ebooks/Languages/Other/Glossika Mass Sentences Hindi Fluency 2 (Michael Campbell, Saumya Noah).pdf",
     "author": "",
     "publisher": "",
-    "series": "",
+    "series": "Glossika",
     "format": "pdf",
     "filesize": 6080970,
     "filesizeMB": "5.80",
@@ -47520,7 +47520,7 @@
     "filepath": "ebooks/Languages/Other/Glossika Mass Sentences Hindi Fluency 3 (Michael Campbell, Saumya Noah).pdf",
     "author": "",
     "publisher": "",
-    "series": "",
+    "series": "Glossika",
     "format": "pdf",
     "filesize": 6288063,
     "filesizeMB": "6.00",
@@ -47650,12 +47650,12 @@
   {
     "id": "20260620-083112-8202",
     "isbn": "",
-    "filename": "Practice Makes Perfect - Basic hindi (Taneja, Sonia).pdf",
+    "filename": "Practice Makes Perfect - Basic Hindi (Taneja, Sonia).pdf",
     "subTitle": "",
     "filepath": "ebooks/Languages/Other/Practice Makes Perfect - Basic hindi (Taneja, Sonia).pdf",
     "author": "",
     "publisher": "",
-    "series": "",
+    "series": "Practice Makes Perfect",
     "format": "pdf",
     "filesize": 9162404,
     "filesizeMB": "8.74",
