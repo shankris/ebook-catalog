@@ -5205,7 +5205,7 @@
     "tags": "",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\Dev\\A_Book_Appart\\20260610-095808-3507.xhtml",
+    "coverImage": "covers\\Dev\\A_Book_Appart\\20260610-095808-3507.jpg",
     "language": "",
     "pageCount": 0,
     "description": ""
@@ -5259,7 +5259,7 @@
     "tags": "",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\Dev\\A_Book_Appart\\20260610-095809-2898.xhtml",
+    "coverImage": "covers\\Dev\\A_Book_Appart\\20260610-095809-2898.jpg",
     "language": "",
     "pageCount": 0,
     "description": ""
@@ -13696,7 +13696,7 @@
     "filepath": "ebooks/DIY/Solar Power Your Home for Dummies (Rik DeGunther).pdf",
     "author": "",
     "publisher": "",
-    "series": "",
+    "series": "Dummies",
     "format": "pdf",
     "filesize": 7475244,
     "filesizeMB": "7.13",
@@ -17328,7 +17328,7 @@
     "tags": "",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\Fiction\\Classics\\20260616-191613-6840.png",
+    "coverImage": "covers\\Fiction\\Classics\\20260616-191613-6840.jpg",
     "language": "French",
     "pageCount": 0,
     "description": ""
@@ -17355,7 +17355,7 @@
     "tags": "",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\Fiction\\Classics\\20260616-191613-3166.png",
+    "coverImage": "covers\\Fiction\\Classics\\20260616-191613-3166.jpg",
     "language": "French",
     "pageCount": 0,
     "description": ""
@@ -45308,7 +45308,7 @@
   {
     "id": "20260526-071837-5465",
     "isbn": "9780471773894",
-    "filename": "Italian Verbs For Dummies (For Dummies (Language, Literature)) (Teresa L. Picarazzi).pdf",
+    "filename": "Italian Verbs For Dummies (Teresa L. Picarazzi).pdf",
     "subTitle": "",
     "filepath": "ebooks\\Languages\\Italian\\Italian Verbs For Dummies (For Dummies (Language, Literature)) (Teresa L. Picarazzi).pdf",
     "author": "Teresa L. Picarazzi",
@@ -52887,7 +52887,7 @@
     "tags": "Philosophy",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\NonFiction\\Alain De Botton\\20260527-070216-7979.jpeg",
+    "coverImage": "covers\\NonFiction\\Alain De Botton\\20260527-070216-7979.jpg",
     "language": "",
     "pageCount": 248,
     "description": "SUNDAY TIMES TOP TEN BESTSELLER NUMBER ONE INTERNATIONAL BESTSELLER From one of our greatest voices in modern philosophy, author of The Course of Love, The Consolations of Philosophy, The Art of Travel and The School of Life 'A serious and optimistic set of practical ideas that could improve and alter the way we live' Jeanette Winterson, The Times 'A beautiful, inspiring book... offering a glimpse..."
@@ -52941,7 +52941,7 @@
     "tags": "Philosophy",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\NonFiction\\Alain De Botton\\20260527-070216-2161.html",
+    "coverImage": "covers\\NonFiction\\Alain De Botton\\20260527-070216-2161.jpg",
     "language": "",
     "pageCount": 287,
     "description": "THE SUNDAY TIMES TOP TEN BESTSELLER From one of our greatest voices in modern philosophy, author of The Course of Love, The Consolations of Philosophy, Religion for Atheists and The School of Life - Alain de Botton sets out to understand our universal fear of failure - and how we might change it 'De Botton's gift is to prompt us to think about how we live and how we might change things' The Times ..."
@@ -53022,7 +53022,7 @@
     "tags": "Fiction",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\NonFiction\\Alain De Botton\\20260527-070217-3271.jpeg",
+    "coverImage": "covers\\NonFiction\\Alain De Botton\\20260527-070217-3271.jpg",
     "language": "",
     "pageCount": 240,
     "description": "How does love survive and thrive in the long term? In Edinburgh, Rabih and Kirsten, fall in love, get married, have children. But this is their story after the first flush of infatuation. As Rabih and Kirsten reform their ideals under the pressures of an average existence, they discover that love is a skill that needs to be learned, and not just experienced...."
@@ -58719,7 +58719,7 @@
     "tags": "",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\School\\Chemistry\\20260602-065756-6997.xhtml",
+    "coverImage": "covers\\School\\Chemistry\\20260602-065756-6997.jpg",
     "language": "",
     "pageCount": 0,
     "description": ""
@@ -62985,7 +62985,7 @@
     "tags": "",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\Travel\\Jan Morris\\20260526-172355-4784.html",
+    "coverImage": "covers\\Travel\\Jan Morris\\20260526-172355-4784.jpg",
     "language": "",
     "pageCount": 0,
     "description": "Farewell the Trumpets: An Imperial Retreat traces the momentous decline and fall of the greatest of empires - from Queen Victoria's Diamond Jubilee to the death of Winston Churchill in 1965. With characteristic balance, this masterpiece of narrative history describes the long retreat and final disso..."
@@ -63228,7 +63228,7 @@
     "tags": "",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\Travel\\Jan Morris\\20260526-172355-3550.jpeg",
+    "coverImage": "covers\\Travel\\Jan Morris\\20260526-172355-3550.jpg",
     "language": "",
     "pageCount": 270,
     "description": "For six centuries the Republic of Venice was a maritime empire, its sovereign power extending throughout much of the eastern Mediterranean – an empire of coasts, islands and isolated fortresses by which, as Wordsworth wrote, the mercantile Venetians 'held the gorgeous east in fee'. Jan Morris recons..."
@@ -63336,7 +63336,7 @@
     "tags": "Venice (Italy)",
     "favorite": false,
     "rating": null,
-    "coverImage": "covers\\Travel\\Jan Morris\\20260526-172355-9979.png",
+    "coverImage": "covers\\Travel\\Jan Morris\\20260526-172355-9979.jpg",
     "language": "",
     "pageCount": 320,
     "description": "Often hailed as one of the best travel books ever written, Venice is neither a guide nor a history book, but a beautifully written immersion in Venetian life and character, set against the background of the city's past. Analysing the particular temperament of Venetians, as well as its waterways, its architecture, its bridges, its tourists, its curiosities, its smells, sounds, lights and colours, t..."
