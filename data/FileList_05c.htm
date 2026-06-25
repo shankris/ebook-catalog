@@ -290,7 +290,7 @@
     /* Books Grid */
     .catalog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 25px;
     }
 
@@ -627,7 +627,7 @@
         // Trigger the "New" filter by default
         activeFilter = { type: 'new', value: '' };
         const sorted = [...libraryBooks].sort((a, b) => new Date(b.scanDate || 0) - new Date(a.scanDate || 0));
-        renderFilteredFlatView('New Arrivals (Last 100)', (book) => sorted.slice(0, 100).includes(book), 'date-desc');
+        renderFilteredFlatView('New Arrivals (Last 100)', (book) => sorted.slice(0, 200).includes(book), 'date-desc');
 
         renderFolderDashboard();
 
@@ -764,7 +764,7 @@
       // --- New Link (Default View) ---
       const newBtn = document.createElement('div');
       newBtn.className = `sidebar-item-clickable ${activeFilter.type === 'new' ? 'active' : ''}`;
-      newBtn.innerHTML = `<span>New</span> <span class="filter-count-badge">100</span>`;
+      newBtn.innerHTML = `<span>New</span> <span class="filter-count-badge">200</span>`;
       newBtn.addEventListener('click', () => {
         activeFilter = { type: 'new', value: '' };
         renderSidebarFilters();
