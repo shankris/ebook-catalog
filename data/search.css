@@ -17,7 +17,6 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  padding: 4rem 2rem;
   /* Added padding to give the dropdown room to float */
 }
 
@@ -40,15 +39,17 @@ body {
 
 #searchInput {
   width: 100%;
-  padding: 0.85rem 1.25rem;
+  padding: 6px 12px 10px;
   font-size: 1.1rem;
   border: 2px solid var(--border-color);
   border-radius: 4px;
   /* Rounded pill style similar to modern search bars */
   outline: none;
   background: var(--card-background);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); */
   transition: box-shadow 0.2s, border-color 0.2s;
+  border: 1px solid #8b8b8b;
+  margin: 10px;
 }
 
 #searchInput:focus {
@@ -68,12 +69,12 @@ body {
   position: absolute;
   top: calc(100% + 4px);
   /* Sits exactly 8px below the search bar */
-  left: 0;
+  left: 12px;
   right: 0;
   background: var(--card-background);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); */
   z-index: 999;
   /* Forces it above everything else on the page */
 
@@ -85,7 +86,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 0;
+  padding: 2px 0;
 }
 
 /* Hide container entirely if it contains no elements */

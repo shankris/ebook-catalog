@@ -569,7 +569,7 @@
     const hardcodedComicsKeywords = ['Asterix', 'Tintin'];
     const hardcodedLanguages = ['Dutch', 'French', 'German', 'Italian', 'Japanese', 'Portuguese', 'Spanish'];
     const learningLanguages = ['Dutch', 'French', 'German', 'Italian', 'Japanese', 'Portuguese', 'Spanish']; // For your 'Language Study' category
-
+    const hardcodedWebDevKeywords = ['A11y', 'CSS', 'JavaScript', 'Next Js', 'React'];
 
     let persistentSortOrder = 'title-asc';
 
@@ -589,6 +589,7 @@
       authors: false,
       comics: false,
       languages: false,
+      webdev: false,
       rating: false
     };
 
@@ -1029,6 +1030,79 @@
         renderFilteredFlatView(currentFlatTitle, currentFlatFilterFn, 'title-asc');
       });
       sidebarContainer.appendChild(favoriteBtn);
+
+
+
+      // --- Web Dev Header & Sub-list ---
+      const totalWebDevCount = hardcodedWebDevKeywords.length;
+
+      const webDevHeader = document.createElement('div');
+      webDevHeader.className = 'sidebar-section-header';
+      const webDevArrow = sectionExpanded.webdev ? ' ▾' : ' ▸';
+
+      webDevHeader.innerHTML =
+        `<span>Web Dev${webDevArrow}</span>
+   <span class="filter-count-badge">${totalWebDevCount}</span>`;
+
+      webDevHeader.addEventListener('click', () => {
+        sectionExpanded.webdev = !sectionExpanded.webdev;
+        renderSidebarFilters();
+      });
+
+      sidebarContainer.appendChild(webDevHeader);
+
+      const webDevSubList = document.createElement('ul');
+      webDevSubList.className =
+        `sidebar-sub-list ${sectionExpanded.webdev ? '' : 'collapsed'}`;
+
+      hardcodedWebDevKeywords.forEach(keyword => {
+
+        const count = libraryBooks.filter(book =>
+          book.category === 'Web Dev' &&
+          book.subCat === keyword
+        ).length;
+
+        const li = document.createElement('li');
+
+        li.className =
+          `sidebar-sub-item ${activeFilter.type === 'webdev' &&
+            activeFilter.value === keyword
+            ? 'active'
+            : ''
+          }`;
+
+        li.innerHTML =
+          `<span>${keyword}</span>
+     <span class="filter-count-badge">${count}</span>`;
+
+        li.addEventListener('click', () => {
+
+          activeFilter = {
+            type: 'webdev',
+            value: keyword
+          };
+
+          renderSidebarFilters();
+
+          currentFlatTitle = `Web Dev: ${keyword}`;
+
+          currentFlatFilterFn = book =>
+            book.category === 'Web Dev' &&
+            book.subCat === keyword;
+
+          renderFilteredFlatView(
+            currentFlatTitle,
+            currentFlatFilterFn,
+            'title-asc'
+          );
+        });
+
+        webDevSubList.appendChild(li);
+      });
+
+      sidebarContainer.appendChild(webDevSubList);
+
+
 
       // --- Rating Header & Sub-list ---
       const totalRatedCount = libraryBooks.filter(book => book.rating !== null && book.rating !== undefined && book.rating !== '').length;
