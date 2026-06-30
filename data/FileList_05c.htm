@@ -628,7 +628,7 @@
         // Trigger the "New" filter by default
         activeFilter = { type: 'new', value: '' };
         const sorted = [...libraryBooks].sort((a, b) => new Date(b.scanDate || 0) - new Date(a.scanDate || 0));
-        renderFilteredFlatView('New Arrivals (Last 100)', (book) => sorted.slice(0, 200).includes(book), 'date-desc');
+        renderFilteredFlatView('New Arrivals - Recent 200', (book) => sorted.slice(0, 200).includes(book), 'date-desc');
 
         renderFolderDashboard();
 
