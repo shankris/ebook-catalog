@@ -523,14 +523,26 @@
       font-weight: 600;
       width: 35%;
     }
+
+    .last-updated {
+      margin-top: 4px;
+      font-size: 0.82rem;
+      color: #777;
+    }
   </style>
 </head>
 
 <body>
 
   <header>
-    <h1 class="pageTitle">Ebooks Catalog</h1>
-    <div id="book-count" class="stats">Loading Library...</div>
+    <div>
+      <h1 class="pageTitle">Ebooks Catalog</h1>
+      <div id="last-updated" class="last-updated"></div>
+    </div>
+
+    <div id="book-count" class="stats">
+      Loading Library...
+    </div>
   </header>
 
   <div class="controls-bar">
@@ -619,6 +631,19 @@
       try {
         const response = await fetch('catalog.json');
         libraryBooks = await response.json();
+
+        const newestDate = libraryBooks.reduce((latest, book) => {
+          if (!book.scanDate) return latest;
+
+          const d = new Date(book.scanDate);
+
+          return d > latest ? d : latest;
+        }, new Date(0));
+
+        document.getElementById("last-updated").textContent =
+          "Last updated: " + formatLastUpdated(newestDate);
+
+
         countLabel.textContent = `${libraryBooks.length} Books`;
 
         rebuildNestedStructure();
@@ -1186,7 +1211,47 @@
       }
     }
 
+    function formatLastUpdated(dateString) {
+      if (!dateString) return "";
 
+      const updated = new Date(dateString);
+      const today = new Date();
+
+      // Remove time component
+      updated.setHours(0, 0, 0, 0);
+      today.setHours(0, 0, 0, 0);
+
+      const diffDays = Math.floor((today - updated) / (1000 * 60 * 60 * 24));
+
+      let relative;
+
+      if (diffDays === 0)
+        relative = "Today";
+      else if (diffDays === 1)
+        relative = "Yesterday";
+      else if (diffDays < 7)
+        relative = `${diffDays} days ago`;
+      else if (diffDays < 14)
+        relative = "Last week";
+      else if (diffDays < 30)
+        relative = `${Math.floor(diffDays / 7)} weeks ago`;
+      else if (diffDays < 60)
+        relative = "1 month ago";
+      else if (diffDays < 365)
+        relative = `${Math.floor(diffDays / 30)} months ago`;
+      else if (diffDays < 730)
+        relative = "1 year ago";
+      else
+        relative = `${Math.floor(diffDays / 365)} years ago`;
+
+      const formattedDate = updated.toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+      });
+
+      return `${formattedDate} • ${relative}`;
+    }
 
     function renderFilteredFlatView(title, filterFn, sortOrder = 'title-asc') {
       currentView = 'filtered-flat';
