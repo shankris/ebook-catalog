@@ -65,10 +65,28 @@
       color: #666;
     }
 
+    #last-updated .label {
+      margin-right: 0.35rem;
+    }
+
+    #last-updated .date::before,
+    #last-updated .time::before,
+    #last-updated .relative::before,
+    #last-updated .activity::before {
+      content: " · ";
+      color: #888;
+      margin: 0 0.25rem;
+    }
+
     #books-added {
       margin-top: 3px;
       font-size: 0.8rem;
       color: #0b7a3d;
+      font-weight: 600;
+    }
+
+    .update-activity {
+      color: #2e7d32;
       font-weight: 600;
     }
 
@@ -79,6 +97,30 @@
 
     .stats {
       white-space: nowrap;
+    }
+
+    .label-mobile {
+      display: none;
+    }
+
+    @media (max-width:768px) {
+
+      .label-desktop,
+      .date,
+      .time,
+      .activity {
+        display: none;
+      }
+
+      .label-mobile {
+        display: inline;
+      }
+    }
+
+    @media (max-width:576px) {
+      #last-updated {
+        display: none;
+      }
     }
 
     .stats {
@@ -621,7 +663,12 @@
 
     let newestDate;
     let updateTimer;
+
     let booksAddedOnLastUpdate = 0;
+    let booksDeletedOnLastUpdate = 0;
+    let booksModifiedOnLastUpdate = 0;
+
+    let catalogMetadata = {};
 
     let persistentSortOrder = 'title-asc';
 
@@ -644,6 +691,7 @@
       webdev: false,
       rating: false
     };
+
 
     function parseFolderStructure(filepath) {
       if (!filepath) return { parent: "Unsorted", sub: "Root" };
@@ -668,39 +716,54 @@
       const sortSelect = document.getElementById('sort-select');
 
       try {
-        const response = await fetch('catalog.json');
-        libraryBooks = await response.json();
+        const response = await fetch("catalog.json");
+        const data = await response.json();
 
-        newestDate = libraryBooks.reduce((latest, book) => {
+        // Supports both the old and new catalog formats
+        if (Array.isArray(data)) {
 
-          if (!book.scanDate) return latest;
+          libraryBooks = data;
 
-          const d = new Date(book.scanDate);
+        } else {
 
-          return d > latest ? d : latest;
+          catalogMetadata = data.metadata || {};
+          libraryBooks = data.books || [];
 
-        }, new Date(0));
+        }
 
 
-        const latestDateOnly = newestDate.toISOString().slice(0, 10);
+        if (catalogMetadata.lastUpdated) {
 
-        booksAddedOnLastUpdate = libraryBooks.filter(book => {
-          if (!book.scanDate) return false;
+          newestDate = new Date(catalogMetadata.lastUpdated);
 
-          const bookDateOnly = new Date(book.scanDate)
-            .toISOString()
-            .slice(0, 10);
+          booksAddedOnLastUpdate = catalogMetadata.booksAdded || 0;
+          const booksDeletedOnLastUpdate = catalogMetadata.booksDeleted || 0;
+          const booksModifiedOnLastUpdate = catalogMetadata.booksModified || 0;
 
-          return bookDateOnly === latestDateOnly;
-        }).length;
+        } else {
 
+          // Backwards compatibility with old catalogs
+
+          newestDate = libraryBooks.reduce((latest, book) => {
+
+            if (!book.scanDate) return latest;
+
+            const d = new Date(book.scanDate);
+
+            return d > latest ? d : latest;
+
+          }, new Date(0));
+
+        }
 
         updateLastUpdatedDisplay();
 
 
-        // countLabel.textContent = `${libraryBooks.length} Books`;
+        const totalBooks =
+          catalogMetadata.totalBooks ?? libraryBooks.length;
+
         countLabel.textContent =
-          `${libraryBooks.length.toLocaleString("en-US")} Books`;
+          `${totalBooks.toLocaleString("en-US")} Books`;
 
         rebuildNestedStructure();
         sortSelect.addEventListener('change', handleSortChange);
@@ -1328,31 +1391,61 @@
         relative = years === 1 ? "Last year" : `${years} years ago`;
         refreshAfter = 86400000;
       }
-
-      const absolute = date.toLocaleDateString("en-GB", {
+      const datePart = date.toLocaleDateString("en-GB", {
         day: "2-digit",
         month: "long",
         year: "numeric"
       });
 
+      const timePart = date.toLocaleTimeString("en-GB", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+      });
+
       return {
-        text: `${absolute} • ${relative}`,
+        datePart,
+        timePart,
+        relative,
         refreshAfter
       };
     }
 
 
+
+
     function updateLastUpdatedDisplay() {
 
       const result = formatLastUpdated(newestDate);
-
       const label = booksAddedOnLastUpdate === 1 ? "book" : "books";
 
-      document.getElementById("last-updated").innerHTML =
-        `Last updated: ${result.text} &bull;
-         <span class="books-added">
-            +${booksAddedOnLastUpdate.toLocaleString()} ${label}
-         </span>`;
+      let activity = "";
+
+      if (booksAddedOnLastUpdate > 0) {
+        activity += `+${booksAddedOnLastUpdate.toLocaleString()} ${booksAddedOnLastUpdate === 1 ? "book" : "books"}`;
+      }
+
+      if (booksDeletedOnLastUpdate > 0) {
+        if (activity) activity += " / ";
+        activity += `-${booksDeletedOnLastUpdate.toLocaleString()} ${booksDeletedOnLastUpdate === 1 ? "book" : "books"}`;
+      }
+
+      if (booksModifiedOnLastUpdate > 0) {
+        if (activity) activity += " / ";
+        activity += `${booksModifiedOnLastUpdate.toLocaleString()} ${booksModifiedOnLastUpdate === 1 ? "book updated" : "books updated"}`;
+      }
+
+      document.getElementById("last-updated").innerHTML = `
+        <span class="label-desktop">Last updated:</span>
+        <span class="label-mobile">Updated:</span>
+
+        <span class="date">01 July 2026</span>
+        <span class="time">19:02</span>
+        <span class="relative">1 hour ago</span>
+        <span class="activity">+10 books</span>
+    ${activity ? `<span class="update-activity">${activity}</span>` : ""}
+`;
+
 
       clearTimeout(updateTimer);
 
