@@ -54,6 +54,33 @@
       padding-bottom: 15px;
     }
 
+    .library-status {
+      flex: 1;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    #last-updated {
+      font-size: 0.88rem;
+      color: #666;
+    }
+
+    #books-added {
+      margin-top: 3px;
+      font-size: 0.8rem;
+      color: #0b7a3d;
+      font-weight: 600;
+    }
+
+    .books-added {
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    .stats {
+      white-space: nowrap;
+    }
+
     .stats {
       font-size: 0.9rem;
       color: var(--secondary);
@@ -535,15 +562,23 @@
 <body>
 
   <header>
-    <div>
-      <h1 class="pageTitle">Ebooks Catalog</h1>
-      <div id="last-updated" class="last-updated"></div>
+
+    <h1 class="pageTitle">
+      Ebooks Catalog
+    </h1>
+
+    <div class="library-status">
+      <div id="last-updated"></div>
+      <div id="books-added"></div>
     </div>
 
     <div id="book-count" class="stats">
-      Loading Library...
+      Loading...
     </div>
+
   </header>
+
+
 
   <div class="controls-bar">
     <div class="breadcrumb" id="nav-breadcrumb">
@@ -583,6 +618,10 @@
     const hardcodedLanguages = ['Dutch', 'French', 'German', 'Italian', 'Japanese', 'Portuguese', 'Spanish'];
     const learningLanguages = ['Dutch', 'French', 'German', 'Italian', 'Japanese', 'Portuguese', 'Spanish']; // For your 'Language Study' category
     const hardcodedWebDevKeywords = ['A11y', 'CSS', 'JavaScript', 'Next Js', 'React'];
+
+    let newestDate;
+    let updateTimer;
+    let booksAddedOnLastUpdate = 0;
 
     let persistentSortOrder = 'title-asc';
 
@@ -632,19 +671,36 @@
         const response = await fetch('catalog.json');
         libraryBooks = await response.json();
 
-        const newestDate = libraryBooks.reduce((latest, book) => {
+        newestDate = libraryBooks.reduce((latest, book) => {
+
           if (!book.scanDate) return latest;
 
           const d = new Date(book.scanDate);
 
           return d > latest ? d : latest;
+
         }, new Date(0));
 
-        document.getElementById("last-updated").textContent =
-          "Last updated: " + formatLastUpdated(newestDate);
+
+        const latestDateOnly = newestDate.toISOString().slice(0, 10);
+
+        booksAddedOnLastUpdate = libraryBooks.filter(book => {
+          if (!book.scanDate) return false;
+
+          const bookDateOnly = new Date(book.scanDate)
+            .toISOString()
+            .slice(0, 10);
+
+          return bookDateOnly === latestDateOnly;
+        }).length;
 
 
-        countLabel.textContent = `${libraryBooks.length} Books`;
+        updateLastUpdatedDisplay();
+
+
+        // countLabel.textContent = `${libraryBooks.length} Books`;
+        countLabel.textContent =
+          `${libraryBooks.length.toLocaleString("en-US")} Books`;
 
         rebuildNestedStructure();
         sortSelect.addEventListener('change', handleSortChange);
@@ -1211,13 +1267,11 @@
       }
     }
 
-    function formatLastUpdated(dateString) {
-      if (!dateString) return "";
+    function formatLastUpdated(date) {
 
-      const updated = new Date(dateString);
       const now = new Date();
 
-      const diffMs = now - updated;
+      const diffMs = now - date;
 
       const seconds = Math.floor(diffMs / 1000);
       const minutes = Math.floor(diffMs / 60000);
@@ -1225,45 +1279,88 @@
       const days = Math.floor(diffMs / 86400000);
 
       let relative;
+      let refreshAfter;
 
-      if (seconds < 30)
+      if (seconds < 30) {
         relative = "Just now";
-      else if (seconds < 60)
+        refreshAfter = 1000;                 // every second
+      }
+      else if (seconds < 60) {
         relative = `${seconds} seconds ago`;
-      else if (minutes === 1)
+        refreshAfter = 1000;
+      }
+      else if (minutes === 1) {
         relative = "1 minute ago";
-      else if (minutes < 60)
+        refreshAfter = 1000;
+      }
+      else if (minutes < 60) {
         relative = `${minutes} minutes ago`;
-      else if (hours === 1)
+        refreshAfter = 30000;               // every 30 seconds
+      }
+      else if (hours === 1) {
         relative = "1 hour ago";
-      else if (hours < 24)
+        refreshAfter = 300000;              // every 5 minutes
+      }
+      else if (hours < 24) {
         relative = `${hours} hours ago`;
-      else if (days === 1)
+        refreshAfter = 300000;
+      }
+      else if (days === 1) {
         relative = "Yesterday";
-      else if (days < 7)
+        refreshAfter = 3600000;             // every hour
+      }
+      else if (days < 7) {
         relative = `${days} days ago`;
-      else if (days < 14)
-        relative = "Last week";
-      else if (days < 30)
-        relative = `${Math.floor(days / 7)} weeks ago`;
-      else if (days < 60)
-        relative = "Last month";
-      else if (days < 365)
-        relative = `${Math.floor(days / 30)} months ago`;
-      else if (days < 730)
-        relative = "Last year";
-      else
-        relative = `${Math.floor(days / 365)} years ago`;
+        refreshAfter = 3600000;
+      }
+      else if (days < 30) {
+        const weeks = Math.floor(days / 7);
+        relative = weeks === 1 ? "Last week" : `${weeks} weeks ago`;
+        refreshAfter = 86400000;            // once/day
+      }
+      else if (days < 365) {
+        const months = Math.floor(days / 30);
+        relative = months === 1 ? "Last month" : `${months} months ago`;
+        refreshAfter = 86400000;
+      }
+      else {
+        const years = Math.floor(days / 365);
+        relative = years === 1 ? "Last year" : `${years} years ago`;
+        refreshAfter = 86400000;
+      }
 
-      const absolute = updated.toLocaleDateString("en-GB", {
+      const absolute = date.toLocaleDateString("en-GB", {
         day: "2-digit",
         month: "long",
         year: "numeric"
       });
 
-      return `${absolute} • ${relative}`;
+      return {
+        text: `${absolute} • ${relative}`,
+        refreshAfter
+      };
     }
 
+
+    function updateLastUpdatedDisplay() {
+
+      const result = formatLastUpdated(newestDate);
+
+      const label = booksAddedOnLastUpdate === 1 ? "book" : "books";
+
+      document.getElementById("last-updated").innerHTML =
+        `Last updated: ${result.text} &bull;
+         <span class="books-added">
+            +${booksAddedOnLastUpdate.toLocaleString()} ${label}
+         </span>`;
+
+      clearTimeout(updateTimer);
+
+      updateTimer = setTimeout(
+        updateLastUpdatedDisplay,
+        result.refreshAfter
+      );
+    }
 
     function renderFilteredFlatView(title, filterFn, sortOrder = 'title-asc') {
       currentView = 'filtered-flat';
