@@ -1330,7 +1330,7 @@
       }
     }
 
-    function formatLastUpdated(date) {
+    function formatLastUpdated(date, compact = false) {
 
       const now = new Date();
 
@@ -1357,7 +1357,9 @@
         refreshAfter = 1000;
       }
       else if (minutes < 60) {
-        relative = `${minutes} minutes ago`;
+        relative = compact
+          ? `${minutes}m ago`
+          : `${minutes} minutes ago`;
         refreshAfter = 30000;               // every 30 seconds
       }
       else if (hours === 1) {
@@ -1422,7 +1424,7 @@
       let activity = "";
 
       if (booksAddedOnLastUpdate > 0) {
-        activity += `+${booksAddedOnLastUpdate.toLocaleString()} ${booksAddedOnLastUpdate === 1 ? "book" : "books"}`;
+        activity += `+${booksAddedOnLastUpdate.toLocaleString()} ${booksAddedOnLastUpdate === 1 ? "Book" : "Books"}`;
       }
 
       if (booksDeletedOnLastUpdate > 0) {
@@ -1439,11 +1441,10 @@
         <span class="label-desktop">Last updated:</span>
         <span class="label-mobile">Updated:</span>
 
-        <span class="date">01 July 2026</span>
-        <span class="time">19:02</span>
-        <span class="relative">1 hour ago</span>
-        <span class="activity">+10 books</span>
-    ${activity ? `<span class="update-activity">${activity}</span>` : ""}
+        <span class="date">${result.datePart}</span>
+        <span class="time">${result.timePart}</span>
+        <span class="relative">${result.relative}</span>
+        ${activity ? `<span class="activity">${activity}</span>` : ""}
 `;
 
 
