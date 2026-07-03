@@ -25,9 +25,13 @@ async function run() {
 
   // 1. Load Existing Catalog for differential checking
   let existingCatalog = [];
+
   if (fs.existsSync(CATALOG_FILE)) {
     try {
-      existingCatalog = JSON.parse(fs.readFileSync(CATALOG_FILE, "utf8"));
+      const existingData = JSON.parse(fs.readFileSync(CATALOG_FILE, "utf8"));
+
+      // Supports both old and new catalog formats
+      existingCatalog = Array.isArray(existingData) ? existingData : existingData.books || [];
     } catch (e) {
       console.error("Existing catalog corrupt or unreadable. Starting fresh.");
     }
@@ -39,6 +43,8 @@ async function run() {
   const foundFilePaths = new Set();
   const validCoverPaths = new Set();
   const updatedCatalog = [];
+  let booksAdded = 0;
+  let booksDeleted = 0;
 
   // Recursive File Walker (Ebooks)
   async function scan(dir) {
@@ -78,6 +84,7 @@ async function run() {
       // - The cover image does not exist (!coverExists)
       if (!existingRecord || isModified || !coverExists) {
         if (!existingRecord) {
+          booksAdded++;
           console.log(`[New Book] Processing: ${item.name}`);
         } else if (isModified) {
           console.log(`[Modified Timestamp] Reprocessing: ${item.name}`);
@@ -173,6 +180,7 @@ async function run() {
     const physicallyExists = foundFilePaths.has(bookFilepath);
 
     if (!physicallyExists) {
+      booksDeleted++;
       console.log(`[Removed Book] File missing on disk, purging record: ${bookFilepath}`);
       if (book.coverImage && book.coverImage !== "covers/placeholder.jpg") {
         const coverPath = path.join(ROOT, book.coverImage);
@@ -213,7 +221,18 @@ async function run() {
   }
 
   // Save clean snapshot to data/catalog.json
-  fs.writeFileSync(CATALOG_FILE, JSON.stringify(finalCatalog, null, 2), "utf8");
+  const output = {
+    metadata: {
+      lastUpdated: new Date().toISOString(),
+      booksAdded,
+      booksDeleted,
+      netChange: booksAdded - booksDeleted,
+      totalBooks: finalCatalog.length,
+    },
+    books: finalCatalog,
+  };
+
+  fs.writeFileSync(CATALOG_FILE, JSON.stringify(output, null, 2), "utf8");
   console.log(`\n✨ Scan complete. Total items compiled: ${finalCatalog.length}`);
 }
 
