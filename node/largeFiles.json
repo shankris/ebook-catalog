@@ -1,0 +1,1280 @@
+{
+  "scanInfo": {
+    "rootFolder": "E:\\Ebooks\\ebook-catalog\\ebooks",
+    "scanDate": "2026-07-11T15:42:47.338Z",
+    "minimumFileSizeMB": 40,
+    "totalFilesScanned": 2731,
+    "largeFilesFound": 141
+  },
+  "files": [
+    {
+      "name": "Grammaire progressive du français, niveau intermédiaire (Maïa Grégoire, Odile Thiévenaz).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\Progressive",
+      "extension": ".pdf",
+      "sizeBytes": 139229196,
+      "sizeMB": 132.78,
+      "created": "2026-04-09T00:13:50.565Z",
+      "modified": "2026-04-09T00:16:04.800Z"
+    },
+    {
+      "name": "CLE - Civilisation progressive du français - Débutant - 400 activités.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\Progressive",
+      "extension": ".pdf",
+      "sizeBytes": 130472322,
+      "sizeMB": 124.43,
+      "created": "2026-04-07T01:12:15.543Z",
+      "modified": "2026-04-07T01:14:21.449Z"
+    },
+    {
+      "name": "Colloquial German The Complete Course for Beginners (Glyn Hatherall, Dietlinde Hatherall).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 115267513,
+      "sizeMB": 109.93,
+      "created": "2026-03-29T00:21:37.310Z",
+      "modified": "2026-03-29T00:24:36.768Z"
+    },
+    {
+      "name": "Teach Yourself German (Sir John Adams, Sydney W. Wells etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 106554915,
+      "sizeMB": 101.62,
+      "created": "2025-10-29T00:22:22.724Z",
+      "modified": "2025-10-29T00:23:25.530Z"
+    },
+    {
+      "name": "CLE - Grammaire progressive du français - Débutant - 440 exercices.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\Progressive",
+      "extension": ".pdf",
+      "sizeBytes": 103391357,
+      "sizeMB": 98.6,
+      "created": "2023-10-19T11:08:41.375Z",
+      "modified": "2023-10-20T08:37:57.946Z"
+    },
+    {
+      "name": "Glossika Mass Sentences Spanish (Castilian) Fluency 3 (Michael Campbell, Nuria Porras).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Spanish",
+      "extension": ".pdf",
+      "sizeBytes": 101912088,
+      "sizeMB": 97.19,
+      "created": "2026-05-10T02:01:35.898Z",
+      "modified": "2026-05-10T02:03:14.341Z"
+    },
+    {
+      "name": "Complete Spanish All-In-One (Practice Makes Perfect), 3rd Premium Edition (Gilda Nissenberg).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Spanish",
+      "extension": ".epub",
+      "sizeBytes": 100875033,
+      "sizeMB": 96.2,
+      "created": "2026-05-18T02:04:37.866Z",
+      "modified": "2026-05-18T02:06:15.963Z"
+    },
+    {
+      "name": "French Fluency 2 Glossika Mass Sentences (Michael Campbell Maxime Paquin).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 100319316,
+      "sizeMB": 95.67,
+      "created": "2026-05-07T00:59:43.981Z",
+      "modified": "2026-05-07T01:01:21.281Z"
+    },
+    {
+      "name": "Teach Yourself Improve Your German (Coggle Paul, Heiner Schenke).zip",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".zip",
+      "sizeBytes": 97641124,
+      "sizeMB": 93.12,
+      "created": "2026-02-15T02:10:48.805Z",
+      "modified": "2026-02-15T02:12:24.803Z"
+    },
+    {
+      "name": "350 Exercices De Vocabulaire Niveau Avance (Collective, Sorbonne).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\B1",
+      "extension": ".pdf",
+      "sizeBytes": 87832544,
+      "sizeMB": 83.76,
+      "created": "2026-04-26T22:53:03.869Z",
+      "modified": "2026-04-26T22:54:27.955Z"
+    },
+    {
+      "name": "First Hundred Words in German (Heather Amery Stephen Cartwright).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 86262562,
+      "sizeMB": 82.27,
+      "created": "2026-01-11T03:43:50.293Z",
+      "modified": "2026-01-11T03:45:17.584Z"
+    },
+    {
+      "name": "Principles of Beautiful Web Design.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\SitePoint",
+      "extension": ".pdf",
+      "sizeBytes": 85729057,
+      "sizeMB": 81.76,
+      "created": "2023-10-11T00:57:12.675Z",
+      "modified": "2023-10-11T00:58:42.687Z"
+    },
+    {
+      "name": "CLE - Orthographe progressive du français - Débutant - 400 exercices.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\Progressive",
+      "extension": ".pdf",
+      "sizeBytes": 85691506,
+      "sizeMB": 81.72,
+      "created": "2026-04-03T01:42:08.530Z",
+      "modified": "2026-04-03T01:43:32.533Z"
+    },
+    {
+      "name": "Preparation a lexamen du DELF A1 Scolaire et Junior (Marie-Christine Jamet).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 82738398,
+      "sizeMB": 78.91,
+      "created": "2026-04-15T00:15:57.340Z",
+      "modified": "2026-04-15T00:18:02.989Z"
+    },
+    {
+      "name": "Vocabulaire progressif du francais des affaires avec 200 exercices (Jean-Luc Penformis).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 80156647,
+      "sizeMB": 76.44,
+      "created": "2026-04-09T22:37:28.688Z",
+      "modified": "2026-04-09T22:39:58.905Z"
+    },
+    {
+      "name": "Glossika Mass Sentences Spanish (Castilian) Fluency 2 (Michael Campbell, Nuria Porras).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Spanish",
+      "extension": ".pdf",
+      "sizeBytes": 79245059,
+      "sizeMB": 75.57,
+      "created": "2026-05-12T01:58:47.397Z",
+      "modified": "2026-05-12T02:00:03.265Z"
+    },
+    {
+      "name": "Le Grevisse de lenseignant (Jean-Christophe Pellat, Stéphanie Fonvielle).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 79203071,
+      "sizeMB": 75.53,
+      "created": "2026-04-20T06:18:30.574Z",
+      "modified": "2026-04-20T06:21:09.138Z"
+    },
+    {
+      "name": "Ecouter et comprendre La France au quotidien (Roesch, Roselyne Rolle-Harold, Rosalba).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 76445438,
+      "sizeMB": 72.9,
+      "created": "2026-01-09T02:02:48.738Z",
+      "modified": "2026-01-09T02:03:11.444Z"
+    },
+    {
+      "name": "DALF B1, B2, B3, B4, 450 activités (Collectif).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 75767709,
+      "sizeMB": 72.26,
+      "created": "2026-04-26T22:51:53.107Z",
+      "modified": "2026-04-26T22:53:06.651Z"
+    },
+    {
+      "name": "Teach yourself French Complete Course (Gaëlle Graham).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 75558652,
+      "sizeMB": 72.06,
+      "created": "2026-04-24T01:15:49.407Z",
+      "modified": "2026-04-24T01:17:03.259Z"
+    },
+    {
+      "name": "La France Au Quotidien (Roesch, Roselyne Rolle-Harold, Rosalba).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 74928523,
+      "sizeMB": 71.46,
+      "created": "2026-01-09T02:02:56.513Z",
+      "modified": "2026-01-09T02:03:59.927Z"
+    },
+    {
+      "name": "Le Grevisse de lenseignant - 1000 exercices de grammaire (Jean-Christophe Pellat, Stéphanie Fonvielle).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 74469674,
+      "sizeMB": 71.02,
+      "created": "2026-04-20T06:17:17.594Z",
+      "modified": "2026-04-20T06:18:31.227Z"
+    },
+    {
+      "name": "TEF Test dévaluation de français. Livre dentraînement (Alban Mommée).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 73527418,
+      "sizeMB": 70.12,
+      "created": "2026-04-11T02:17:02.585Z",
+      "modified": "2026-04-11T02:18:15.722Z"
+    },
+    {
+      "name": "Grammaire progressive du français - A1 - Débutant - 440 exercices - 3ème édition.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 72453946,
+      "sizeMB": 69.1,
+      "created": "2026-04-01T00:57:38.715Z",
+      "modified": "2026-04-01T00:58:49.455Z"
+    },
+    {
+      "name": "Les cinq cents exercices grammaire A2. Livre-Corrigés integrés. Per le Scuole superiori (Anne Akyz, Bernadette Bazelle-Shahmaei etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 71908491,
+      "sizeMB": 68.58,
+      "created": "2026-04-11T02:29:07.400Z",
+      "modified": "2026-04-11T02:30:16.375Z"
+    },
+    {
+      "name": "600 Basic Japanese Verbs The Essential Reference Guide Learn the Japanese Vocabulary and Grammar You Need to Learn Japanese… (The Hiro Japanese Center).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Japanese",
+      "extension": ".pdf",
+      "sizeBytes": 71503971,
+      "sizeMB": 68.19,
+      "created": "2026-05-27T00:35:56.561Z",
+      "modified": "2026-05-27T00:36:05.136Z"
+    },
+    {
+      "name": "vocabulaire italien (Unknown).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Italian",
+      "extension": ".pdf",
+      "sizeBytes": 70937190,
+      "sizeMB": 67.65,
+      "created": "2026-05-21T02:03:48.973Z",
+      "modified": "2026-05-21T02:05:54.516Z"
+    },
+    {
+      "name": "Grammaire essentielle du français B2, ebook (Didier).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 70266494,
+      "sizeMB": 67.01,
+      "created": "2026-04-04T00:08:18.041Z",
+      "modified": "2026-04-04T00:09:26.999Z"
+    },
+    {
+      "name": "Into Iraq (Michael Palin).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Travel\\Michael Palin",
+      "extension": ".epub",
+      "sizeBytes": 70156691,
+      "sizeMB": 66.91,
+      "created": "2024-03-08T01:34:53.191Z",
+      "modified": "2024-03-08T01:35:04.986Z"
+    },
+    {
+      "name": "Le DELF Junior et Scolaire B2 100 Réussite (Dorothée Dupleix, Bruno Girardeau etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 70029815,
+      "sizeMB": 66.79,
+      "created": "2026-04-13T23:16:14.702Z",
+      "modified": "2026-04-13T23:18:00.184Z"
+    },
+    {
+      "name": "Latelier B2 Méthode de français.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 69684587,
+      "sizeMB": 66.46,
+      "created": "2023-10-18T01:29:41.768Z",
+      "modified": "2023-10-18T01:30:42.760Z"
+    },
+    {
+      "name": "Practice Makes Perfect Spanish Vocabulary (Dorothy Richmond).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Spanish",
+      "extension": ".epub",
+      "sizeBytes": 69027540,
+      "sizeMB": 65.83,
+      "created": "2026-05-18T02:03:54.849Z",
+      "modified": "2026-05-18T02:05:02.444Z"
+    },
+    {
+      "name": "abc DALF C1C2.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\C1",
+      "extension": ".pdf",
+      "sizeBytes": 68554136,
+      "sizeMB": 65.38,
+      "created": "2023-10-12T00:47:01.978Z",
+      "modified": "2023-10-12T00:52:05.866Z"
+    },
+    {
+      "name": "Bescherelle La conjugaison pour tous (Ed. 2019) (Nicolas Laurent, Bénédicte Delaunay etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 68457570,
+      "sizeMB": 65.29,
+      "created": "2026-05-22T00:57:53.567Z",
+      "modified": "2026-05-22T00:59:21.340Z"
+    },
+    {
+      "name": "Grammaire progressive du français - A2 B1 - Intermédiaire - Corrigés - 4ème édition.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 68394893,
+      "sizeMB": 65.23,
+      "created": "2026-04-03T01:43:26.227Z",
+      "modified": "2026-04-03T01:44:33.127Z"
+    },
+    {
+      "name": "Schaums Outline of German Grammar (Elke Gschossmann-Hendershot).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 68309674,
+      "sizeMB": 65.15,
+      "created": "2026-05-06T01:36:51.250Z",
+      "modified": "2026-05-06T01:37:59.973Z"
+    },
+    {
+      "name": "Italian vocabulary for English speakers - 5000 words (Andrey Taranov).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Italian",
+      "extension": ".pdf",
+      "sizeBytes": 67576493,
+      "sizeMB": 64.45,
+      "created": "2026-05-24T00:34:57.060Z",
+      "modified": "2026-05-24T00:35:02.266Z"
+    },
+    {
+      "name": "Deutsch Intensiv Schreiben B2deutschschule2 ().pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 66500455,
+      "sizeMB": 63.42,
+      "created": "2026-02-23T00:33:03.813Z",
+      "modified": "2026-02-23T00:34:08.626Z"
+    },
+    {
+      "name": "Hugo in Three Months French Your Essential Guide to Understanding and Speaking French (Ronald Overy, Jacqueline Lecanuet).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 66459249,
+      "sizeMB": 63.38,
+      "created": "2026-01-25T01:09:02.823Z",
+      "modified": "2026-01-25T01:09:57.260Z"
+    },
+    {
+      "name": "Conjugaison progressive du français (Michèle Boularès).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 66369613,
+      "sizeMB": 63.29,
+      "created": "2026-04-03T01:42:25.035Z",
+      "modified": "2026-04-03T01:43:29.700Z"
+    },
+    {
+      "name": "Conjugaison progressive du français - A2 B1 - Intermédiaire - 450 exercices - 3ème édition.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 66369613,
+      "sizeMB": 63.29,
+      "created": "2026-04-03T01:42:25.035Z",
+      "modified": "2026-04-03T01:43:29.700Z"
+    },
+    {
+      "name": "Deutsch Intensiv Schreiben B2 (Sandra Hohmann).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 66321705,
+      "sizeMB": 63.25,
+      "created": "2026-02-22T01:06:38.613Z",
+      "modified": "2026-02-22T01:07:42.570Z"
+    },
+    {
+      "name": "TIME Special Edition – The Science of Addiction 2025.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Self_Help",
+      "extension": ".pdf",
+      "sizeBytes": 65884402,
+      "sizeMB": 62.83,
+      "created": "2025-09-19T11:42:52.474Z",
+      "modified": "2025-09-19T11:42:46.980Z"
+    },
+    {
+      "name": "Les expressions idiomatiques (Isabelle Chollet, J-.M. Robert).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 65717475,
+      "sizeMB": 62.67,
+      "created": "2026-04-11T02:25:31.977Z",
+      "modified": "2026-04-11T02:26:36.354Z"
+    },
+    {
+      "name": "Bled junior (Berlion D.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 65481717,
+      "sizeMB": 62.45,
+      "created": "2026-04-21T01:22:17.301Z",
+      "modified": "2026-04-21T01:23:28.302Z"
+    },
+    {
+      "name": "Les Expressions Idiomatiques.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 65019286,
+      "sizeMB": 62.01,
+      "created": "2023-10-19T02:28:05.728Z",
+      "modified": "2023-10-19T02:28:18.370Z"
+    },
+    {
+      "name": "Universal Principles of Design 3e.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\UX",
+      "extension": ".pdf",
+      "sizeBytes": 64889057,
+      "sizeMB": 61.88,
+      "created": "2023-09-29T00:47:40.733Z",
+      "modified": "2023-09-29T00:47:54.491Z"
+    },
+    {
+      "name": "Practice Makes Perfect Basic Spanish, Premium Third Edition (Dorothy Richmond).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Spanish",
+      "extension": ".pdf",
+      "sizeBytes": 64802561,
+      "sizeMB": 61.8,
+      "created": "2026-05-29T01:42:15.379Z",
+      "modified": "2026-05-29T01:43:21.551Z"
+    },
+    {
+      "name": "Le français du monde du travail (Cloose Éliane.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 64783834,
+      "sizeMB": 61.78,
+      "created": "2026-01-09T02:03:09.327Z",
+      "modified": "2026-01-09T02:04:09.602Z"
+    },
+    {
+      "name": "Deutsch intensiv Hoeren und Sprechen B2 (unknown).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 64455243,
+      "sizeMB": 61.47,
+      "created": "2026-02-22T01:07:47.809Z",
+      "modified": "2026-02-22T01:08:50.051Z"
+    },
+    {
+      "name": "ABC Delf Livre de LEleve.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 63529885,
+      "sizeMB": 60.59,
+      "created": "2023-10-05T01:37:23.578Z",
+      "modified": "2023-10-05T01:37:43.597Z"
+    },
+    {
+      "name": "JavaScript The Complete Reference (Thomas Powell, Fritz Schneider).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\JavaScript",
+      "extension": ".epub",
+      "sizeBytes": 62822183,
+      "sizeMB": 59.91,
+      "created": "2024-02-04T04:53:34.613Z",
+      "modified": "2024-02-04T04:54:34.105Z"
+    },
+    {
+      "name": "Italian in tree months (Reynolds Milena.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Italian",
+      "extension": ".pdf",
+      "sizeBytes": 62556155,
+      "sizeMB": 59.66,
+      "created": "2026-01-25T01:08:53.781Z",
+      "modified": "2026-01-25T01:09:44.493Z"
+    },
+    {
+      "name": "Practice Makes Perfect Complete Italian Grammar, Premium Third Edition (Marcel Danesi).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Italian",
+      "extension": ".pdf",
+      "sizeBytes": 62168596,
+      "sizeMB": 59.29,
+      "created": "2026-03-10T00:35:06.481Z",
+      "modified": "2026-03-10T00:36:06.085Z"
+    },
+    {
+      "name": "Les Secrets De La Photo De Rue (Gildas Lepetit-Castel).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Photography\\How-to",
+      "extension": ".pdf",
+      "sizeBytes": 61186503,
+      "sizeMB": 58.35,
+      "created": "2023-11-04T00:51:47.676Z",
+      "modified": "2023-11-04T00:52:15.841Z"
+    },
+    {
+      "name": "The Big Red Book of Spanish Grammar (MyiLibrary.Vargas, Dora del Carmen).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Spanish",
+      "extension": ".epub",
+      "sizeBytes": 61089561,
+      "sizeMB": 58.26,
+      "created": "2026-06-03T01:12:03.555Z",
+      "modified": "2026-06-03T01:15:24.794Z"
+    },
+    {
+      "name": "Kickstart JavaScript Fundamentals (Dr. Rupali Mahesh Chopade).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\JavaScript",
+      "extension": ".epub",
+      "sizeBytes": 61021260,
+      "sizeMB": 58.19,
+      "created": "2025-11-13T01:46:03.487Z",
+      "modified": "2025-11-13T01:46:55.015Z"
+    },
+    {
+      "name": "Exercices d’oral en contexte. Niveau intermédiaire (Anne Akyüz, Bernadette Bazelle-Shahmaei).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 60563353,
+      "sizeMB": 57.76,
+      "created": "2023-11-05T03:53:22.181Z",
+      "modified": "2023-11-05T03:54:06.543Z"
+    },
+    {
+      "name": "Learning CSS3 Animations and Transitions (Alexis Goldstein).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\CSS",
+      "extension": ".epub",
+      "sizeBytes": 60530690,
+      "sizeMB": 57.73,
+      "created": "2023-11-06T01:45:25.654Z",
+      "modified": "2023-11-06T01:46:18.084Z"
+    },
+    {
+      "name": "Practice Makes Perfect Complete French All-in-One (Annie Heminway).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".epub",
+      "sizeBytes": 60167863,
+      "sizeMB": 57.38,
+      "created": "2026-05-19T01:45:51.746Z",
+      "modified": "2026-05-19T01:47:37.939Z"
+    },
+    {
+      "name": "Outils pour le Français CM1 (Sylvie Bordron, Martine Palau, Hélène Pons etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 60057887,
+      "sizeMB": 57.28,
+      "created": "2026-04-11T02:26:14.314Z",
+      "modified": "2026-04-11T02:27:12.820Z"
+    },
+    {
+      "name": "ABC Delf B1 Corrigés et transcriptions.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\B1",
+      "extension": ".pdf",
+      "sizeBytes": 59817204,
+      "sizeMB": 57.05,
+      "created": "2023-10-04T00:35:03.963Z",
+      "modified": "2023-10-04T00:35:17.065Z"
+    },
+    {
+      "name": "French Beginners Workbook (Anthony Bulger).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 59762671,
+      "sizeMB": 56.99,
+      "created": "2025-11-12T02:10:02.464Z",
+      "modified": "2025-11-12T02:11:14.578Z"
+    },
+    {
+      "name": "Glossika Mass Sentences Spanish (Castilian) Fluency 1 (Michael Campbell, Nuria Porras).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Spanish",
+      "extension": ".pdf",
+      "sizeBytes": 59235217,
+      "sizeMB": 56.49,
+      "created": "2026-05-10T02:02:08.310Z",
+      "modified": "2026-05-10T02:03:05.774Z"
+    },
+    {
+      "name": "Netzwerk neu A2 Kursbuch (Stephanie Dengler, Paul Rusch, Helen Schmitz etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 59080275,
+      "sizeMB": 56.34,
+      "created": "2026-02-23T00:32:19.978Z",
+      "modified": "2026-02-23T00:33:17.390Z"
+    },
+    {
+      "name": "Communication progressive du français - C1 C2 - Perfectionnement - 700 exercices.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\C1",
+      "extension": ".pdf",
+      "sizeBytes": 58646492,
+      "sizeMB": 55.93,
+      "created": "2026-04-03T01:42:50.807Z",
+      "modified": "2026-04-03T01:48:55.391Z"
+    },
+    {
+      "name": "Cours de Langue et de Civilisation Françaises III (Gaston Mauger).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 58628813,
+      "sizeMB": 55.91,
+      "created": "2026-04-19T06:23:59.285Z",
+      "modified": "2026-04-19T06:26:36.523Z"
+    },
+    {
+      "name": "Larousse - Dictionnaire des synonymes.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 58626777,
+      "sizeMB": 55.91,
+      "created": "2023-10-19T06:52:52.769Z",
+      "modified": "2023-10-19T06:57:14.361Z"
+    },
+    {
+      "name": "Colloquial German 2 - The Next Step in Language Learning (Annette Duensing, Carolyn Batstone).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 58522009,
+      "sizeMB": 55.81,
+      "created": "2026-02-15T02:09:17.665Z",
+      "modified": "2026-02-15T02:10:15.142Z"
+    },
+    {
+      "name": "CSS The Definitive Guide.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\CSS",
+      "extension": ".pdf",
+      "sizeBytes": 58437563,
+      "sizeMB": 55.73,
+      "created": "2023-10-07T00:34:38.572Z",
+      "modified": "2023-10-07T00:36:41.510Z"
+    },
+    {
+      "name": "CLE Progressive - Communication progressive du français - Perfectionnement C1 C2 - 700 exercices.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 58395961,
+      "sizeMB": 55.69,
+      "created": "2026-04-07T01:15:05.075Z",
+      "modified": "2026-04-07T01:16:01.779Z"
+    },
+    {
+      "name": "Grammaire 450 Nouveaux Exercices (Pierre Claude, Évelyne Sirejols).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 58266163,
+      "sizeMB": 55.57,
+      "created": "2023-10-31T00:46:54.822Z",
+      "modified": "2023-10-31T00:47:17.274Z"
+    },
+    {
+      "name": "Bescherelle. La grammaire pour bien écrire. Exercices avec les corrigés ().pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 57768645,
+      "sizeMB": 55.09,
+      "created": "2026-04-20T06:15:26.163Z",
+      "modified": "2026-04-20T06:16:50.525Z"
+    },
+    {
+      "name": "La conjugaison et ses pièges (Récits, témoignages) (Berchoud, Marie-Josèphe).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 57620341,
+      "sizeMB": 54.95,
+      "created": "2026-04-13T01:12:56.125Z",
+      "modified": "2026-04-13T01:13:52.242Z"
+    },
+    {
+      "name": "My 1001 nights tales adventures from Morocco (Morrison, Alice).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Travel\\Mis",
+      "extension": ".epub",
+      "sizeBytes": 57487654,
+      "sizeMB": 54.82,
+      "created": "2024-03-08T01:26:46.299Z",
+      "modified": "2024-03-08T01:26:56.566Z"
+    },
+    {
+      "name": "Dictionnaire de lAllemand économique, commercial et financier allemand-françaisfrançais-allemand (Boelcke, Jürgen, Straub, Bernard Thiele etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 57243828,
+      "sizeMB": 54.59,
+      "created": "2026-05-23T02:03:08.653Z",
+      "modified": "2026-05-23T02:04:44.628Z"
+    },
+    {
+      "name": "La Traduction de langlais au français (Michel Ballard) .pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 56409488,
+      "sizeMB": 53.8,
+      "created": "2026-05-28T01:24:14.591Z",
+      "modified": "2026-05-28T01:25:29.807Z"
+    },
+    {
+      "name": "Deutsch Übungsbuch Grammatik A1-A2 (Sabine Dinsel, Lukas Mayrhofer).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 56173213,
+      "sizeMB": 53.57,
+      "created": "2026-02-23T23:57:24.595Z",
+      "modified": "2026-02-23T23:58:19.166Z"
+    },
+    {
+      "name": "Practice Makes Perfect French Conversation (Eliane Kurbegov).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".epub",
+      "sizeBytes": 55232609,
+      "sizeMB": 52.67,
+      "created": "2026-05-16T02:37:13.497Z",
+      "modified": "2026-05-16T02:38:09.761Z"
+    },
+    {
+      "name": "Night Photography And Light Painting Finding Your Way In The Dark (Lance Keimig).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Photography\\How-to",
+      "extension": ".pdf",
+      "sizeBytes": 55089329,
+      "sizeMB": 52.54,
+      "created": "2024-04-20T00:07:28.765Z",
+      "modified": "2024-04-20T00:07:39.525Z"
+    },
+    {
+      "name": "français professionnel des affaires (Jean-Luc Penfornis).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 54905947,
+      "sizeMB": 52.36,
+      "created": "2026-04-08T01:17:32.194Z",
+      "modified": "2026-04-08T01:18:26.990Z"
+    },
+    {
+      "name": "Latelier - Méthode de Français - B1 cahier d’activités (Marie-Noëlle Cocton).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 54805718,
+      "sizeMB": 52.27,
+      "created": "2026-04-12T01:03:58.140Z",
+      "modified": "2026-04-12T01:05:10.090Z"
+    },
+    {
+      "name": "TypeScript and JavaScript Coding Made Simple.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\TypeScript",
+      "extension": ".pdf",
+      "sizeBytes": 54644398,
+      "sizeMB": 52.11,
+      "created": "2023-09-23T03:21:17.008Z",
+      "modified": "2023-09-23T03:21:36.144Z"
+    },
+    {
+      "name": "The JavaScript Interview BIBLE (Nezir Zahirovic).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\JavaScript",
+      "extension": ".pdf",
+      "sizeBytes": 54314175,
+      "sizeMB": 51.8,
+      "created": "2023-12-06T00:38:47.955Z",
+      "modified": "2023-12-06T00:39:22.912Z"
+    },
+    {
+      "name": "100% FLE - Grammaire essentielle du français A1, ebook (Didier).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\A1",
+      "extension": ".pdf",
+      "sizeBytes": 54239257,
+      "sizeMB": 51.73,
+      "created": "2026-04-03T01:58:23.856Z",
+      "modified": "2026-04-03T01:59:16.200Z"
+    },
+    {
+      "name": "Spanish (Hugo in Three Months) (Isabel Cisneros).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Spanish",
+      "extension": ".pdf",
+      "sizeBytes": 53914263,
+      "sizeMB": 51.42,
+      "created": "2026-01-25T01:08:22.119Z",
+      "modified": "2026-01-25T01:09:06.478Z"
+    },
+    {
+      "name": "Usability and User Experience Design (Franz, BenjaminKauer-Franz, Michaela).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\UX",
+      "extension": ".epub",
+      "sizeBytes": 53688143,
+      "sizeMB": 51.2,
+      "created": "2024-06-08T17:07:00.109Z",
+      "modified": "2024-06-08T17:12:10.025Z"
+    },
+    {
+      "name": "Kaizen-The-Japanese-Method-for-Transforming-Habits-One-Small-Step-at-a-Time.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\NonFiction",
+      "extension": ".pdf",
+      "sizeBytes": 53647350,
+      "sizeMB": 51.16,
+      "created": "2024-08-19T08:51:54.156Z",
+      "modified": "2024-08-19T08:23:41.411Z"
+    },
+    {
+      "name": "Latelier B1 méthode de français.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 53409036,
+      "sizeMB": 50.93,
+      "created": "2023-10-18T01:31:12.207Z",
+      "modified": "2023-10-18T01:32:18.141Z"
+    },
+    {
+      "name": "Teach Yourself Portuguese A Complete Course for Beginners (with audio) (Manuela Cook).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Portuguese",
+      "extension": ".pdf",
+      "sizeBytes": 53142356,
+      "sizeMB": 50.68,
+      "created": "2026-04-24T01:42:32.486Z",
+      "modified": "2026-04-24T01:43:23.896Z"
+    },
+    {
+      "name": "Wortschatz A1 (CHRISTIANE. ROHRMANN LEMCKE (LUTZ.) etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 52836378,
+      "sizeMB": 50.39,
+      "created": "2026-02-22T01:03:14.066Z",
+      "modified": "2026-02-22T01:04:05.556Z"
+    },
+    {
+      "name": "Universal Design.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\UX",
+      "extension": ".pdf",
+      "sizeBytes": 52351988,
+      "sizeMB": 49.93,
+      "created": "2023-09-19T15:49:26.855Z",
+      "modified": "2023-09-19T15:50:11.814Z"
+    },
+    {
+      "name": "100 FLE - Vocabulaire essentiel du français A1 (Lucie Mensdorff-Pouilly,Caroline Spérandio).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\A1",
+      "extension": ".pdf",
+      "sizeBytes": 52284396,
+      "sizeMB": 49.86,
+      "created": "2026-04-04T00:10:08.753Z",
+      "modified": "2026-04-04T00:11:00.243Z"
+    },
+    {
+      "name": "Deutsch intensiv Grammatik B2 (Stefan Kreutzmüller).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 52266414,
+      "sizeMB": 49.85,
+      "created": "2026-02-21T04:08:21.234Z",
+      "modified": "2026-02-21T04:09:12.417Z"
+    },
+    {
+      "name": "Deutsch intensiv Lesen B1 Das Training (Sandra Hohmann).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 52197399,
+      "sizeMB": 49.78,
+      "created": "2026-02-22T01:07:04.571Z",
+      "modified": "2026-02-22T01:07:54.314Z"
+    },
+    {
+      "name": "TypeScript Programming Fundamentals (Ted Noreux).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\TypeScript",
+      "extension": ".pdf",
+      "sizeBytes": 51549544,
+      "sizeMB": 49.16,
+      "created": "2024-03-19T01:30:33.767Z",
+      "modified": "2024-03-19T01:32:08.058Z"
+    },
+    {
+      "name": "MULTIPLE-CHOICE QUESTIONS FOR A-LEVEL CHEMISTRY (Derek Stebbens, D. M Stebbens).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\School\\Chemistry",
+      "extension": ".pdf",
+      "sizeBytes": 51126168,
+      "sizeMB": 48.76,
+      "created": "2026-03-24T01:05:24.642Z",
+      "modified": "2026-03-24T01:06:14.126Z"
+    },
+    {
+      "name": "Effective Prototyping for Software Makers.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\User_Interface",
+      "extension": ".pdf",
+      "sizeBytes": 50846255,
+      "sizeMB": 48.49,
+      "created": "2024-02-24T21:31:02.865Z",
+      "modified": "2024-02-24T21:31:42.148Z"
+    },
+    {
+      "name": "CLE - Grammaire progressive du français - Perfectionnement - 600 exercices.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\Progressive",
+      "extension": ".pdf",
+      "sizeBytes": 50669841,
+      "sizeMB": 48.32,
+      "created": "2023-10-19T10:52:43.266Z",
+      "modified": "2023-10-20T08:42:48.528Z"
+    },
+    {
+      "name": "Préparation à l’examen du Delf B2 (Jamet M.-Ch.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 50504593,
+      "sizeMB": 48.16,
+      "created": "2026-04-11T02:19:06.556Z",
+      "modified": "2026-04-11T02:21:14.544Z"
+    },
+    {
+      "name": "Les exercices de grammaire avec corrigés A2.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 50351924,
+      "sizeMB": 48.02,
+      "created": "2023-10-19T01:51:48.665Z",
+      "modified": "2023-10-19T01:52:09.776Z"
+    },
+    {
+      "name": "500 Poses for Photographing Group Portraits (Michelle Perkins).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Photography\\How-to",
+      "extension": ".pdf",
+      "sizeBytes": 50206020,
+      "sizeMB": 47.88,
+      "created": "2023-11-02T01:49:53.950Z",
+      "modified": "2023-11-02T01:50:05.458Z"
+    },
+    {
+      "name": "Vocabulaire expliqué du français niveau intermédiaire (Mimran).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 49444451,
+      "sizeMB": 47.15,
+      "created": "2026-04-09T00:18:02.071Z",
+      "modified": "2026-04-09T00:18:51.116Z"
+    },
+    {
+      "name": "Grammaire Progressive Du Français AVANCÉ B1-B2 (Michèle Boularès, Jean-Louis Frérot).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 49362083,
+      "sizeMB": 47.08,
+      "created": "2026-04-03T01:44:14.423Z",
+      "modified": "2026-04-03T01:45:04.107Z"
+    },
+    {
+      "name": "Fixing Bad UX Designs (Lisandra Maioli).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Dev\\UX",
+      "extension": ".pdf",
+      "sizeBytes": 49240157,
+      "sizeMB": 46.96,
+      "created": "2026-06-13T02:12:06.525Z",
+      "modified": "2026-06-13T02:12:15.786Z"
+    },
+    {
+      "name": "Grammaire Progressive du Français Niveau Intermédiaire 4e édition.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 48343349,
+      "sizeMB": 46.1,
+      "created": "2023-10-20T08:39:37.996Z",
+      "modified": "2023-10-20T08:42:08.319Z"
+    },
+    {
+      "name": "Communication progressive du francais perfectionnement.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 48217511,
+      "sizeMB": 45.98,
+      "created": "2023-10-19T07:09:20.342Z",
+      "modified": "2023-10-19T07:13:39.208Z"
+    },
+    {
+      "name": "Litterature progressive du Francais avec 600 activites (Nicole Blondeau).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 47986973,
+      "sizeMB": 45.76,
+      "created": "2026-04-09T00:28:32.023Z",
+      "modified": "2026-04-09T00:29:18.920Z"
+    },
+    {
+      "name": "Deutsch intensiv Schreiben C1 (Dorothea Stein-Bassler).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German\\C1",
+      "extension": ".pdf",
+      "sizeBytes": 47194260,
+      "sizeMB": 45.01,
+      "created": "2026-02-22T01:06:47.891Z",
+      "modified": "2026-02-22T01:07:34.109Z"
+    },
+    {
+      "name": "Grammaire progressive du français, niveau perfectionnement (Maïa Grégoire).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 47133923,
+      "sizeMB": 44.95,
+      "created": "2026-04-12T00:57:08.804Z",
+      "modified": "2026-04-12T00:58:46.426Z"
+    },
+    {
+      "name": "French for Everyone Junior 5 Words a Day Learn and Practise 1,000 French Words (DK).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".epub",
+      "sizeBytes": 46909098,
+      "sizeMB": 44.74,
+      "created": "2026-01-14T02:07:04.239Z",
+      "modified": "2026-01-14T02:07:18.483Z"
+    },
+    {
+      "name": "Oxford take off in French (Marie-Thérèse Bougard).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 46802043,
+      "sizeMB": 44.63,
+      "created": "2026-03-29T00:17:58.383Z",
+      "modified": "2026-03-29T00:18:44.032Z"
+    },
+    {
+      "name": "Les cinq cents exercices grammaire B1 (Caquineau-Gündüz M-P., Delatour Y.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\B1",
+      "extension": ".pdf",
+      "sizeBytes": 46711485,
+      "sizeMB": 44.55,
+      "created": "2024-01-09T01:56:51.907Z",
+      "modified": "2024-01-09T01:58:29.403Z"
+    },
+    {
+      "name": "French Verb Tenses, Premium 4th Edition (Trudie Booth).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 46689744,
+      "sizeMB": 44.53,
+      "created": "2026-05-31T02:31:55.841Z",
+      "modified": "2026-05-31T02:50:36.350Z"
+    },
+    {
+      "name": "CLE - Litterature progressive du Francais avec 600 activites - Intermédiaire.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\Progressive",
+      "extension": ".pdf",
+      "sizeBytes": 46684398,
+      "sizeMB": 44.52,
+      "created": "2026-04-07T01:11:50.273Z",
+      "modified": "2026-04-07T01:12:36.474Z"
+    },
+    {
+      "name": "Grammaire essentielle du français B2 (Bourmayan Anouch Yves Loiseau , Odile Rimbert).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 46664840,
+      "sizeMB": 44.5,
+      "created": "2023-10-23T01:38:59.941Z",
+      "modified": "2023-10-23T01:39:35.940Z"
+    },
+    {
+      "name": "German for Beginners (Wilkes A.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 46157345,
+      "sizeMB": 44.02,
+      "created": "2025-12-02T01:59:02.812Z",
+      "modified": "2025-12-02T01:59:11.950Z"
+    },
+    {
+      "name": "Searching for Hassan (Terence Ward).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Travel\\Mis",
+      "extension": ".epub",
+      "sizeBytes": 46076895,
+      "sizeMB": 43.94,
+      "created": "2024-03-09T01:41:39.090Z",
+      "modified": "2024-03-09T01:42:09.993Z"
+    },
+    {
+      "name": "Italian for Beginners (Wilkes A.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Italian",
+      "extension": ".pdf",
+      "sizeBytes": 45806091,
+      "sizeMB": 43.68,
+      "created": "2026-04-23T01:00:09.732Z",
+      "modified": "2026-04-23T01:00:54.434Z"
+    },
+    {
+      "name": "Practice Makes Perfect Complete Italian Grammar, Premium Third Edition (Marcel Danesi).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Italian",
+      "extension": ".epub",
+      "sizeBytes": 45206269,
+      "sizeMB": 43.11,
+      "created": "2026-06-01T00:21:38.953Z",
+      "modified": "2026-06-01T00:22:30.165Z"
+    },
+    {
+      "name": "Dictionnaire de langlais économique, commercial et financier (Marcheteau, Michel. Auteur).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 45030144,
+      "sizeMB": 42.94,
+      "created": "2026-05-23T02:05:12.552Z",
+      "modified": "2026-05-23T02:05:19.497Z"
+    },
+    {
+      "name": "500 poses for photographing high school seniors (Perkins, Michelle).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Photography\\How-to",
+      "extension": ".pdf",
+      "sizeBytes": 45024340,
+      "sizeMB": 42.94,
+      "created": "2023-11-02T01:51:22.360Z",
+      "modified": "2023-11-02T01:51:35.124Z"
+    },
+    {
+      "name": "Master the Basics French (Christopher Kendris).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 44803826,
+      "sizeMB": 42.73,
+      "created": "2026-06-18T23:23:26.599Z",
+      "modified": "2026-06-18T23:24:49.101Z"
+    },
+    {
+      "name": "Communication progressive du francais Débutant.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 44800962,
+      "sizeMB": 42.73,
+      "created": "2023-10-19T06:50:03.820Z",
+      "modified": "2023-10-19T06:52:36.256Z"
+    },
+    {
+      "name": "Bescherelle La Conjugaison pour tous (Ed. 1997) (Michel Arrivé).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French\\A2",
+      "extension": ".pdf",
+      "sizeBytes": 44729785,
+      "sizeMB": 42.66,
+      "created": "2026-04-21T01:21:06.513Z",
+      "modified": "2026-04-21T01:21:54.738Z"
+    },
+    {
+      "name": "Larousse Dictionnaire des difficultés de la langue française.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 44720995,
+      "sizeMB": 42.65,
+      "created": "2023-10-19T06:50:03.856Z",
+      "modified": "2023-10-19T06:52:51.265Z"
+    },
+    {
+      "name": "Deutsch intensiv Berufliches Deutsch B2 (Andreea Farmache, Roderich Grauer etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 44395654,
+      "sizeMB": 42.34,
+      "created": "2026-02-22T01:06:17.373Z",
+      "modified": "2026-02-22T01:07:00.342Z"
+    },
+    {
+      "name": "Practice Makes Perfect Complete Japanese Grammar, 2nd Edition (Eriko Sato).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Japanese",
+      "extension": ".pdf",
+      "sizeBytes": 44382203,
+      "sizeMB": 42.33,
+      "created": "2026-05-26T00:48:39.106Z",
+      "modified": "2026-05-26T00:49:24.582Z"
+    },
+    {
+      "name": "Your Handwriting Can Change Your Life (Vimala Rodgers).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Self_Help",
+      "extension": ".pdf",
+      "sizeBytes": 44377514,
+      "sizeMB": 42.32,
+      "created": "2024-01-25T01:15:46.108Z",
+      "modified": "2024-01-25T01:16:08.235Z"
+    },
+    {
+      "name": "French GCSE (Edward Neather, Mike Ounsworth (auth.)).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 43774564,
+      "sizeMB": 41.75,
+      "created": "2025-11-02T00:58:02.904Z",
+      "modified": "2025-11-02T00:58:17.816Z"
+    },
+    {
+      "name": "First 1000 Words French (Heather Amery).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 43565533,
+      "sizeMB": 41.55,
+      "created": "2025-12-06T11:33:50.573Z",
+      "modified": "2025-12-06T11:34:25.603Z"
+    },
+    {
+      "name": "Le DELF 100 réussite B2.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 43457554,
+      "sizeMB": 41.44,
+      "created": "2023-10-05T01:40:25.777Z",
+      "modified": "2023-10-05T01:43:38.089Z"
+    },
+    {
+      "name": "Deutsche Grammatik Ein Handbuch für den Ausländerunterricht (Gerhard Helbig, Joachim Buscha).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 42981524,
+      "sizeMB": 40.99,
+      "created": "2026-02-23T23:57:39.268Z",
+      "modified": "2026-02-23T23:58:22.026Z"
+    },
+    {
+      "name": "Easy German Step-by-Step (Ed Swick).epub",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".epub",
+      "sizeBytes": 42911073,
+      "sizeMB": 40.92,
+      "created": "2026-03-18T23:22:53.180Z",
+      "modified": "2026-03-18T23:23:39.201Z"
+    },
+    {
+      "name": "Conversational French in 20 Lessons (Cortina Method) (Cortina Diez R.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 42849458,
+      "sizeMB": 40.86,
+      "created": "2026-05-29T02:10:12.270Z",
+      "modified": "2026-05-29T02:37:54.186Z"
+    },
+    {
+      "name": "Mit Erfolg zu Start Deutsch 12 (telc Deutsch A1A2) (Testbuch) (Hans-Jürgen Hantschel, Verena Klotz etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 42619999,
+      "sizeMB": 40.65,
+      "created": "2026-02-24T00:02:25.683Z",
+      "modified": "2026-02-24T00:03:06.761Z"
+    },
+    {
+      "name": "Glossika Guide to Italian Pronunciation and Grammar (Michael Campbell).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Italian",
+      "extension": ".pdf",
+      "sizeBytes": 42612324,
+      "sizeMB": 40.64,
+      "created": "2026-05-10T02:01:54.151Z",
+      "modified": "2026-05-10T02:02:35.066Z"
+    },
+    {
+      "name": "Deutsch intensiv Grammatik B1 Das Training. (Magdalena Ptak, Marion Schomer).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\German",
+      "extension": ".pdf",
+      "sizeBytes": 42340034,
+      "sizeMB": 40.38,
+      "created": "2026-02-22T01:03:02.239Z",
+      "modified": "2026-02-22T01:03:44.252Z"
+    },
+    {
+      "name": "AP chemistry (Jespersen, Neil D, Jespersen etc.).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\School\\Chemistry",
+      "extension": ".pdf",
+      "sizeBytes": 42314612,
+      "sizeMB": 40.35,
+      "created": "2026-03-28T02:05:17.381Z",
+      "modified": "2026-03-28T02:06:35.813Z"
+    },
+    {
+      "name": "201 Dutch Verbs fully conjugated in all the tenses (Henry R Stern).pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\Dutch",
+      "extension": ".pdf",
+      "sizeBytes": 42177918,
+      "sizeMB": 40.22,
+      "created": "2026-05-27T00:31:31.859Z",
+      "modified": "2026-05-27T00:31:39.253Z"
+    },
+    {
+      "name": "Communication progressive du francais intermediaire.pdf",
+      "folderPath": "E:\\Ebooks\\ebook-catalog\\ebooks\\Languages\\French",
+      "extension": ".pdf",
+      "sizeBytes": 42025303,
+      "sizeMB": 40.08,
+      "created": "2023-10-19T06:58:41.126Z",
+      "modified": "2023-10-19T07:01:02.386Z"
+    }
+  ]
+}

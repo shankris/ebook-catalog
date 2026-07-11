@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Large File Viewer</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    th:first-child {
+      width: 500px;
+    }
+
+
+    .summary {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+
+    table {
+
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+
+    }
+
+
+    th {
+
+      background: #333;
+      color: white;
+      padding: 10px;
+      text-align: left;
+
+    }
+
+
+    td {
+
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+
+    }
+
+
+    tr:hover {
+
+      background: #f0f8ff;
+
+    }
+
+
+    .size {
+
+      font-weight: bold;
+      color: #c0392b;
+
+    }
+
+
+    .path {
+
+      font-size: 13px;
+      color: #555;
+
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <h1>
+    Large Files Report
+  </h1>
+
+
+  <div class="summary" id="summary">
+    Loading...
+  </div>
+
+
+  <table>
+
+    <thead>
+
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Type</th>
+        <th>Modified</th>
+        <th>Path</th>
+      </tr>
+
+    </thead>
+
+
+    <tbody id="fileList">
+
+    </tbody>
+
+
+  </table>
+
+
+
+  <script>
+
+
+    async function loadFiles() {
+
+
+      const response =
+        await fetch("largeFiles.json");
+
+
+      const data =
+        await response.json();
+
+
+
+      const info =
+        data.scanInfo;
+
+
+
+      document.getElementById("summary")
+        .innerHTML = `
+
+        <b>Folder:</b> ${info.rootFolder}<br>
+        <b>Minimum Size:</b> ${info.minimumFileSizeMB} MB<br>
+        <b>Total Files Scanned:</b> ${info.totalFilesScanned}<br>
+        <b>Large Files Found:</b> ${info.largeFilesFound}<br>
+        <b>Scan Date:</b> ${new Date(info.scanDate).toLocaleString()}
+
+        `;
+
+
+
+      const tbody =
+        document.getElementById("fileList");
+
+
+      data.files.forEach(file => {
+
+
+        const row =
+          document.createElement("tr");
+
+
+        row.innerHTML = `
+
+<td>
+    ${file.name}
+</td>
+
+
+<td class="size">
+    ${file.sizeMB.toLocaleString()} MB
+</td>
+
+
+<td>
+    ${file.extension}
+</td>
+
+
+<td>
+    ${new Date(file.modified)
+            .toLocaleString()}
+</td>
+
+
+<td class="path">
+    ${file.folderPath}
+</td>
+
+`;
+
+        tbody.appendChild(row);
+
+
+      });
+
+
+    }
+
+
+    loadFiles();
+
+
+  </script>
+
+
+</body>
+
+</html>
