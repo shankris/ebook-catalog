@@ -34,7 +34,7 @@ async function run() {
   }
 
   // 2. Build Fast Lookup Map
-  const catalogMap = new Map(catalog.map(book => [normalizeToUrl(book.filepath), book]));
+  const catalogMap = new Map(catalog.map((book) => [normalizeToUrl(book.filepath), book]));
   const foundPaths = new Set();
   const validCoverPaths = new Set(); // Track covers we actively need
   const updatedCatalog = [];
@@ -67,7 +67,7 @@ async function run() {
       }
 
       // 4. Decision: Process or Skip?
-      const isModified = existing && (new Date(existing.modifiedAt).getTime() !== stats.mtime.getTime());
+      const isModified = existing && new Date(existing.modifiedAt).getTime() !== stats.mtime.getTime();
 
       // REGENERATE TRIGGER: Process if new, modified, OR if the cover file vanished
       if (!existing || isModified || !coverExists) {
@@ -78,7 +78,7 @@ async function run() {
         }
 
         try {
-          const result = (ext === ".pdf") ? await processPDF(fullPath) : await processEPUB(fullPath);
+          const result = ext === ".pdf" ? await processPDF(fullPath) : await processEPUB(fullPath);
           updatedCatalog.push(result);
           if (result.coverImage) validCoverPaths.add(normalizeToUrl(result.coverImage));
         } catch (err) {
@@ -94,23 +94,29 @@ async function run() {
 
   await scan(EBOOKS_DIR);
 
-  // 5. Detect Removals (Book missing -> Delete known cover)
-  const finalCatalog = updatedCatalog.filter(book => {
-    const bookFilepath = normalizeToUrl(book.filepath);
-    const exists = foundPaths.has(bookFilepath);
+  // ----------------------------------------------------
+  // 5. Detect deleted books
+  // ----------------------------------------------------
 
-    if (!exists) {
-      console.log(`[Removed Book] File no longer exists: ${bookFilepath}`);
-      if (book.coverImage && book.coverImage !== "covers/placeholder.jpg") {
-        const coverPath = path.join(ROOT, book.coverImage);
-        if (fs.existsSync(coverPath)) {
-          fs.unlinkSync(coverPath);
-          console.log(`  -> Cleaned up corresponding cover.`);
-        }
+  const removedBooks = catalog.filter((book) => {
+    return !foundPaths.has(normalizeToUrl(book.filepath));
+  });
+
+  for (const book of removedBooks) {
+    console.log(`[Removed Book] ${book.filepath}`);
+
+    if (book.coverImage && book.coverImage !== "covers/placeholder.jpg") {
+      const coverPath = path.join(ROOT, book.coverImage);
+
+      if (fs.existsSync(coverPath)) {
+        fs.unlinkSync(coverPath);
+        console.log(`  -> Deleted cover ${book.coverImage}`);
       }
     }
-    return exists;
-  });
+  }
+
+  // updatedCatalog already contains only books that still exist
+  const finalCatalog = updatedCatalog;
 
   // 6. Deep Clean Orphaned Covers (Cover exists -> No corresponding book file)
   if (fs.existsSync(COVERS_DIR)) {

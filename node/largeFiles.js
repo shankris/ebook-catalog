@@ -5,7 +5,7 @@ const path = require("path");
 // Configuration - Update these values
 // =====================================
 
-const scanFolder = "E:\\Ebooks\\ebook-catalog\\ebooks";
+const scanFolder = "E:\\Ebooks";
 const minimumSizeMB = 40;
 
 const outputFile = "largeFiles.json";
