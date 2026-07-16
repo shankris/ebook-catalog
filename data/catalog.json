@@ -1,10 +1,14 @@
 {
   "metadata": {
-    "lastUpdated": "2026-07-12T00:32:54.824Z",
-    "booksAdded": 15,
+    "lastUpdated": "2026-07-12T02:36:50.527Z",
+    "booksAdded": 0,
     "booksDeleted": 0,
-    "netChange": 15,
-    "totalBooks": 2728
+    "netChange": 0,
+    "totalBooks": 2728,
+    "totalSizeBytes": 30069629671,
+    "totalSizeMB": "28676.63",
+    "totalSizeGB": "28.00",
+    "totalSizeGBDecimal": "30.07"
   },
   "books": [
     {
@@ -21068,7 +21072,7 @@
       "description": ""
     },
     {
-      "id": "20260613-123012-5465",
+      "id": "20260712-065130-7733",
       "isbn": "",
       "filename": "108 Questions Answers on Mutual Funds SIP (Yadnya Investments).epub",
       "subTitle": "",
@@ -21082,14 +21086,14 @@
       "publishDate": "",
       "createdAt": "2026-06-13T01:33:40.577Z",
       "modifiedAt": "2026-06-13T01:33:48.150Z",
-      "scanDate": "2026-06-13T07:00:12.833Z",
-      "category": "Investing",
-      "subCat": "Mutual Funds",
+      "scanDate": "2026-07-12T01:21:30.974Z",
+      "category": "",
+      "subCat": "",
       "subSubCat": "",
       "tags": "",
       "favorite": false,
       "rating": null,
-      "coverImage": "covers\\Investing\\20260613-123012-5465.jpg",
+      "coverImage": "covers\\Investing\\20260712-065130-7733.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""

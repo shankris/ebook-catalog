@@ -627,7 +627,7 @@
     <div class="breadcrumb" id="nav-breadcrumb">
       <span>📁 Home</span>
     </div>
-    <a href="FileList_202607.htm">New Catalog</a>
+    <a href="FileList_05c.htm">Old Catalog</a>
     <div class="sort-container">
       <select id="sort-select"></select>
     </div>
@@ -719,7 +719,7 @@
       const sortSelect = document.getElementById('sort-select');
 
       try {
-        const response = await fetch("catalog.json");
+        const response = await fetch("catalog2026.json");
         const data = await response.json();
 
         // Supports both the old and new catalog formats

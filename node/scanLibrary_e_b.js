@@ -6,9 +6,9 @@ const processPDF = require("./processors/pdfProcessor");
 const processEPUB = require("./processors/epubProcessor");
 
 const ROOT = path.join(__dirname, "..");
-const EBOOKS_DIR = path.join(ROOT, "ebooks");
-const COVERS_DIR = path.join(ROOT, "covers");
-const CATALOG_FILE = path.join(ROOT, "data", "catalog2026.json");
+const EBOOKS_DIR = path.join(ROOT, "ebooks/ebooks2");
+const COVERS_DIR = path.join(ROOT, "ebooks/covers");
+const CATALOG_FILE = path.join(ROOT, "data", "ebooks/catalog2026.json");
 
 // Helper to enforce standard forward slashes for comparisons
 function normalizeToUrl(p) {
