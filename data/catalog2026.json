@@ -1,10 +1,14 @@
 {
   "metadata": {
-    "lastUpdated": "2026-07-18T11:53:03.588Z",
-    "booksAdded": 29,
+    "lastUpdated": "2026-07-18T12:30:39.295Z",
+    "booksAdded": 0,
     "booksDeleted": 0,
-    "netChange": 29,
-    "totalBooks": 719
+    "netChange": 0,
+    "totalBooks": 719,
+    "totalSizeBytes": 6184820126,
+    "totalSizeMB": "5898.30",
+    "totalSizeGB": "5.76",
+    "totalSizeGBDecimal": "6.18"
   },
   "books": [
     {
@@ -111,7 +115,7 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers\\AI\\20260718-172218-9195.jpg",
-      "language": "",
+      "language": "French",
       "pageCount": 0,
       "description": ""
     },
@@ -3891,7 +3895,7 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers\\Freelance\\20260718-172222-9291.jpg",
-      "language": "",
+      "language": "French",
       "pageCount": 0,
       "description": ""
     },
@@ -4026,7 +4030,7 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers\\Freelance\\20260718-172222-2027.jpg",
-      "language": "",
+      "language": "French",
       "pageCount": 0,
       "description": ""
     },
@@ -4323,7 +4327,7 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers\\Health\\20260718-172222-4193.jpeg",
-      "language": "",
+      "language": "French",
       "pageCount": 0,
       "description": ""
     },
@@ -19308,7 +19312,7 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers\\Self-Help\\20260718-172303-9009.jpeg",
-      "language": "",
+      "language": "French",
       "pageCount": 0,
       "description": ""
     },
