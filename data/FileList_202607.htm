@@ -456,6 +456,14 @@
       margin-right: -8px;
     }
 
+    .modal-position {
+      font-size: 13px;
+      color: #888;
+      margin-top: -4px;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
     .format-badge {
       background: var(--accent);
       color: white;
@@ -572,6 +580,7 @@
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--primary);
+      min-height: 56px;
     }
 
     .info-table {
@@ -598,6 +607,92 @@
       margin-top: 4px;
       font-size: 0.82rem;
       color: #777;
+    }
+
+
+    .modal-shortcuts {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid #ddd;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+
+      font-size: 13px;
+      color: #666;
+    }
+
+    .shortcut {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .shortcut kbd {
+      display: inline-block;
+      min-width: 20px;
+      padding: 2px;
+      border: 1px solid #bdbdbd;
+      border-radius: 2px;
+      background: linear-gradient(#ffffff, #ececec);
+      /* box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 1px 2px rgba(0, 0, 0, .15); */
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+    }
+
+
+    .modal-progress {
+
+      position: relative;
+
+      width: 100%;
+      height: 28px;
+
+      margin: 8px 0 18px 0;
+
+    }
+
+    .modal-progress-svg {
+
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+    }
+
+    .progress-bg {
+
+      fill: #ececec;
+
+    }
+
+    .progress-fill {
+
+      fill: #a9d7ff;
+
+      transition: width .20s ease;
+
+    }
+
+    .modal-progress-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #222;
+      text-shadow:
+        0 1px 1px rgba(255, 255, 255, .9),
+        0 0 2px rgba(255, 255, 255, .9);
+      pointer-events: none;
     }
   </style>
 </head>
@@ -646,10 +741,60 @@
       </div>
       <div class="modal-right">
         <h2 id="modal-title" class="modal-title">Book Title</h2>
+
+        <div id="modal-progress" class="modal-progress">
+
+          <svg class="modal-progress-svg" viewBox="0 0 1000 26" preserveAspectRatio="none">
+
+            <!-- background -->
+
+            <rect x="0" y="0" width="1000" height="26" rx="4" class="progress-bg" />
+
+            <!-- fill -->
+
+            <rect id="modal-progress-fill" x="0" y="0" width="0" height="26" rx="" class="progress-fill" />
+
+          </svg>
+
+          <div id="modal-position" class="modal-progress-text">
+          </div>
+
+        </div>
+
+
         <table class="info-table">
           <tbody id="modal-info-tbody">
           </tbody>
         </table>
+
+        <div class="modal-shortcuts">
+
+          <span class="shortcut">
+            <kbd>←</kbd> Prev
+          </span>
+
+          <span class="shortcut">
+            <kbd>→</kbd> Next
+          </span>
+
+          <span class="shortcut">
+            <kbd>↑</kbd> First
+          </span>
+
+          <span class="shortcut">
+            <kbd>↓</kbd> Last
+          </span>
+
+          <span class="shortcut">
+            <kbd>PgUp</kbd>/<kbd>PgDn</kbd> ±5
+          </span>
+
+          <span class="shortcut">
+            <kbd>Esc</kbd> Close
+          </span>
+
+        </div>
+
       </div>
     </div>
   </div>
@@ -677,6 +822,10 @@
 
     let libraryBooks = [];
     let nestedLibraryStructure = {};
+
+    // Modal navigation
+    let currentModalBooks = [];
+    let currentModalIndex = -1;
 
     let currentView = 'dashboard';
     let currentActiveParent = '';
@@ -787,6 +936,58 @@
           if (e.target === modal) modal.classList.remove('active');
         });
 
+        document.addEventListener('keydown', (e) => {
+
+          if (!modal.classList.contains('active'))
+            return;
+
+          switch (e.key) {
+
+            case 'ArrowLeft':
+              e.preventDefault();
+              showModalBook(currentModalIndex - 1);
+              break;
+
+            case 'ArrowRight':
+              e.preventDefault();
+              showModalBook(currentModalIndex + 1);
+              break;
+
+            case 'ArrowUp':
+              e.preventDefault();
+              showModalBook(0);
+              break;
+
+            case 'ArrowDown':
+              e.preventDefault();
+              showModalBook(currentModalBooks.length - 1);
+              break;
+
+            case 'PageUp':
+              e.preventDefault();
+              showModalBook(
+                Math.max(0, currentModalIndex - 5)
+              );
+              break;
+
+            case 'PageDown':
+              e.preventDefault();
+              showModalBook(
+                Math.min(
+                  currentModalBooks.length - 1,
+                  currentModalIndex + 5
+                )
+              );
+              break;
+
+            case 'Escape':
+              e.preventDefault();
+              modal.classList.remove('active');
+              break;
+          }
+
+        });
+
       } catch (err) {
         console.error("Initialization Failed:", err);
         document.getElementById('view-container').innerHTML = `<p>Error fetching data resources.</p>`;
@@ -841,13 +1042,39 @@
 
     // --- Dynamic Modal Display Logic ---
     function showDetails(book) {
+
+      // temp to be removed later
+      console.log("showDetails()");
+      console.log("Book:", book.title);
+      console.log("Modal Index:", currentModalIndex);
+      console.log("Books in modal:", currentModalBooks.length);
+
+
+      currentModalIndex = currentModalBooks.findIndex(
+        b => b.id === book.id
+      );
+
       const modal = document.getElementById('detail-modal');
       const modalTitle = document.getElementById('modal-title');
+      const modalPosition = document.getElementById('modal-position');
       const modalImg = document.getElementById('modal-img');
       const tbody = document.getElementById('modal-info-tbody');
 
       const safeFilename = book.filename || "Unknown Title";
       modalTitle.textContent = safeFilename.replace(/\.[^/.]+$/, "");
+      const progress =
+        document.getElementById("modal-progress-fill");
+
+      const percent =
+        ((currentModalIndex + 1) / currentModalBooks.length) * 100;
+
+      progress.setAttribute(
+        "width",
+        percent * 10        // because the SVG width is 1000
+      );
+
+      modalPosition.textContent =
+        `Book ${currentModalIndex + 1} of ${currentModalBooks.length}`;
 
       const normalizedCover = book.coverImage ? book.coverImage.replace(/\\/g, '/') : '';
       modalImg.src = normalizedCover ? `../${normalizedCover}` : `../covers/placeholder.jpg`;
@@ -905,6 +1132,16 @@
       });
 
       modal.classList.add('active');
+    }
+
+
+    function showModalBook(index) {
+
+      if (index < 0 || index >= currentModalBooks.length)
+        return;
+
+      showDetails(currentModalBooks[index]);
+
     }
 
     // --- Render Sidebar Panels ---
@@ -1483,6 +1720,7 @@
         const catA = (a.category && String(a.category).trim() !== '') ? String(a.category).trim().toLowerCase() : 'zzz_uncategorized';
         const catB = (b.category && String(b.category).trim() !== '') ? String(b.category).trim().toLowerCase() : 'zzz_uncategorized';
 
+
         switch (sortOrder) {
           case 'title-asc':
             // STEP 1: Group by Category Alphabetically
@@ -1510,6 +1748,8 @@
           default: return 0;
         }
       });
+
+      currentModalBooks = books;
 
       breadcrumb.innerHTML = `
     <span class="back-btn" onclick="clearActiveFilters()">📁 Home</span> 
@@ -1562,7 +1802,12 @@
       </div>
     `;
 
-        card.addEventListener('click', () => showDetails(book));
+        card.addEventListener('click', () => {
+          currentModalIndex = currentModalBooks.findIndex(
+            b => b.id === book.id
+          );
+          showDetails(book);
+        });
         grid.appendChild(card);
       });
 
@@ -1707,6 +1952,8 @@
         }
       });
 
+      currentModalBooks = books;
+
       const grid = document.createElement('div');
       grid.className = 'catalog-grid';
 
@@ -1746,7 +1993,12 @@
           </div>
         `;
 
-        card.addEventListener('click', () => showDetails(book));
+        card.addEventListener('click', () => {
+          currentModalIndex = currentModalBooks.findIndex(
+            b => b.id === book.id
+          );
+          showDetails(book);
+        });
         grid.appendChild(card);
       });
 

@@ -787,6 +787,44 @@
         renderFolderDashboard();
 
         closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+
+        document.addEventListener("keydown", (e) => {
+
+          const modal = document.getElementById("detail-modal");
+
+          if (!modal.classList.contains("active"))
+            return;
+
+          switch (e.key) {
+
+            case "ArrowLeft":
+              e.preventDefault();
+              showModalBook(currentModalIndex - 1);
+              break;
+
+            case "ArrowRight":
+              e.preventDefault();
+              showModalBook(currentModalIndex + 1);
+              break;
+
+            case "ArrowUp":
+              e.preventDefault();
+              showModalBook(0);
+              break;
+
+            case "ArrowDown":
+              e.preventDefault();
+              showModalBook(currentModalBooks.length - 1);
+              break;
+
+            case "Escape":
+              e.preventDefault();
+              modal.classList.remove("active");
+              break;
+          }
+
+        });
+
         modal.addEventListener('click', (e) => {
           if (e.target === modal) modal.classList.remove('active');
         });
@@ -845,6 +883,11 @@
 
     // --- Dynamic Modal Display Logic ---
     function showDetails(book) {
+
+      currentModalIndex = currentModalBooks.findIndex(
+        b => b.id === book.id
+      );
+
       const modal = document.getElementById('detail-modal');
       const modalTitle = document.getElementById('modal-title');
       const modalImg = document.getElementById('modal-img');
@@ -910,6 +953,17 @@
 
       modal.classList.add('active');
     }
+
+    function showModalBook(index) {
+
+      if (index < 0 || index >= currentModalBooks.length)
+        return;
+
+      currentModalIndex = index;
+      showDetails(currentModalBooks[index]);
+
+    }
+
 
     // --- Render Sidebar Panels ---
     function renderSidebarFilters() {
@@ -1479,7 +1533,10 @@
 
       let books = libraryBooks.filter(filterFn);
 
+      currentModalBooks = books;
+
       books.sort((a, b) => {
+
         const titleA = a.filename ? a.filename.toLowerCase() : '';
         const titleB = b.filename ? b.filename.toLowerCase() : '';
 
@@ -1566,7 +1623,13 @@
       </div>
     `;
 
-        card.addEventListener('click', () => showDetails(book));
+        card.addEventListener('click', () => {
+
+          currentModalIndex = currentModalBooks.indexOf(book);
+          showDetails(book);
+
+        });
+
         grid.appendChild(card);
       });
 
@@ -1694,7 +1757,7 @@
       if (!nestedLibraryStructure[parentName] || !nestedLibraryStructure[parentName][subName]) return;
 
       let books = [...nestedLibraryStructure[parentName][subName]];
-
+      currentModalBooks = books;
       books.sort((a, b) => {
         const titleA = a.filename ? a.filename.toLowerCase() : '';
         const titleB = b.filename ? b.filename.toLowerCase() : '';
@@ -1751,6 +1814,12 @@
         `;
 
         card.addEventListener('click', () => showDetails(book));
+        card.addEventListener('click', () => {
+
+          currentModalIndex = currentModalBooks.indexOf(book);
+          showDetails(book);
+
+        });
         grid.appendChild(card);
       });
 
