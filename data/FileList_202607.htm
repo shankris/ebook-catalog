@@ -1157,9 +1157,9 @@
         activeFilter = { type: 'new', value: '' };
         renderSidebarFilters();
 
-        // Sort by Date Descending, slice first 100
+        // Sort by Date Descending, slice first 200
         const sorted = [...libraryBooks].sort((a, b) => new Date(b.scanDate || 0) - new Date(a.scanDate || 0));
-        const recentBooks = sorted.slice(0, 100);
+        const recentBooks = sorted.slice(0, 200);
 
         currentFlatTitle = 'New Arrivals - 200';
         // Use a custom render logic or filter for the top 100
