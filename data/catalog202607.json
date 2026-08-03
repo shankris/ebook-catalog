@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "lastUpdated": "2026-08-03T15:03:47.982Z",
-    "booksAdded": 2,
+    "lastUpdated": "2026-08-03T15:58:00.436Z",
+    "booksAdded": 0,
     "booksDeleted": 0,
-    "netChange": 2,
+    "netChange": 0,
     "totalBooks": 1972,
     "totalSizeBytes": 14045571531,
     "totalSizeMB": "13394.90",
@@ -42,7 +42,7 @@
       },
       {
         "name": "Dale Carnegie",
-        "count": 1
+        "count": 2
       },
       {
         "name": "Daphne du Maurier",
@@ -401,16 +401,12 @@
         "count": 5
       },
       {
-        "name": "Barrons",
-        "count": 1
-      },
-      {
         "name": "Bluebook",
         "count": 12
       },
       {
         "name": "Bourne",
-        "count": 8
+        "count": 2
       },
       {
         "name": "Cliffs",
@@ -481,6 +477,10 @@
         "count": 8
       },
       {
+        "name": "Jason Bourne",
+        "count": 6
+      },
+      {
         "name": "Made Easy",
         "count": 1
       },
@@ -494,7 +494,7 @@
       },
       {
         "name": "Practical Man",
-        "count": 1
+        "count": 2
       },
       {
         "name": "Practice Makes Perfect",
@@ -513,12 +513,8 @@
         "count": 6
       },
       {
-        "name": "Schaum's Easy Outlines",
-        "count": 4
-      },
-      {
-        "name": "Schaums Easy Outline",
-        "count": 1
+        "name": "Schaum's Outline",
+        "count": 12
       },
       {
         "name": "Screenwriting Blue Books",
@@ -559,20 +555,8 @@
     ],
     "publishers": [
       {
-        "name": "Barons",
-        "count": 1
-      },
-      {
         "name": "Barron's",
-        "count": 7
-      },
-      {
-        "name": "Barron’s",
-        "count": 1
-      },
-      {
-        "name": "Barrons",
-        "count": 9
+        "count": 26
       },
       {
         "name": "Berlitz",
@@ -596,10 +580,6 @@
       },
       {
         "name": "Princeton",
-        "count": 2
-      },
-      {
-        "name": "Schaum's Outline",
         "count": 2
       }
     ]
@@ -7032,11 +7012,11 @@
       "description": ""
     },
     {
-      "id": "20260728-173539-9504",
+      "id": "20260803-204055-8018",
       "isbn": "",
-      "filename": "Practical SVG (Chris Coyier).epub",
+      "filename": "A Book Apart 19 Practical SVG (Chris Coyier).epub",
       "subTitle": "",
-      "filepath": "ebooks/Dev/SVG/Practical SVG (Chris Coyier).epub",
+      "filepath": "ebooks/Dev/SVG/A Book Apart 19 Practical SVG (Chris Coyier).epub",
       "author": "",
       "publisher": "",
       "series": "A Book Apart",
@@ -7046,14 +7026,14 @@
       "publishDate": "",
       "createdAt": "2026-07-28T03:59:36.418Z",
       "modifiedAt": "2026-07-28T03:59:52.968Z",
-      "scanDate": "2026-07-28T12:05:39.549Z",
+      "scanDate": "2026-08-03T15:10:55.570Z",
       "category": "Dev",
-      "subCat": "SVG",
+      "subCat": "",
       "subSubCat": "",
       "tags": "",
       "favorite": false,
       "rating": null,
-      "coverImage": "covers/Dev/SVG/20260728-173539-9504.jpg",
+      "coverImage": "covers/Dev/SVG/20260803-204055-8018.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -8766,7 +8746,7 @@
       "subTitle": "",
       "filepath": "ebooks/English/Learn/Barrons SAT Critical Reading Workbook, 14ed (Sharon Weiner Green M.A.).epub",
       "author": "",
-      "publisher": "",
+      "publisher": "Barron's",
       "series": "",
       "format": "epub",
       "filesize": 3249359,
@@ -8793,7 +8773,7 @@
       "subTitle": "",
       "filepath": "ebooks/English/Learn/Barrons SAT Writing Workbook, 3ed (George Ehrenhaft Ed. D.).epub",
       "author": "",
-      "publisher": "",
+      "publisher": "Barron's",
       "series": "",
       "format": "epub",
       "filesize": 3361730,
@@ -15193,7 +15173,7 @@
       "filepath": "ebooks/Fiction/Bourne/01 The Bourne Identity (Robert Ludlum).pdf",
       "author": "Robert Ludlum",
       "publisher": "",
-      "series": "Bourne",
+      "series": "Jason Bourne",
       "format": "pdf",
       "filesize": 1149770,
       "filesizeMB": "1.10",
@@ -15220,7 +15200,7 @@
       "filepath": "ebooks/Fiction/Bourne/02 The Bourne Supremacy (Robert Ludlum).epub",
       "author": "Robert Ludlum",
       "publisher": "",
-      "series": "Bourne",
+      "series": "Jason Bourne",
       "format": "epub",
       "filesize": 628596,
       "filesizeMB": "0.60",
@@ -15247,7 +15227,7 @@
       "filepath": "ebooks/Fiction/Bourne/03 The Bourne Ultimatum (Robert Ludlum).epub",
       "author": "Robert Ludlum",
       "publisher": "",
-      "series": "Bourne",
+      "series": "Jason Bourne",
       "format": "epub",
       "filesize": 426131,
       "filesizeMB": "0.41",
@@ -15296,12 +15276,12 @@
     {
       "id": "20260727-121430-3898",
       "isbn": "",
-      "filename": "The Bourne Imperative (Jason Bourne 10) (Robert Ludlum, Eric Van Lustbader).epub",
+      "filename": "The Bourne Imperative (Robert Ludlum, Eric Van Lustbader).epub",
       "subTitle": "",
       "filepath": "ebooks/Fiction/Bourne/The Bourne Imperative (Jason Bourne 10) (Robert Ludlum, Eric Van Lustbader).epub",
       "author": "Eric Van Lustbader",
       "publisher": "",
-      "series": "Bourne",
+      "series": "Jason Bourne",
       "format": "epub",
       "filesize": 982193,
       "filesizeMB": "0.94",
@@ -15328,7 +15308,7 @@
       "filepath": "ebooks/Fiction/Bourne/The Bourne Initiative (Eric van Lustbader Robert Ludlum).epub",
       "author": "Eric Van Lustbader",
       "publisher": "",
-      "series": "Bourne",
+      "series": "Jason Bourne",
       "format": "epub",
       "filesize": 686068,
       "filesizeMB": "0.65",
@@ -15355,7 +15335,7 @@
       "filepath": "ebooks/Fiction/Bourne/The Bourne Sanction (Robert Ludlum, Eric Lustbader).epub",
       "author": "Eric Van Lustbader",
       "publisher": "",
-      "series": "Bourne",
+      "series": "Jason Bourne",
       "format": "epub",
       "filesize": 418674,
       "filesizeMB": "0.40",
@@ -21592,7 +21572,7 @@
       "filepath": "ebooks/Languages/French/A2/Schaums Outline of French Grammar, 5ed (Schaums Outline Series) (Mary Crocker).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 2094860,
       "filesizeMB": "2.00",
@@ -22239,7 +22219,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/French/B1/Barrons E-Z French (Kendris, Christopher).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 26356656,
@@ -22266,7 +22246,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/French/B1/Barrons SAT subject test French (White, Renée, Bouvier).pdf",
       "author": "",
-      "publisher": "",
+      "publisher": "Barron's",
       "series": "",
       "format": "pdf",
       "filesize": 28103937,
@@ -25290,7 +25270,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/French/B2/Barrons French Grammar (Christopher Kendris).pdf",
       "author": "",
-      "publisher": "",
+      "publisher": "Barron's",
       "series": "",
       "format": "pdf",
       "filesize": 9894979,
@@ -25317,7 +25297,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/French/B2/Barrons regents exams and answers. French level 3 (Kendris, Christopher).pdf",
       "author": "",
-      "publisher": "",
+      "publisher": "Barron's",
       "series": "",
       "format": "pdf",
       "filesize": 14443344,
@@ -34849,7 +34829,7 @@
       "filepath": "ebooks/Languages/German/B2/Schaums Outline of German Vocabulary, 3ed (Edda Weiss, Conrad J. Schmitt, Lois Feuerle etc.).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 10696771,
       "filesizeMB": "10.20",
@@ -34983,7 +34963,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/German/C1/Barrons 1001 Pitfalls in German (Strutz, Henry).pdf",
       "author": "",
-      "publisher": "",
+      "publisher": "Barron's",
       "series": "",
       "format": "pdf",
       "filesize": 13464800,
@@ -36657,7 +36637,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/Italian/B1/Barrons E-Z Italian (Danesi, Marcel).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 16322752,
@@ -37468,7 +37448,7 @@
       "filepath": "ebooks/Languages/Italian/B1/Schaums Outline of Italian Grammar (Joseph Germano, Conrad Schmitt).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 1903043,
       "filesizeMB": "1.81",
@@ -40086,7 +40066,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/Japanese/B2/Barron`s Japanese Grammar (Carol Akiyama, Nobuo Akiyama).pdf",
       "author": "",
-      "publisher": "",
+      "publisher": "Barron's",
       "series": "",
       "format": "pdf",
       "filesize": 14597171,
@@ -43596,7 +43576,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/Spanish/B1/Barrons E-Z Spanish grammar (Corredor, Boris).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 21449670,
@@ -44488,7 +44468,7 @@
       "filepath": "ebooks/Languages/Spanish/B1/Schaum's Outline of Spanish Grammar, 5ed (Schaums Outline Series) (Conrad Schmitt).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 1042458,
       "filesizeMB": "0.99",
@@ -46532,7 +46512,7 @@
       "subTitle": "",
       "filepath": "ebooks/Mis/E-Z psychology (Melucci, Nancy J).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 22724305,
@@ -47088,7 +47068,7 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/NonFiction/Alain De Botton/20260803-132404-6488.jpg",
-      "language": "",
+      "language": "French",
       "pageCount": 0,
       "description": ""
     },
@@ -48584,8 +48564,8 @@
       "subTitle": "",
       "filepath": "ebooks/School/Barrons Ap Computer Science A (Roselyn Teukolsky).pdf",
       "author": "",
-      "publisher": "",
-      "series": "Barrons",
+      "publisher": "Barron's",
+      "series": "",
       "format": "pdf",
       "filesize": 6755598,
       "filesizeMB": "6.44",
@@ -48665,7 +48645,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Chemistry/Barron’s Sat Subject Test Chemistry (Joseph A. Mascetta, Mark Kernion).pdf",
       "author": "",
-      "publisher": "Barron’s",
+      "publisher": "Barron's",
       "series": "",
       "format": "pdf",
       "filesize": 15446603,
@@ -48881,8 +48861,8 @@
       "subTitle": "",
       "filepath": "ebooks/School/Chemistry/Schaum's Outline of Beginning Chemistry (David Goldberg).pdf",
       "author": "",
-      "publisher": "Schaum's Outline",
-      "series": "",
+      "publisher": "",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 4515517,
       "filesizeMB": "4.31",
@@ -48908,8 +48888,8 @@
       "subTitle": "",
       "filepath": "ebooks/School/Chemistry/Schaums Easy Outline Beginning Chemistry (David E Goldberg, David Goldberg).pdf",
       "author": "",
-      "publisher": "Schaum's Outline",
-      "series": "",
+      "publisher": "",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 1691123,
       "filesizeMB": "1.61",
@@ -48936,7 +48916,7 @@
       "filepath": "ebooks/School/Chemistry/Schaums Easy Outlines College Chemistry (Jerome Rosenberg, Lawrence Epstein).pdf",
       "author": "",
       "publisher": "",
-      "series": "Schaum's Easy Outlines",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 2133269,
       "filesizeMB": "2.03",
@@ -49205,7 +49185,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Math/Algebra/Barrons E-Z algebra (Downing, Douglas).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 25105376,
@@ -49232,7 +49212,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Math/Algebra/Barrons E-Z algebra 2 (Meg Clemens, Glen Clemens).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 29233568,
@@ -49259,7 +49239,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Math/Algebra/Barrons E-Z pre-algebra (Lorandini, Caryl).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 15263811,
@@ -49421,7 +49401,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Math/Barrons E-Z Geometry (Barrons E-Z) (Lawrence S. Leff).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 9583407,
@@ -49660,11 +49640,11 @@
     {
       "id": "20260803-132457-6876",
       "isbn": "",
-      "filename": "Barons E-Z math (Prindle, Anthony, Prindle, Katie, Prindle).pdf",
+      "filename": "Barron's E-Z math (Prindle, Anthony, Prindle, Katie, Prindle).pdf",
       "subTitle": "",
       "filepath": "ebooks/School/Math/E-Z math (Prindle, Anthony, Prindle, Katie, Prindle).pdf",
       "author": "",
-      "publisher": "Barons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 12770656,
@@ -50232,7 +50212,7 @@
       "filepath": "ebooks/School/Math/Modern Mathematics for the Practical Man (MacNeil D.B.).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Practical Man",
       "format": "pdf",
       "filesize": 6202114,
       "filesizeMB": "5.91",
@@ -50556,7 +50536,7 @@
       "filepath": "ebooks/School/Math/Schaums Easy Outline of Probability and Statistics (Mureay R Spiegel John J Schiler AV Srinivasan).pdf",
       "author": "",
       "publisher": "",
-      "series": "Schaums Easy Outline",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 1734087,
       "filesizeMB": "1.65",
@@ -50583,7 +50563,7 @@
       "filepath": "ebooks/School/Math/Schaums Outline of Discrete Mathematics 3ed (Seymour Lipschutz, Marc Lipson).pdf",
       "author": "",
       "publisher": "",
-      "series": "Schaum's Easy Outlines",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 4439782,
       "filesizeMB": "4.23",
@@ -50610,7 +50590,7 @@
       "filepath": "ebooks/School/Math/Schaums Outline of PreCalculus 2ed (Fred Safier).pdf",
       "author": "",
       "publisher": "",
-      "series": "Schaum's Easy Outlines",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 7384302,
       "filesizeMB": "7.04",
@@ -50637,7 +50617,7 @@
       "filepath": "ebooks/School/Math/Schaums Outlines Basic Mathematics (Haym Kruglak, John Moore, Ramon Mata-Toledo).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 7217503,
       "filesizeMB": "6.88",
@@ -51393,7 +51373,7 @@
       "filepath": "ebooks/School/Physics/Schaums Outline of College Physics, 11ed (frederick j. bueche, Eugene Hecht).epub",
       "author": "",
       "publisher": "",
-      "series": "Schaum's Easy Outlines",
+      "series": "Schaum's Outline",
       "format": "epub",
       "filesize": 20382691,
       "filesizeMB": "19.44",
@@ -51500,7 +51480,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Statistics/Barrons E-Z statistics (Downing, Douglas,Clark, Jeff).pdf",
       "author": "",
-      "publisher": "Barrons",
+      "publisher": "Barron's",
       "series": "E-Z",
       "format": "pdf",
       "filesize": 20922544,
@@ -52201,7 +52181,7 @@
       "filename": "How to Win Friends  Influence People (Dale Carnegie).pdf",
       "subTitle": "",
       "filepath": "ebooks/Self-Help/How to Win Friends  Influence People (Dale Carnegie).pdf",
-      "author": "",
+      "author": "Dale Carnegie",
       "publisher": "",
       "series": "",
       "format": "pdf",
