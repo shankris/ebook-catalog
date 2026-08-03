@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "2026-08-03T15:58:00.436Z",
+    "lastUpdated": "2026-08-03T16:32:17.286Z",
     "booksAdded": 0,
     "booksDeleted": 0,
     "netChange": 0,
@@ -47,6 +47,10 @@
       {
         "name": "Daphne du Maurier",
         "count": 1
+      },
+      {
+        "name": "Elisabeth Smith",
+        "count": 5
       },
       {
         "name": "Eric Van Lustbader",
@@ -393,6 +397,10 @@
         "count": 4
       },
       {
+        "name": "50 Ways To Improve",
+        "count": 4
+      },
+      {
         "name": "5000 Most Frequently Used",
         "count": 1
       },
@@ -418,7 +426,7 @@
       },
       {
         "name": "Complete Idiots Guide",
-        "count": 34
+        "count": 36
       },
       {
         "name": "Cookbook",
@@ -434,7 +442,7 @@
       },
       {
         "name": "Dummies",
-        "count": 79
+        "count": 81
       },
       {
         "name": "E-Z",
@@ -449,8 +457,16 @@
         "count": 1
       },
       {
+        "name": "Essential",
+        "count": 3
+      },
+      {
         "name": "Fast and Fun Way",
         "count": 6
+      },
+      {
+        "name": "Fast-track",
+        "count": 4
       },
       {
         "name": "GCSE",
@@ -514,7 +530,7 @@
       },
       {
         "name": "Schaum's Outline",
-        "count": 12
+        "count": 13
       },
       {
         "name": "Screenwriting Blue Books",
@@ -19520,7 +19536,7 @@
       "filepath": "ebooks/Languages/French/A2/50 Ways To Improve Your French (Marie-Jo Morelle Lorna Wright).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "50 Ways To Improve",
       "format": "pdf",
       "filesize": 6698528,
       "filesizeMB": "6.39",
@@ -22812,9 +22828,9 @@
       "filename": "Elisabeth Smiths fast-track French (Smith, Elisabeth).pdf",
       "subTitle": "",
       "filepath": "ebooks/Languages/French/B1/Elisabeth Smiths fast-track French (Smith, Elisabeth).pdf",
-      "author": "",
+      "author": "Elisabeth Smith",
       "publisher": "",
-      "series": "",
+      "series": "Fast-track",
       "format": "pdf",
       "filesize": 5350148,
       "filesizeMB": "5.10",
@@ -30212,7 +30228,7 @@
       "filepath": "ebooks/Languages/German/A2/50 ways to improve your German (Klövekorn-Ward, Sieglinde).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "50 Ways To Improve",
       "format": "pdf",
       "filesize": 5914559,
       "filesizeMB": "5.64",
@@ -32181,9 +32197,9 @@
       "filename": "Elisabeth Smiths Fast-track German (Smith, Elisabeth).pdf",
       "subTitle": "",
       "filepath": "ebooks/Languages/German/B1/Elisabeth Smiths Fast-track German (Smith, Elisabeth).pdf",
-      "author": "",
+      "author": "Elisabeth Smith",
       "publisher": "",
-      "series": "",
+      "series": "Fast-track",
       "format": "pdf",
       "filesize": 5313552,
       "filesizeMB": "5.07",
@@ -35423,7 +35439,7 @@
       "filepath": "ebooks/Languages/Italian/A2/50 Ways to Improve your Italian (Valeria Malandra).epub",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "50 Ways To Improve",
       "format": "epub",
       "filesize": 1712238,
       "filesizeMB": "1.63",
@@ -36825,9 +36841,9 @@
       "filename": "Elisabeth Smiths fast-track Italian (Smith, Elisabeth).pdf",
       "subTitle": "",
       "filepath": "ebooks/Languages/Italian/B1/Elisabeth Smiths fast-track Italian (Smith, Elisabeth).pdf",
-      "author": "",
+      "author": "Elisabeth Smith",
       "publisher": "",
-      "series": "",
+      "series": "Fast-track",
       "format": "pdf",
       "filesize": 5480297,
       "filesizeMB": "5.23",
@@ -41012,7 +41028,7 @@
       "filepath": "ebooks/Languages/Portuguese/A2/Essential Portuguese Grammar (Sue Tyson-Ward).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Essential",
       "format": "pdf",
       "filesize": 13979517,
       "filesizeMB": "13.33",
@@ -41037,7 +41053,7 @@
       "filename": "Fast Portuguese (Smith, Elisabeth).pdf",
       "subTitle": "",
       "filepath": "ebooks/Languages/Portuguese/A2/Fast Portuguese (Smith, Elisabeth).pdf",
-      "author": "",
+      "author": "Elisabeth Smith",
       "publisher": "",
       "series": "",
       "format": "pdf",
@@ -41471,7 +41487,7 @@
       "filepath": "ebooks/Languages/Spanish/A1/Essential Spanish grammar (Kattán-Ibarra, Juan, Kattán-Ibarra).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Essential",
       "format": "pdf",
       "filesize": 12746640,
       "filesizeMB": "12.16",
@@ -42065,7 +42081,7 @@
       "filepath": "ebooks/Languages/Spanish/A2/50 ways to improve your Spanish (Chambers, Keith).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "50 Ways To Improve",
       "format": "pdf",
       "filesize": 5862240,
       "filesizeMB": "5.59",
@@ -43953,9 +43969,9 @@
       "filename": "Fast-track Spanish (Smith, Elisabeth).pdf",
       "subTitle": "",
       "filepath": "ebooks/Languages/Spanish/B1/Fast-track Spanish (Smith, Elisabeth).pdf",
-      "author": "",
+      "author": "Elisabeth Smith",
       "publisher": "",
-      "series": "",
+      "series": "Fast-track",
       "format": "pdf",
       "filesize": 5632051,
       "filesizeMB": "5.37",
@@ -48943,7 +48959,7 @@
       "filepath": "ebooks/School/Electronics All-in-One For Dummies 3ed (Doug Lowe).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Dummies",
       "format": "pdf",
       "filesize": 26891696,
       "filesizeMB": "25.65",
@@ -49267,7 +49283,7 @@
       "filepath": "ebooks/School/Math/Algebra/Basic Math and Pre-Algebra All-In-One for Dummies (Mark Zegarelli).epub",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Dummies",
       "format": "epub",
       "filesize": 13200523,
       "filesizeMB": "12.59",
@@ -49483,7 +49499,7 @@
       "filepath": "ebooks/School/Math/Calculus/Calculus I (W. Michael Kelley).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Complete Idiots Guide",
       "format": "pdf",
       "filesize": 15208100,
       "filesizeMB": "14.50",
@@ -49510,7 +49526,7 @@
       "filepath": "ebooks/School/Math/Calculus/Calculus II (W. Michael Kelley).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Complete Idiots Guide",
       "format": "pdf",
       "filesize": 14867353,
       "filesizeMB": "14.18",
@@ -51157,7 +51173,7 @@
       "filepath": "ebooks/School/Math/Trigonometry/Trigonometry with calculator-based solutions (Moyer, Robert E, Ayres, Frank).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Schaum's Outline",
       "format": "pdf",
       "filesize": 10897648,
       "filesizeMB": "10.39",
