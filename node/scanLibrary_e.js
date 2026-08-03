@@ -220,7 +220,20 @@ async function run() {
     cleanOrphanedCovers(COVERS_DIR);
   }
 
-  // Save clean snapshot to data/catalog.json
+  // ----------------------------------------------------
+  // Calculate total library size
+  // ----------------------------------------------------
+  const totalSizeBytes = finalCatalog.reduce((total, book) => {
+    return total + (Number(book.filesize) || 0);
+  }, 0);
+
+  const totalSizeMB = (totalSizeBytes / (1024 * 1024)).toFixed(2);
+  const totalSizeGB = (totalSizeBytes / (1024 * 1024 * 1024)).toFixed(2); // Binary GB (GiB)
+  const totalSizeGBDecimal = (totalSizeBytes / 1_000_000_000).toFixed(2); // Decimal GB
+
+  // ----------------------------------------------------
+  // Save clean snapshot to data/catalog2026.json
+  // ----------------------------------------------------
   const output = {
     metadata: {
       lastUpdated: new Date().toISOString(),
@@ -228,11 +241,21 @@ async function run() {
       booksDeleted,
       netChange: booksAdded - booksDeleted,
       totalBooks: finalCatalog.length,
+
+      totalSizeBytes,
+      totalSizeMB,
+      totalSizeGB,
+      totalSizeGBDecimal,
     },
+
     books: finalCatalog,
   };
 
   fs.writeFileSync(CATALOG_FILE, JSON.stringify(output, null, 2), "utf8");
+
+  console.log(`\n✨ Scan complete.`);
+  console.log(`Books: ${finalCatalog.length}`);
+  console.log(`Total Size: ${totalSizeGBDecimal} GB (${totalSizeMB} MB)`);
   console.log(`\n✨ Scan complete. Total items compiled: ${finalCatalog.length}`);
 }
 
