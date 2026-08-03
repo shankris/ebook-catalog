@@ -779,6 +779,59 @@
       opacity: 0;
       visibility: hidden;
     }
+
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+
+    .summary-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--card-bg);
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+
+    .summary-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+    }
+
+
+    .summary-name {
+      font-size: 15px;
+    }
+
+
+    .summary-count {
+      min-width: 35px;
+      text-align: center;
+
+      padding: 4px 8px;
+
+      border-radius: 3px;
+
+      /* background: #f6f6f6; */
+      color: #6e6e6e;
+
+      font-size: 13px;
+    }
+
+
+    .summary-title {
+      padding: 20px;
+      margin: 0;
+    }
   </style>
 </head>
 
@@ -915,6 +968,8 @@
     let newestDate;
     let updateTimer;
 
+    let catalogData = {};
+
     let booksAddedOnLastUpdate = 0;
     let booksDeletedOnLastUpdate = 0;
     let booksModifiedOnLastUpdate = 0;
@@ -941,6 +996,7 @@
     let activeFilter = { type: 'all', value: '' };
     let sectionExpanded = {
       series: true,
+      summary: true,
       authors: false,
       comics: false,
       languages: false,
@@ -972,15 +1028,19 @@
       const sortSelect = document.getElementById('sort-select');
 
       try {
-        const response = await fetch("catalog2026.json");
-        const data = await response.json();
+        const response = await fetch("catalog202607.json");
+        catalogData = await response.json();
+
+        console.log(catalogData);
+        console.log(catalogData.summary);
+        console.log(Object.keys(catalogData));
 
         // Supports both the old and new catalog formats
-        if (Array.isArray(data)) {
-          libraryBooks = data;
+        if (Array.isArray(catalogData)) {
+          libraryBooks = catalogData;
         } else {
-          catalogMetadata = data.metadata || {};
-          libraryBooks = data.books || [];
+          catalogMetadata = catalogData.metadata || {};
+          libraryBooks = catalogData.books || [];
         }
 
         if (catalogMetadata.lastUpdated) {
@@ -1283,6 +1343,65 @@
       });
 
       sidebarContainer.appendChild(frenchBtn);
+
+
+      // --- Summary Header & Sub-list ---
+      const summaryHeader = document.createElement('div');
+      summaryHeader.className = 'sidebar-section-header';
+
+      const summaryArrow = sectionExpanded.summary ? ' ▾' : ' ▸';
+
+      summaryHeader.innerHTML =
+        `<span>Summary${summaryArrow}</span>
+   <span class="filter-count-badge">4</span>`;
+
+      summaryHeader.addEventListener('click', () => {
+        sectionExpanded.summary = !sectionExpanded.summary;
+        renderSidebarFilters();
+      });
+
+      sidebarContainer.appendChild(summaryHeader);
+
+      const summarySubList = document.createElement('ul');
+      summarySubList.className =
+        `sidebar-sub-list ${sectionExpanded.summary ? '' : 'collapsed'}`;
+
+      [
+        { title: "Authors", key: "authors", filter: "author" },
+        { title: "Categories", key: "categories", filter: "category" },
+        { title: "Series", key: "series", filter: "series" },
+        { title: "Publishers", key: "publishers", filter: "publisher" }
+      ].forEach(item => {
+
+        const li = document.createElement('li');
+
+        li.className =
+          `sidebar-sub-item ${activeFilter.type === item.filter &&
+            activeFilter.value === currentFlatTitle.replace(
+              `${item.title.slice(0, -1)}: `,
+              ''
+            )
+            ? 'active'
+            : ''
+          }`;
+
+        li.innerHTML =
+          `<span>${item.title}</span>
+     <span class="filter-count-badge">
+       ${(catalogData.summary?.[item.key] || []).length}
+     </span>`;
+
+        li.addEventListener('click', () => {
+          showSummary(item.key);
+        });
+
+        summarySubList.appendChild(li);
+
+      });
+
+      sidebarContainer.appendChild(summarySubList);
+
+
 
 
       // --- Series Header & Sub-list ---
@@ -2068,6 +2187,128 @@
           showDetails(book);
         });
         grid.appendChild(card);
+      });
+
+      container.appendChild(grid);
+    }
+
+
+    function showSummary(type) {
+
+      const items = catalogData.summary[type] || [];
+
+      const container = document.getElementById('view-container');
+      const breadcrumb = document.getElementById('nav-breadcrumb');
+
+      currentView = 'summary';
+
+      breadcrumb.innerHTML = `
+    <span class="back-btn" onclick="clearActiveFilters()">📁 Home</span>
+    <span> &gt; </span>
+    <span>${type.charAt(0).toUpperCase() + type.slice(1)}</span>
+  `;
+
+      container.innerHTML = '';
+
+      const title = document.createElement('h2');
+      title.textContent =
+        type.charAt(0).toUpperCase() + type.slice(1);
+
+      title.className = 'summary-title';
+
+      container.appendChild(title);
+
+
+      const grid = document.createElement('div');
+      grid.className = 'summary-grid';
+
+
+      items.forEach(item => {
+
+        const card = document.createElement('div');
+
+        card.className = 'summary-card';
+
+        card.innerHTML = `
+      <div class="summary-name">
+        ${item.name}
+      </div>
+
+      <div class="summary-count">
+          ${item.count > 1
+            ? `<span class="filter-count-badge">${item.count}</span>`
+            : ''
+          }
+      </div>
+    `;
+
+
+        card.addEventListener('click', () => {
+
+          activeFilter = {
+            type: type,
+            value: item.name
+          };
+
+
+          if (type === 'authors') {
+
+            currentFlatTitle = `Author: ${item.name}`;
+
+            currentFlatFilterFn = book =>
+              book.author &&
+              book.author.toLowerCase()
+                .includes(item.name.toLowerCase());
+
+          }
+
+
+          else if (type === 'series') {
+
+            currentFlatTitle = `Series: ${item.name}`;
+
+            currentFlatFilterFn = book =>
+              book.series &&
+              book.series.toLowerCase()
+                .includes(item.name.toLowerCase());
+
+          }
+
+
+          else if (type === 'categories') {
+
+            currentFlatTitle = `Category: ${item.name}`;
+
+            currentFlatFilterFn = book =>
+              book.category &&
+              book.category.toLowerCase()
+                .includes(item.name.toLowerCase());
+
+          }
+
+
+          else if (type === 'publishers') {
+
+            currentFlatTitle = `Publisher: ${item.name}`;
+
+            currentFlatFilterFn = book =>
+              book.publisher &&
+              book.publisher.toLowerCase()
+                .includes(item.name.toLowerCase());
+
+          }
+
+
+          renderFilteredFlatView(
+            currentFlatTitle,
+            currentFlatFilterFn,
+            'title-asc'
+          );
+
+        });
+
+        grid.appendChild(card);
+
       });
 
       container.appendChild(grid);
