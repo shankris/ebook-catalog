@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "lastUpdated": "2026-08-06T04:59:28.447Z",
-    "booksAdded": 86,
+    "lastUpdated": "2026-08-06T07:57:00.782Z",
+    "booksAdded": 0,
     "booksDeleted": 0,
-    "netChange": 86,
-    "totalBooks": 2231,
-    "totalSizeBytes": 15444615935,
-    "totalSizeMB": "14729.13",
-    "totalSizeGB": "14.38",
-    "totalSizeGBDecimal": "15.44"
+    "netChange": 0,
+    "totalBooks": 2233,
+    "totalSizeBytes": 15445957427,
+    "totalSizeMB": "14730.41",
+    "totalSizeGB": "14.39",
+    "totalSizeGBDecimal": "15.45"
   },
   "summary": {
     "authors": [
@@ -50,7 +50,7 @@
       },
       {
         "name": "Dervla Murphy",
-        "count": 15
+        "count": 21
       },
       {
         "name": "Elisabeth Smith",
@@ -75,6 +75,10 @@
       {
         "name": "Gillian Flynn",
         "count": 1
+      },
+      {
+        "name": "James Hadley Chase",
+        "count": 2
       },
       {
         "name": "Jeremy Clarkson",
@@ -118,6 +122,10 @@
       },
       {
         "name": "Patricia Highsmith",
+        "count": 1
+      },
+      {
+        "name": "Peter Mayne",
         "count": 1
       },
       {
@@ -184,7 +192,7 @@
       },
       {
         "name": "Chinese Language Study",
-        "count": 6
+        "count": 7
       },
       {
         "name": "Classics",
@@ -208,11 +216,11 @@
       },
       {
         "name": "Design",
-        "count": 12
+        "count": 13
       },
       {
         "name": "Dev",
-        "count": 151
+        "count": 149
       },
       {
         "name": "DIY",
@@ -220,7 +228,7 @@
       },
       {
         "name": "Dutch Language Study",
-        "count": 13
+        "count": 14
       },
       {
         "name": "English",
@@ -236,7 +244,7 @@
       },
       {
         "name": "Fiction",
-        "count": 29
+        "count": 31
       },
       {
         "name": "Freelance",
@@ -244,11 +252,11 @@
       },
       {
         "name": "French Language Study",
-        "count": 388
+        "count": 399
       },
       {
         "name": "German Language Study",
-        "count": 198
+        "count": 204
       },
       {
         "name": "Health",
@@ -264,7 +272,7 @@
       },
       {
         "name": "Italian Language Study",
-        "count": 123
+        "count": 126
       },
       {
         "name": "Japanese Language Study",
@@ -272,7 +280,7 @@
       },
       {
         "name": "JavaScript",
-        "count": 7
+        "count": 8
       },
       {
         "name": "Knowledge",
@@ -288,7 +296,7 @@
       },
       {
         "name": "Languages",
-        "count": 146
+        "count": 116
       },
       {
         "name": "Lock Picking",
@@ -336,7 +344,7 @@
       },
       {
         "name": "Portuguese Language Study",
-        "count": 10
+        "count": 11
       },
       {
         "name": "React",
@@ -364,7 +372,7 @@
       },
       {
         "name": "Spanish Language Study",
-        "count": 174
+        "count": 181
       },
       {
         "name": "Travel",
@@ -462,7 +470,7 @@
       },
       {
         "name": "Dummies",
-        "count": 104
+        "count": 142
       },
       {
         "name": "E-Z",
@@ -527,6 +535,10 @@
       {
         "name": "Must Know",
         "count": 3
+      },
+      {
+        "name": "Nuls",
+        "count": 11
       },
       {
         "name": "Pour les nuls",
@@ -8988,7 +9000,7 @@
       "filepath": "ebooks/English/Grammar/English Grammar Workbook for Dummies with Online Practice (Geraldine Woods).epub",
       "author": "",
       "publisher": "",
-      "series": "DummiDummieses",
+      "series": "Dummies",
       "format": "epub",
       "filesize": 6663000,
       "filesizeMB": "6.35",
@@ -16806,6 +16818,60 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Fiction/Humour/20260725-131113-8224.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260806-132543-3048",
+      "isbn": "",
+      "filename": "An Ace Up My Sleeve (James Hadley Chase).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Fiction/James Hadley Chase/An Ace Up My Sleeve (James Hadley Chase).pdf",
+      "author": "James Hadley Chase",
+      "publisher": "",
+      "series": "",
+      "format": "pdf",
+      "filesize": 470172,
+      "filesizeMB": "0.45",
+      "publishDate": "",
+      "createdAt": "2026-08-06T07:08:09.545Z",
+      "modifiedAt": "2026-08-06T07:08:13.862Z",
+      "scanDate": "2026-08-06T07:55:44.092Z",
+      "category": "Fiction",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Fiction/James Hadley Chase/20260806-132543-3048.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260806-132544-7568",
+      "isbn": "",
+      "filename": "The World in My Pocket  (James Hadley Chase).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Fiction/James Hadley Chase/The World in My Pocket  (James Hadley Chase).pdf",
+      "author": "James Hadley Chase",
+      "publisher": "",
+      "series": "",
+      "format": "pdf",
+      "filesize": 871320,
+      "filesizeMB": "0.83",
+      "publishDate": "",
+      "createdAt": "2026-08-06T07:20:30.599Z",
+      "modifiedAt": "2026-08-06T07:20:34.803Z",
+      "scanDate": "2026-08-06T07:55:44.847Z",
+      "category": "Fiction",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Fiction/James Hadley Chase/20260806-132544-7568.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -31154,7 +31220,7 @@
       "subTitle": "",
       "filepath": "ebooks/Languages/French/C1/McGraw-Hills 500 French Questions Ace Your College Exams (Heminway, Annie).pdf",
       "author": "",
-      "publisher": "",
+      "publisher": "McGraw-Hill",
       "series": "",
       "format": "pdf",
       "filesize": 6695632,
@@ -53422,7 +53488,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Chemistry/McGraw-Hills SAT Subject Test Chemistry, 2ed (Thomas Evangelist).pdf",
       "author": "",
-      "publisher": "",
+      "publisher": "McGraw-Hill",
       "series": "",
       "format": "pdf",
       "filesize": 1300986,
@@ -55738,7 +55804,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Math/SAT/McGraw-Hills Conquering SAT Math, 2nd Ed. (McGraw-Hills Conquering SAT Math) (Robert Postman, Ryan Postman).pdf",
       "author": "",
-      "publisher": "McGraw-Hills",
+      "publisher": "McGraw-Hill",
       "series": "",
       "format": "pdf",
       "filesize": 2403414,
@@ -55765,7 +55831,7 @@
       "subTitle": "",
       "filepath": "ebooks/School/Math/SAT/McGraw-Hills SAT Subject Test - Math Level 1, 2ed (John Diehl).pdf",
       "author": "",
-      "publisher": "McGraw-Hills",
+      "publisher": "McGraw-Hill",
       "series": "",
       "format": "pdf",
       "filesize": 1134302,
@@ -55792,8 +55858,8 @@
       "subTitle": "",
       "filepath": "ebooks/School/Math/SAT/McGraw-Hills SAT Subject Test - Math Level 2, 2ed (John Diehl).pdf",
       "author": "",
-      "publisher": "",
-      "series": "McGraw-Hills",
+      "publisher": "McGraw-Hill",
+      "series": "",
       "format": "pdf",
       "filesize": 2622747,
       "filesizeMB": "2.50",
