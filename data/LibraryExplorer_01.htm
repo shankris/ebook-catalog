@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Explorer</title>
+  <style>
+    :root {
+      --bg-header: #0078d4;
+      --bg-sidebar: #f5f5f5;
+      --bg-list: #ffffff;
+      --bg-detail: #fafafa;
+      --border-color: #e1dfdd;
+      --active-item: #edebe9;
+      --selected-item: #c7e0f4;
+      --accent-color: #0078d4;
+      --text-primary: #323130;
+      --text-secondary: #605e5c;
+      --badge-bg: #e1dfdd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--text-primary);
+      background-color: var(--bg-sidebar);
+    }
+
+    /* Header Bar */
+    header {
+      height: 48px;
+      background-color: var(--bg-header);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .btn-file {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .btn-file:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Main Outlook 3-Pane Layout */
+    .app-container {
+      display: grid;
+      grid-template-columns: 280px 380px 1fr;
+      flex: 1;
+      height: calc(100vh - 48px);
+      overflow: hidden;
+    }
+
+    /* Common Pane Styles */
+    .pane {
+      height: 100%;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* PANE 1: Navigation Sidebar */
+    #pane-nav {
+      background-color: var(--bg-sidebar);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .nav-search {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-sidebar);
+      flex-shrink: 0;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 6px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-color);
+    }
+
+    #nav-accordion {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .nav-group {
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .nav-group.open {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .nav-group-title {
+      padding: 10px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      user-select: none;
+      background: #eaeaea;
+      flex-shrink: 0;
+    }
+
+    .nav-group-title:hover {
+      background: #e0e0e0;
+    }
+
+    .nav-group-items {
+      list-style: none;
+      display: none;
+      background: #ffffff;
+    }
+
+    .nav-group.open .nav-group-items {
+      display: block;
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+    }
+
+    .nav-item {
+      padding: 8px 16px;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-shrink: 0;
+    }
+
+    .nav-item:hover {
+      background-color: var(--active-item);
+    }
+
+    .nav-item.active {
+      background-color: var(--selected-item);
+      font-weight: 600;
+    }
+
+    .count-badge {
+      background: var(--badge-bg);
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      color: var(--text-secondary);
+      margin-left: 8px;
+    }
+
+    /* PANE 2: Book List */
+    #pane-list {
+      background-color: var(--bg-list);
+    }
+
+    .list-header {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #fafafa;
+      flex-shrink: 0;
+    }
+
+    .list-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .book-items {
+      flex: 1;
+      overflow-y: auto;
+      list-style: none;
+    }
+
+    .book-card {
+      padding: 12px;
+      border-bottom: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: background 0.1s;
+      display: flex;
+      gap: 12px;
+    }
+
+    .book-card:hover {
+      background-color: var(--active-item);
+    }
+
+    .book-card.selected {
+      background-color: var(--selected-item);
+      border-left: 4px solid var(--accent-color);
+    }
+
+    /* Pane 2 Thumbnail updated to 60px x 80px */
+    .book-thumb {
+      width: 60px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 2px;
+      background-color: #ddd;
+      flex-shrink: 0;
+    }
+
+    .book-card-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .book-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .book-card-sub {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .book-card-tags {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    /* Book format background updated to #b2b2b2 */
+    .format-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: #b2b2b2;
+      color: white;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    /* PANE 3: Book Details */
+    #pane-detail {
+      background-color: var(--bg-detail);
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .empty-state {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .detail-container {
+      display: flex;
+      gap: 24px;
+      max-width: 900px;
+    }
+
+    /* Pane 3 Cover updated to 260px x 360px */
+    .detail-cover {
+      width: 260px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background: #e0e0e0;
+      flex-shrink: 0;
+    }
+
+    .detail-content {
+      flex: 1;
+    }
+
+    .detail-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .detail-author {
+      font-size: 16px;
+      color: var(--accent-color);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      row-gap: 8px;
+      font-size: 13px;
+      margin-bottom: 20px;
+      background: white;
+      padding: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+    }
+
+    .meta-label {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .meta-value {
+      word-break: break-word;
+    }
+
+    .detail-description {
+      font-size: 14px;
+      line-height: 1.6;
+      background: white;
+      padding: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Library Catalog</h1>
+    <div class="header-actions">
+      <span id="stat-count">Total: 0 books</span>
+      <input type="file" id="file-input" accept=".json" style="display: none;">
+      <button class="btn-file" onclick="document.getElementById('file-input').click()">Load Local JSON</button>
+    </div>
+  </header>
+
+  <div class="app-container">
+    <!-- PANE 1: NAVIGATION -->
+    <div class="pane" id="pane-nav">
+      <div class="nav-search">
+        <input type="text" class="search-input" id="nav-filter" placeholder="Filter categories/authors..."
+          oninput="filterNavGroups()">
+      </div>
+      <div id="nav-accordion"></div>
+    </div>
+
+    <!-- PANE 2: BOOK LIST -->
+    <div class="pane" id="pane-list">
+      <div class="list-header">
+        <input type="text" class="search-input" id="book-search" placeholder="Search title, author, filename..."
+          oninput="handleBookSearch()">
+        <div class="list-info">
+          <span id="filter-status">All Books</span>
+          <span id="displayed-count">0 items</span>
+        </div>
+      </div>
+      <ul class="book-items" id="book-list" onscroll="handleListScroll()"></ul>
+    </div>
+
+    <!-- PANE 3: DETAILS -->
+    <div class="pane" id="pane-detail">
+      <div class="empty-state" id="empty-detail">Select a book to view details</div>
+      <div id="detail-view" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script>
+    // Global Application State
+    let libraryData = { metadata: {}, summary: {}, books: [] };
+    let filteredBooks = [];
+    let displayedBooksCount = 0;
+    const PAGE_SIZE = 40;
+    let currentFilterType = 'ALL';
+    let currentFilterValue = null;
+    let selectedBookId = null;
+
+    // Helper function to navigate up 1 level for cover images
+    function getCoverUrl(path) {
+      if (!path) return '';
+      if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('/')) {
+        return path;
+      }
+      return '../' + path;
+    }
+
+    // Auto-fetch data from catalog202607.json
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('catalog202607.json')
+        .then(res => res.json())
+        .then(data => initApp(data))
+        .catch(() => console.log('Waiting for manual JSON file upload...'));
+
+      document.getElementById('file-input').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => initApp(JSON.parse(event.target.result));
+          reader.readAsText(file);
+        }
+      });
+    });
+
+    function initApp(data) {
+      libraryData = data;
+      filteredBooks = libraryData.books || [];
+
+      // Update stats
+      document.getElementById('stat-count').textContent = `Total: ${libraryData.metadata?.totalBooks || filteredBooks.length} books`;
+
+      renderSidebar();
+      applyFilters();
+    }
+
+    /* --- PANE 1: SIDEBAR NAVIGATION --- */
+    function renderSidebar() {
+      const container = document.getElementById('nav-accordion');
+      container.innerHTML = '';
+
+      // All Books Option
+      const allDiv = document.createElement('div');
+      allDiv.className = 'nav-item active';
+      allDiv.id = 'nav-all-books';
+      allDiv.style.borderBottom = '1px solid var(--border-color)';
+      allDiv.innerHTML = `<span>📚 All Books</span> <span class="count-badge">${libraryData.books.length}</span>`;
+      allDiv.onclick = () => {
+        closeAllAccordionGroups();
+        selectNavFilter('ALL', null, allDiv);
+      };
+      container.appendChild(allDiv);
+
+      const summaries = [
+        { key: 'categories', title: 'Categories' },
+        { key: 'authors', title: 'Authors' },
+        { key: 'series', title: 'Series' },
+        { key: 'publishers', title: 'Publishers' }
+      ];
+
+      summaries.forEach((group, index) => {
+        const items = libraryData.summary[group.key] || [];
+        if (!items.length) return;
+
+        const groupEl = document.createElement('div');
+        groupEl.className = 'nav-group';
+
+        const titleEl = document.createElement('div');
+        titleEl.className = 'nav-group-title';
+        titleEl.innerHTML = `<span>${group.title}</span> <span class="arrow-icon">►</span>`;
+
+        const listEl = document.createElement('ul');
+        listEl.className = 'nav-group-items';
+
+        items.forEach(item => {
+          const li = document.createElement('li');
+          li.className = 'nav-item';
+          li.dataset.name = item.name.toLowerCase();
+          li.innerHTML = `<span title="${item.name}">${item.name || 'Unassigned'}</span><span class="count-badge">${item.count}</span>`;
+          li.onclick = (e) => {
+            e.stopPropagation();
+            selectNavFilter(group.key, item.name, li);
+          };
+          listEl.appendChild(li);
+        });
+
+        titleEl.onclick = () => {
+          const isCurrentlyOpen = groupEl.classList.contains('open');
+
+          closeAllAccordionGroups();
+
+          if (!isCurrentlyOpen) {
+            groupEl.classList.add('open');
+            titleEl.querySelector('.arrow-icon').textContent = '▼';
+          }
+        };
+
+        groupEl.appendChild(titleEl);
+        groupEl.appendChild(listEl);
+        container.appendChild(groupEl);
+
+        if (index === 0) {
+          groupEl.classList.add('open');
+          titleEl.querySelector('.arrow-icon').textContent = '▼';
+        }
+      });
+    }
+
+    function closeAllAccordionGroups() {
+      document.querySelectorAll('.nav-group').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.arrow-icon').forEach(el => el.textContent = '►');
+    }
+
+    function filterNavGroups() {
+      const term = document.getElementById('nav-filter').value.toLowerCase();
+      document.querySelectorAll('.nav-group-items .nav-item').forEach(item => {
+        const name = item.dataset.name;
+        item.style.display = name.includes(term) ? 'flex' : 'none';
+      });
+    }
+
+    function selectNavFilter(type, value, element) {
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+
+      currentFilterType = type;
+      currentFilterValue = value;
+      applyFilters();
+    }
+
+    /* --- PANE 2: BOOK LISTING & INFINITE SCROLL --- */
+    let searchDebounce = null;
+    function handleBookSearch() {
+      clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(() => applyFilters(), 200);
+    }
+
+    function applyFilters() {
+      const searchTerm = document.getElementById('book-search').value.toLowerCase();
+
+      filteredBooks = libraryData.books.filter(book => {
+        let matchesGroup = true;
+        if (currentFilterType === 'categories') matchesGroup = book.category === currentFilterValue;
+        else if (currentFilterType === 'authors') matchesGroup = book.author === currentFilterValue;
+        else if (currentFilterType === 'series') matchesGroup = book.series === currentFilterValue;
+        else if (currentFilterType === 'publishers') matchesGroup = book.publisher === currentFilterValue;
+
+        let matchesSearch = true;
+        if (searchTerm) {
+          matchesSearch = (book.filename && book.filename.toLowerCase().includes(searchTerm)) ||
+            (book.author && book.author.toLowerCase().includes(searchTerm)) ||
+            (book.category && book.category.toLowerCase().includes(searchTerm));
+        }
+
+        return matchesGroup && matchesSearch;
+      });
+
+      const statusLabel = currentFilterValue ? `${currentFilterValue}` : 'All Books';
+      document.getElementById('filter-status').textContent = statusLabel;
+      document.getElementById('displayed-count').textContent = `${filteredBooks.length} items`;
+
+      displayedBooksCount = 0;
+      document.getElementById('book-list').innerHTML = '';
+      loadMoreBooks();
+    }
+
+    function loadMoreBooks() {
+      const listEl = document.getElementById('book-list');
+      const nextChunk = filteredBooks.slice(displayedBooksCount, displayedBooksCount + PAGE_SIZE);
+
+      const fragment = document.createDocumentFragment();
+      nextChunk.forEach(book => {
+        const card = document.createElement('li');
+        card.className = `book-card ${book.id === selectedBookId ? 'selected' : ''}`;
+        card.id = `book-card-${book.id}`;
+
+        const displayTitle = book.filename ? book.filename.replace(/\.[^/.]+$/, "") : "Untitled";
+        const coverSrc = getCoverUrl(book.coverImage);
+
+        card.innerHTML = `
+          <img class="book-thumb" src="${coverSrc}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'80\'><rect width=\'100%\' height=\'100%\' fill=\'%23ccc\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'10\' fill=\'%23666\'>BOOK</text></svg>'" alt="cover">
+          <div class="book-card-info">
+            <div class="book-card-title">${displayTitle}</div>
+            <div class="book-card-sub">${book.author || 'Unknown Author'}</div>
+            <div class="book-card-tags">
+              ${book.format ? `<span class="format-tag">${book.format}</span>` : ''}
+              <span style="font-size:11px; color:#888;">${book.filesizeMB ? book.filesizeMB + ' MB' : ''}</span>
+            </div>
+          </div>
+        `;
+
+        card.onclick = () => selectBook(book);
+        fragment.appendChild(card);
+      });
+
+      listEl.appendChild(fragment);
+      displayedBooksCount += nextChunk.length;
+    }
+
+    function handleListScroll() {
+      const listEl = document.getElementById('book-list');
+      if (listEl.scrollTop + listEl.clientHeight >= listEl.scrollHeight - 100) {
+        if (displayedBooksCount < filteredBooks.length) {
+          loadMoreBooks();
+        }
+      }
+    }
+
+    /* --- PANE 3: BOOK DETAIL VIEW --- */
+    function selectBook(book) {
+      selectedBookId = book.id;
+
+      document.querySelectorAll('.book-card').forEach(el => el.classList.remove('selected'));
+      const activeCard = document.getElementById(`book-card-${book.id}`);
+      if (activeCard) activeCard.classList.add('selected');
+
+      document.getElementById('empty-detail').style.display = 'none';
+      const detailView = document.getElementById('detail-view');
+      detailView.style.display = 'block';
+
+      const displayTitle = book.filename ? book.filename.replace(/\.[^/.]+$/, "") : "Untitled";
+      const coverSrc = getCoverUrl(book.coverImage);
+
+      detailView.innerHTML = `
+        <div class="detail-container">
+          <img class="detail-cover" src="${coverSrc}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'260\' height=\'360\'><rect width=\'100%\' height=\'100%\' fill=\'%23ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'16\' fill=\'%23888\'>No Cover Available</text></svg>'" alt="Cover">
+          
+          <div class="detail-content">
+            <h2 class="detail-title">${displayTitle}</h2>
+            <div class="detail-author">${book.author || 'Unknown Author'}</div>
+
+            <div class="meta-grid">
+              <span class="meta-label">Category:</span>
+              <span class="meta-value">${book.category || 'N/A'}</span>
+
+              <span class="meta-label">Format:</span>
+              <span class="meta-value">${(book.format || 'N/A').toUpperCase()}</span>
+
+              <span class="meta-label">File Size:</span>
+              <span class="meta-value">${book.filesizeMB ? book.filesizeMB + ' MB' : 'N/A'}</span>
+
+              <span class="meta-label">Series:</span>
+              <span class="meta-value">${book.series || 'N/A'}</span>
+
+              <span class="meta-label">Publisher:</span>
+              <span class="meta-value">${book.publisher || 'N/A'}</span>
+
+              <span class="meta-label">File Path:</span>
+              <span class="meta-value" style="font-family: monospace; font-size:11px;">${book.filepath || 'N/A'}</span>
+
+              <span class="meta-label">Added Date:</span>
+              <span class="meta-value">${book.createdAt ? new Date(book.createdAt).toLocaleDateString() : 'N/A'}</span>
+            </div>
+
+            ${book.description ? `
+              <div class="detail-description">
+                <strong>Description</strong>
+                <p style="margin-top: 8px;">${book.description}</p>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+
+</html>
