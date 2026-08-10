@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "lastUpdated": "2026-08-10T02:39:10.913Z",
-    "booksAdded": 39,
+    "lastUpdated": "2026-08-10T12:33:55.060Z",
+    "booksAdded": 0,
     "booksDeleted": 0,
-    "netChange": 39,
-    "totalBooks": 2403,
-    "totalSizeBytes": 16751481213,
-    "totalSizeMB": "15975.46",
-    "totalSizeGB": "15.60",
-    "totalSizeGBDecimal": "16.75"
+    "netChange": 0,
+    "totalBooks": 2418,
+    "totalSizeBytes": 16822825651,
+    "totalSizeMB": "16043.50",
+    "totalSizeGB": "15.67",
+    "totalSizeGBDecimal": "16.82"
   },
   "summary": {
     "authors": [
@@ -192,7 +192,7 @@
       },
       {
         "name": "AI",
-        "count": 30
+        "count": 31
       },
       {
         "name": "Angular",
@@ -232,7 +232,7 @@
       },
       {
         "name": "Dev",
-        "count": 219
+        "count": 221
       },
       {
         "name": "DIY",
@@ -256,11 +256,11 @@
       },
       {
         "name": "Fiction",
-        "count": 36
+        "count": 37
       },
       {
         "name": "Freelance",
-        "count": 30
+        "count": 32
       },
       {
         "name": "French Language Study",
@@ -272,7 +272,7 @@
       },
       {
         "name": "Health",
-        "count": 53
+        "count": 58
       },
       {
         "name": "Hobby",
@@ -308,7 +308,7 @@
       },
       {
         "name": "Languages",
-        "count": 124
+        "count": 115
       },
       {
         "name": "Lock Picking",
@@ -316,7 +316,7 @@
       },
       {
         "name": "Marketing",
-        "count": 8
+        "count": 9
       },
       {
         "name": "Math Drill",
@@ -380,11 +380,11 @@
       },
       {
         "name": "Self-Help",
-        "count": 86
+        "count": 89
       },
       {
         "name": "Spanish Language Study",
-        "count": 193
+        "count": 202
       },
       {
         "name": "Travel",
@@ -478,7 +478,7 @@
       },
       {
         "name": "Dummies",
-        "count": 164
+        "count": 165
       },
       {
         "name": "E-Z",
@@ -648,7 +648,11 @@
       },
       {
         "name": "Sitepoint",
-        "count": 1
+        "count": 2
+      },
+      {
+        "name": "Smashing Magazine",
+        "count": 14
       },
       {
         "name": "Wrox",
@@ -1220,6 +1224,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/AI/20260716-202445-5816.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180330-3717",
+      "isbn": "",
+      "filename": "Generative AI For Dummies (Pam Baker).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/AI/Generative AI For Dummies (Pam Baker).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "Dummies",
+      "format": "pdf",
+      "filesize": 2372018,
+      "filesizeMB": "2.26",
+      "publishDate": "",
+      "createdAt": "2026-08-10T11:50:27.083Z",
+      "modifiedAt": "2026-08-10T11:50:35.017Z",
+      "scanDate": "2026-08-10T12:33:31.181Z",
+      "category": "AI",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/AI/20260810-180330-3717.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -2975,6 +3006,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Dev/Css/20260729-082359-6705.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180331-7557",
+      "isbn": "",
+      "filename": "HTML CSS Essentials For Dummies (Paul McFedries).epub",
+      "subTitle": "",
+      "filepath": "ebooks/Dev/Css/HTML CSS Essentials For Dummies (Paul McFedries).epub",
+      "author": "",
+      "publisher": "",
+      "series": "Dummies",
+      "format": "epub",
+      "filesize": 3501961,
+      "filesizeMB": "3.34",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:13:45.609Z",
+      "modifiedAt": "2026-08-10T12:13:54.602Z",
+      "scanDate": "2026-08-10T12:33:31.241Z",
+      "category": "Dev",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Dev/Css/20260810-180331-7557.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -6944,6 +7002,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Dev/Mis/20260806-102820-1415.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180331-8739",
+      "isbn": "",
+      "filename": "Creating eCourses For Dummies (Amanda Rosenzweig).epub",
+      "subTitle": "",
+      "filepath": "ebooks/Dev/Mis/Creating eCourses For Dummies (Amanda Rosenzweig).epub",
+      "author": "",
+      "publisher": "",
+      "series": "Dummies",
+      "format": "epub",
+      "filesize": 2481075,
+      "filesizeMB": "2.37",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:24:05.971Z",
+      "modifiedAt": "2026-08-10T12:24:13.033Z",
+      "scanDate": "2026-08-10T12:33:31.310Z",
+      "category": "Dev",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Dev/Mis/20260810-180331-8739.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -19153,6 +19238,33 @@
       "description": ""
     },
     {
+      "id": "20260810-180331-8182",
+      "isbn": "",
+      "filename": "L'heure zéro (Agatha Christie).epub",
+      "subTitle": "",
+      "filepath": "ebooks/Fiction/L'heure zéro (Agatha Christie).epub",
+      "author": "Agatha Christie",
+      "publisher": "",
+      "series": "",
+      "format": "epub",
+      "filesize": 554765,
+      "filesizeMB": "0.53",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:22:18.061Z",
+      "modifiedAt": "2026-08-10T12:22:22.592Z",
+      "scanDate": "2026-08-10T12:33:31.589Z",
+      "category": "Fiction",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Fiction/20260810-180331-8182.jpeg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
       "id": "20260727-121431-7941",
       "isbn": "",
       "filename": "Rebecca (Daphne du Maurier).epub",
@@ -20233,6 +20345,33 @@
       "description": ""
     },
     {
+      "id": "20260810-180331-1900",
+      "isbn": "",
+      "filename": "The Pocket Idiots Guide to Interview Questions and Answers (Sharon McDonnell).epub",
+      "subTitle": "",
+      "filepath": "ebooks/Freelance/The Pocket Idiots Guide to Interview Questions and Answers (Sharon McDonnell).epub",
+      "author": "",
+      "publisher": "",
+      "series": "",
+      "format": "epub",
+      "filesize": 517838,
+      "filesizeMB": "0.49",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:21:53.030Z",
+      "modifiedAt": "2026-08-10T12:21:57.151Z",
+      "scanDate": "2026-08-10T12:33:31.621Z",
+      "category": "Freelance",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Freelance/20260810-180331-1900.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
       "id": "20260716-215110-4595",
       "isbn": "",
       "filename": "The Principles of Successful Freelancing (Miles Burke).pdf",
@@ -20282,6 +20421,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Freelance/20260716-215113-4260.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180331-3374",
+      "isbn": "",
+      "filename": "Ultimate cover letters (Yate, Martin John).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Freelance/Ultimate cover letters (Yate, Martin John).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "",
+      "format": "pdf",
+      "filesize": 11527328,
+      "filesizeMB": "10.99",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:09:11.360Z",
+      "modifiedAt": "2026-08-10T12:09:23.623Z",
+      "scanDate": "2026-08-10T12:33:34.154Z",
+      "category": "Freelance",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Freelance/20260810-180331-3374.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -20498,6 +20664,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Health/20260806-102831-7637.xhtml",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180334-9573",
+      "isbn": "",
+      "filename": "Diabetes Carb Counting For Dummies 2ed (Sherri Shafer).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Health/Diabetes Carb Counting For Dummies 2ed (Sherri Shafer).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "Dummies",
+      "format": "pdf",
+      "filesize": 4932707,
+      "filesizeMB": "4.70",
+      "publishDate": "",
+      "createdAt": "2026-08-10T11:51:54.031Z",
+      "modifiedAt": "2026-08-10T11:52:04.136Z",
+      "scanDate": "2026-08-10T12:33:35.307Z",
+      "category": "Health",
+      "subCat": "Diabetes",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Health/20260810-180334-9573.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -20795,6 +20988,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Health/20260806-102831-8649.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180335-2838",
+      "isbn": "",
+      "filename": "Hormone Balance For Dummies (Isabella Mainwaring).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Health/Hormone Balance For Dummies (Isabella Mainwaring).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "Dummies",
+      "format": "pdf",
+      "filesize": 5495970,
+      "filesizeMB": "5.24",
+      "publishDate": "",
+      "createdAt": "2026-08-10T11:51:37.771Z",
+      "modifiedAt": "2026-08-10T11:51:49.387Z",
+      "scanDate": "2026-08-10T12:33:38.182Z",
+      "category": "Health",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Health/20260810-180335-2838.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -21583,6 +21803,60 @@
       "description": ""
     },
     {
+      "id": "20260810-180338-4104",
+      "isbn": "",
+      "filename": "The Pocket Idiots Guide to Vitamins (Pressman, Alan H, Buff, Sheila).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Health/The Pocket Idiots Guide to Vitamins (Pressman, Alan H, Buff, Sheila).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "Complete Idiots Guide",
+      "format": "pdf",
+      "filesize": 5063564,
+      "filesizeMB": "4.83",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:22:11.074Z",
+      "modifiedAt": "2026-08-10T12:22:22.592Z",
+      "scanDate": "2026-08-10T12:33:39.533Z",
+      "category": "Health",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Health/20260810-180338-4104.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180339-3057",
+      "isbn": "",
+      "filename": "The Pocket Idiot’s Guide to Superfoods (Heidi McIndoo).epub",
+      "subTitle": "",
+      "filepath": "ebooks/Health/The Pocket Idiot’s Guide to Superfoods (Heidi McIndoo).epub",
+      "author": "",
+      "publisher": "",
+      "series": "Complete Idiots Guide",
+      "format": "epub",
+      "filesize": 2048967,
+      "filesizeMB": "1.95",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:16:05.933Z",
+      "modifiedAt": "2026-08-10T12:16:13.170Z",
+      "scanDate": "2026-08-10T12:33:39.563Z",
+      "category": "Health",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Health/20260810-180339-3057.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
       "id": "20260724-084843-9001",
       "isbn": "",
       "filename": "Total body diet for dummies (Victoria Shanta Retelny).epub",
@@ -21686,6 +21960,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Health/20260806-102835-2835.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180339-6436",
+      "isbn": "",
+      "filename": "Vitamins Supplements For Dummies (Shelley B. Weinstock).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Health/Vitamins Supplements For Dummies (Shelley B. Weinstock).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "Dummies",
+      "format": "pdf",
+      "filesize": 7622540,
+      "filesizeMB": "7.27",
+      "publishDate": "",
+      "createdAt": "2026-08-10T11:52:41.157Z",
+      "modifiedAt": "2026-08-10T11:52:57.601Z",
+      "scanDate": "2026-08-10T12:33:43.088Z",
+      "category": "Health",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Health/20260810-180339-6436.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -54543,6 +54844,33 @@
       "description": ""
     },
     {
+      "id": "20260810-180343-3521",
+      "isbn": "",
+      "filename": "Social Media Marketing All-In-One For Dummies, 6ed (Michelle Krasniak).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Marketing/Social Media Marketing All-In-One For Dummies, 6ed (Michelle Krasniak).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "Dummies",
+      "format": "pdf",
+      "filesize": 6945067,
+      "filesizeMB": "6.62",
+      "publishDate": "",
+      "createdAt": "2026-08-10T11:52:55.649Z",
+      "modifiedAt": "2026-08-10T11:53:11.028Z",
+      "scanDate": "2026-08-10T12:33:43.937Z",
+      "category": "Marketing",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Marketing/20260810-180343-3521.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
       "id": "20260721-092749-5188",
       "isbn": "",
       "filename": "Adult Coloring Book Stress Relieving Patterns (Blue Star Coloring).pdf",
@@ -61746,6 +62074,33 @@
       "description": ""
     },
     {
+      "id": "20260810-180344-8265",
+      "isbn": "",
+      "filename": "Best cover letters for 100,000+ jobs (Enelow, Wendy S).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Self-Help/Best cover letters for 100,000+ jobs (Enelow, Wendy S).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "",
+      "format": "pdf",
+      "filesize": 13365248,
+      "filesizeMB": "12.75",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:08:49.116Z",
+      "modifiedAt": "2026-08-10T12:09:19.564Z",
+      "scanDate": "2026-08-10T12:33:47.204Z",
+      "category": "Self-Help",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Self-Help/20260810-180344-8265.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
       "id": "20260722-121010-8742",
       "isbn": "",
       "filename": "Bien Gérer Son Temps au Travail pour les Nuls (Dirk Zeller, Patricia Lentini).epub",
@@ -63447,6 +63802,33 @@
       "description": ""
     },
     {
+      "id": "20260810-180347-1512",
+      "isbn": "",
+      "filename": "Success Habits for Dummies (Dirk Zeller).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Self-Help/Success Habits for Dummies (Dirk Zeller).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "Dummies",
+      "format": "pdf",
+      "filesize": 3938162,
+      "filesizeMB": "3.76",
+      "publishDate": "",
+      "createdAt": "2026-08-10T11:58:38.077Z",
+      "modifiedAt": "2026-08-10T11:58:47.260Z",
+      "scanDate": "2026-08-10T12:33:47.389Z",
+      "category": "Self-Help",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Self-Help/20260810-180347-1512.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
       "id": "20260725-100938-3853",
       "isbn": "",
       "filename": "The 5 AM Club (Robin Sharma).epub",
@@ -63901,6 +64283,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Self-Help/20260724-085247-5956.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260810-180347-5620",
+      "isbn": "",
+      "filename": "The Key To Study Skills (Lev Goldentouch, Anna Goldentouch).epub",
+      "subTitle": "",
+      "filepath": "ebooks/Self-Help/The Key To Study Skills (Lev Goldentouch, Anna Goldentouch).epub",
+      "author": "",
+      "publisher": "",
+      "series": "",
+      "format": "epub",
+      "filesize": 977228,
+      "filesizeMB": "0.93",
+      "publishDate": "",
+      "createdAt": "2026-08-10T12:10:26.102Z",
+      "modifiedAt": "2026-08-10T12:10:31.866Z",
+      "scanDate": "2026-08-10T12:33:47.426Z",
+      "category": "Self-Help",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Self-Help/20260810-180347-5620.jpeg",
       "language": "",
       "pageCount": 0,
       "description": ""
