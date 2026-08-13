@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "lastUpdated": "2026-08-13T00:57:55.082Z",
-    "booksAdded": 48,
+    "lastUpdated": "2026-08-13T01:16:48.846Z",
+    "booksAdded": 1,
     "booksDeleted": 0,
-    "netChange": 48,
+    "netChange": 1,
     "totalBooks": 2550,
     "totalSizeBytes": 17977971319,
     "totalSizeMB": "17145.13",
@@ -264,11 +264,11 @@
       },
       {
         "name": "French Language Study",
-        "count": 416
+        "count": 432
       },
       {
         "name": "German Language Study",
-        "count": 228
+        "count": 232
       },
       {
         "name": "Health",
@@ -284,7 +284,7 @@
       },
       {
         "name": "Italian Language Study",
-        "count": 143
+        "count": 145
       },
       {
         "name": "Japanese Language Study",
@@ -308,7 +308,7 @@
       },
       {
         "name": "Languages",
-        "count": 141
+        "count": 117
       },
       {
         "name": "Lock Picking",
@@ -356,7 +356,7 @@
       },
       {
         "name": "Portuguese Language Study",
-        "count": 13
+        "count": 14
       },
       {
         "name": "React",
@@ -384,7 +384,7 @@
       },
       {
         "name": "Spanish Language Study",
-        "count": 213
+        "count": 214
       },
       {
         "name": "Travel",
@@ -438,7 +438,7 @@
       },
       {
         "name": "A Book Apart",
-        "count": 45
+        "count": 54
       },
       {
         "name": "Activités pour le",
@@ -583,6 +583,10 @@
       {
         "name": "Teach Yourself",
         "count": 2
+      },
+      {
+        "name": "Teach Yourself Complete",
+        "count": 3
       },
       {
         "name": "The Humongous Book",
@@ -3118,33 +3122,6 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Dev/Css/20260729-082359-6705.jpg",
-      "language": "",
-      "pageCount": 0,
-      "description": ""
-    },
-    {
-      "id": "20260813-062540-6876",
-      "isbn": "",
-      "filename": "Fundamentals of HTML, SVG, CSS and JavaScript for Data Visualisation (Peter Cook).pdf",
-      "subTitle": "",
-      "filepath": "ebooks/Dev/Css/Fundamentals of HTML, SVG, CSS and JavaScript for Data Visualisation (Peter Cook).pdf",
-      "author": "",
-      "publisher": "",
-      "series": "",
-      "format": "pdf",
-      "filesize": 1527635,
-      "filesizeMB": "1.46",
-      "publishDate": "",
-      "createdAt": "2026-08-13T00:07:16.552Z",
-      "modifiedAt": "2026-08-13T00:07:20.372Z",
-      "scanDate": "2026-08-13T00:56:40.051Z",
-      "category": "Dev",
-      "subCat": "CSS",
-      "subSubCat": "",
-      "tags": "",
-      "favorite": false,
-      "rating": null,
-      "coverImage": "covers/Dev/Css/20260813-062540-6876.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -5980,6 +5957,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Dev/JavaScript/20260716-202706-1094.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20260813-064508-1650",
+      "isbn": "",
+      "filename": "Fundamentals of HTML, SVG, CSS and JavaScript for Data Visualisation (Peter Cook).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Dev/JavaScript/Fundamentals of HTML, SVG, CSS and JavaScript for Data Visualisation (Peter Cook).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "",
+      "format": "pdf",
+      "filesize": 1527635,
+      "filesizeMB": "1.46",
+      "publishDate": "",
+      "createdAt": "2026-08-13T00:07:16.552Z",
+      "modifiedAt": "2026-08-13T00:07:20.372Z",
+      "scanDate": "2026-08-13T01:16:00.957Z",
+      "category": "Dev",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Dev/JavaScript/20260813-064508-1650.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -9468,11 +9472,11 @@
       "description": ""
     },
     {
-      "id": "20260813-062651-4088",
+      "id": "20260813-064600-9647",
       "isbn": "",
-      "filename": "The React UX Architects Handbook Design Thinking Strategies for Exceptional Digital Experiences (Aarav Joshi).pdf",
+      "filename": "The React UX Architects Handbook (Aarav Joshi).pdf",
       "subTitle": "",
-      "filepath": "ebooks/Dev/React/The React UX Architects Handbook Design Thinking Strategies for Exceptional Digital Experiences (Aarav Joshi).pdf",
+      "filepath": "ebooks/Dev/React/The React UX Architects Handbook (Aarav Joshi).pdf",
       "author": "",
       "publisher": "",
       "series": "",
@@ -9482,14 +9486,14 @@
       "publishDate": "",
       "createdAt": "2026-08-13T00:42:10.189Z",
       "modifiedAt": "2026-08-13T00:42:22.493Z",
-      "scanDate": "2026-08-13T00:56:52.150Z",
+      "scanDate": "2026-08-13T01:16:01.418Z",
       "category": "Dev",
-      "subCat": "React",
+      "subCat": "",
       "subSubCat": "",
       "tags": "",
       "favorite": false,
       "rating": null,
-      "coverImage": "covers/Dev/React/20260813-062651-4088.jpg",
+      "coverImage": "covers/Dev/React/20260813-064600-9647.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -33039,11 +33043,11 @@
       "description": ""
     },
     {
-      "id": "20260813-062704-9517",
+      "id": "20260813-064601-6314",
       "isbn": "",
-      "filename": "Flowers of Evil and Other Works - Les Fleurs du Mal et Oeuvres Choisies A Dual-Language Book (Charles Baudelaire).epub",
+      "filename": "Flowers of Evil and Other Works - Dual-Language Book (Charles Baudelaire).epub",
       "subTitle": "",
-      "filepath": "ebooks/Languages/French/B2/Flowers of Evil and Other Works - Les Fleurs du Mal et Oeuvres Choisies A Dual-Language Book (Charles Baudelaire).epub",
+      "filepath": "ebooks/Languages/French/B2/Flowers of Evil and Other Works - Dual-Language Book (Charles Baudelaire).epub",
       "author": "",
       "publisher": "",
       "series": "",
@@ -33053,14 +33057,14 @@
       "publishDate": "",
       "createdAt": "2026-08-12T22:46:30.076Z",
       "modifiedAt": "2026-08-12T22:46:33.383Z",
-      "scanDate": "2026-08-13T00:57:04.079Z",
-      "category": "French Language Study",
-      "subCat": "Short Stories",
+      "scanDate": "2026-08-13T01:16:01.750Z",
+      "category": "Languages",
+      "subCat": "",
       "subSubCat": "",
       "tags": "",
       "favorite": false,
       "rating": null,
-      "coverImage": "covers/Languages/French/B2/20260813-062704-9517.jpeg",
+      "coverImage": "covers/Languages/French/B2/20260813-064601-6314.jpeg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -34254,11 +34258,11 @@
       "description": ""
     },
     {
-      "id": "20260813-062715-9119",
+      "id": "20260813-064648-4744",
       "isbn": "",
-      "filename": "Pleasures and Days and Memory Short Stories - Dual-Language Book (Marcel Proust Edward H. Ousselin).epub",
+      "filename": "Pleasures and Days and Memory - Dual-Language (Marcel Proust Edward H. Ousselin).epub",
       "subTitle": "",
-      "filepath": "ebooks/Languages/French/B2/Pleasures and Days and Memory Short Stories - Dual-Language Book (Marcel Proust Edward H. Ousselin).epub",
+      "filepath": "ebooks/Languages/French/B2/Pleasures and Days and Memory - Dual-Language (Marcel Proust Edward H. Ousselin).epub",
       "author": "",
       "publisher": "",
       "series": "",
@@ -34268,14 +34272,14 @@
       "publishDate": "",
       "createdAt": "2026-08-12T22:47:15.172Z",
       "modifiedAt": "2026-08-12T22:47:18.259Z",
-      "scanDate": "2026-08-13T00:57:15.753Z",
-      "category": "French Language Study",
-      "subCat": "Short Stories",
+      "scanDate": "2026-08-13T01:16:48.528Z",
+      "category": "Languages",
+      "subCat": "",
       "subSubCat": "",
       "tags": "",
       "favorite": false,
       "rating": null,
-      "coverImage": "covers/Languages/French/B2/20260813-062715-9119.jpeg",
+      "coverImage": "covers/Languages/French/B2/20260813-064648-4744.jpeg",
       "language": "",
       "pageCount": 0,
       "description": ""
