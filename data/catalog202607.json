@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "lastUpdated": "2026-09-18T23:49:05.689Z",
-    "booksAdded": 24,
+    "lastUpdated": "2026-09-19T00:01:40.152Z",
+    "booksAdded": 0,
     "booksDeleted": 0,
-    "netChange": 24,
+    "netChange": 0,
     "totalBooks": 3635,
     "totalSizeBytes": 25575340195,
     "totalSizeMB": "24390.55",
@@ -284,7 +284,7 @@
       },
       {
         "name": "French Language Study",
-        "count": 644
+        "count": 645
       },
       {
         "name": "German Language Study",
@@ -304,7 +304,7 @@
       },
       {
         "name": "Italian Language Study",
-        "count": 167
+        "count": 168
       },
       {
         "name": "Japanese Language Study",
@@ -328,7 +328,7 @@
       },
       {
         "name": "Languages",
-        "count": 149
+        "count": 143
       },
       {
         "name": "Lock Picking",
@@ -400,7 +400,7 @@
       },
       {
         "name": "Spanish Language Study",
-        "count": 281
+        "count": 285
       },
       {
         "name": "Travel",
@@ -424,6 +424,10 @@
       }
     ],
     "series": [
+      {
+        "name": "10 Minute Guide",
+        "count": 1
+      },
       {
         "name": "15-Minute",
         "count": 1
@@ -714,7 +718,7 @@
       },
       {
         "name": "Utterly Confused",
-        "count": 2
+        "count": 10
       },
       {
         "name": "Without Toil",
@@ -35801,7 +35805,7 @@
       "filepath": "ebooks/Languages/French/A1/Beginning French for the utterly confused (Amilcar Sebastian Mercado).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Utterly Confused",
       "format": "pdf",
       "filesize": 1197188,
       "filesizeMB": "1.14",
@@ -72488,7 +72492,7 @@
       "filepath": "ebooks/Languages/Spanish/A1/Beginning Spanish for the Utterly Confused (Yates, Jean).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Utterly Confused",
       "format": "pdf",
       "filesize": 11848736,
       "filesizeMB": "11.30",
@@ -85522,7 +85526,7 @@
       "filepath": "ebooks/School/Math/Algebra/Algebra for the Utterly Confused (Larry J. Stephens).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Utterly Confused",
       "format": "pdf",
       "filesize": 1474570,
       "filesizeMB": "1.41",
@@ -96370,7 +96374,7 @@
       "filepath": "ebooks/Self-Help/Statistics for the Utterly Confused (Lloyd R. Jaisingh).pdf",
       "author": "",
       "publisher": "",
-      "series": "",
+      "series": "Utterly Confused",
       "format": "pdf",
       "filesize": 9183900,
       "filesizeMB": "8.76",
