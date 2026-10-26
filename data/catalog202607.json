@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-26T02:13:03.993Z",
-    "booksAdded": 74,
+    "lastUpdated": "2026-10-26T04:09:41.287Z",
+    "booksAdded": 2,
     "booksDeleted": 0,
-    "netChange": 74,
+    "netChange": 2,
     "totalBooks": 4467,
     "totalSizeBytes": 32098160064,
     "totalSizeMB": "30611.19",
@@ -296,11 +296,11 @@
       },
       {
         "name": "French Language Study",
-        "count": 780
+        "count": 790
       },
       {
         "name": "German Language Study",
-        "count": 362
+        "count": 368
       },
       {
         "name": "Health",
@@ -316,11 +316,11 @@
       },
       {
         "name": "Italian Language Study",
-        "count": 202
+        "count": 214
       },
       {
         "name": "Japanese Language Study",
-        "count": 90
+        "count": 92
       },
       {
         "name": "JavaScript",
@@ -340,7 +340,7 @@
       },
       {
         "name": "Languages",
-        "count": 196
+        "count": 167
       },
       {
         "name": "Lock Picking",
@@ -408,11 +408,11 @@
       },
       {
         "name": "Self-Help",
-        "count": 335
+        "count": 333
       },
       {
         "name": "Spanish Language Study",
-        "count": 325
+        "count": 326
       },
       {
         "name": "Tamil Language Study",
@@ -51324,6 +51324,33 @@
       "description": ""
     },
     {
+      "id": "20261026-093927-2006",
+      "isbn": "",
+      "filename": "Correctrice Incorrigible (Muriel Gilbert).epub",
+      "subTitle": "",
+      "filepath": "ebooks/Languages/French/B2/Correctrice Incorrigible (Muriel Gilbert).epub",
+      "author": "",
+      "publisher": "",
+      "series": "",
+      "format": "epub",
+      "filesize": 238224,
+      "filesizeMB": "0.23",
+      "publishDate": "",
+      "createdAt": "2026-10-26T01:49:49.153Z",
+      "modifiedAt": "2026-10-26T01:49:53.093Z",
+      "scanDate": "2026-10-26T04:09:28.067Z",
+      "category": "Languages",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Languages/French/B2/20261026-093927-2006.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
       "id": "20260716-203356-9335",
       "isbn": "",
       "filename": "DELF B2 200 activités (Emmanuelle Daill, Anatole Bloomfield).pdf",
@@ -58684,6 +58711,33 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Languages/French/Comic/20261018-080013-9844.jpg",
+      "language": "",
+      "pageCount": 0,
+      "description": ""
+    },
+    {
+      "id": "20261026-093928-6152",
+      "isbn": "",
+      "filename": "Faux Amis Key Words (Thody, Philip Malcolm Waller, 1928 , Evans).pdf",
+      "subTitle": "",
+      "filepath": "ebooks/Languages/French/Faux Amis Key Words (Thody, Philip Malcolm Waller, 1928 , Evans).pdf",
+      "author": "",
+      "publisher": "",
+      "series": "",
+      "format": "pdf",
+      "filesize": 11526000,
+      "filesizeMB": "10.99",
+      "publishDate": "",
+      "createdAt": "2026-10-26T01:45:42.546Z",
+      "modifiedAt": "2026-10-26T01:46:00.472Z",
+      "scanDate": "2026-10-26T04:09:39.499Z",
+      "category": "Languages",
+      "subCat": "",
+      "subSubCat": "",
+      "tags": "",
+      "favorite": false,
+      "rating": null,
+      "coverImage": "covers/Languages/French/20261026-093928-6152.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
@@ -108383,33 +108437,6 @@
       "description": ""
     },
     {
-      "id": "20261026-074237-4627",
-      "isbn": "",
-      "filename": "Correctrice Incorrigible (Muriel Gilbert).epub",
-      "subTitle": "",
-      "filepath": "ebooks/Self-Help/Correctrice Incorrigible (Muriel Gilbert).epub",
-      "author": "",
-      "publisher": "",
-      "series": "",
-      "format": "epub",
-      "filesize": 238224,
-      "filesizeMB": "0.23",
-      "publishDate": "",
-      "createdAt": "2026-10-26T01:49:49.153Z",
-      "modifiedAt": "2026-10-26T01:49:53.093Z",
-      "scanDate": "2026-10-26T02:12:37.300Z",
-      "category": "Self-Help",
-      "subCat": "",
-      "subSubCat": "",
-      "tags": "",
-      "favorite": false,
-      "rating": null,
-      "coverImage": "covers/Self-Help/20261026-074237-4627.jpg",
-      "language": "",
-      "pageCount": 0,
-      "description": ""
-    },
-    {
       "id": "20260806-102918-3113",
       "isbn": "",
       "filename": "Critical conversations for dummies (Schlachter, Christina Tangora).pdf",
@@ -108999,33 +109026,6 @@
       "favorite": false,
       "rating": null,
       "coverImage": "covers/Self-Help/20261018-080144-5951.jpg",
-      "language": "",
-      "pageCount": 0,
-      "description": ""
-    },
-    {
-      "id": "20261026-074237-8609",
-      "isbn": "",
-      "filename": "Faux Amis Key Words (Thody, Philip Malcolm Waller, 1928 , Evans).pdf",
-      "subTitle": "",
-      "filepath": "ebooks/Self-Help/Faux Amis Key Words (Thody, Philip Malcolm Waller, 1928 , Evans).pdf",
-      "author": "",
-      "publisher": "",
-      "series": "",
-      "format": "pdf",
-      "filesize": 11526000,
-      "filesizeMB": "10.99",
-      "publishDate": "",
-      "createdAt": "2026-10-26T01:45:42.546Z",
-      "modifiedAt": "2026-10-26T01:46:00.472Z",
-      "scanDate": "2026-10-26T02:12:41.269Z",
-      "category": "Self-Help",
-      "subCat": "",
-      "subSubCat": "",
-      "tags": "",
-      "favorite": false,
-      "rating": null,
-      "coverImage": "covers/Self-Help/20261026-074237-8609.jpg",
       "language": "",
       "pageCount": 0,
       "description": ""
